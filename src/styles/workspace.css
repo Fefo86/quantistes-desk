@@ -87,35 +87,40 @@ html.quantistes :is(#q15Lookup .q15-lookup-header b,#q15Settings .q15-settings-h
 html.quantistes #q15ParamsMount {
   padding-bottom: max(1rem, env(safe-area-inset-bottom, 0px)) !important;
 }
-html.quantistes #q15ParamsMount > #qlCalcDock {
-  position: static;
-  inset: auto;
-  z-index: auto;
+html.quantistes #terminalSidebar .qx-level-action {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: .5rem 1rem;
-  margin: .75rem 0 0;
-  padding: .75rem 0 0;
-  background: transparent;
-  border-top-color: var(--rule) !important;
-  border-radius: 0 !important;
+  grid-template-columns: minmax(0, 1fr);
+  gap: .5rem;
+  margin-top: 1rem;
+  padding-top: .8rem;
+  border-top: 1px solid var(--rule);
 }
-html.quantistes #qlCalcDock > #qlCalcLabel {
+html.quantistes #terminalSidebar .qx-level-action > #qlCalcLabel {
   color: var(--muted);
-  font: 500 .875rem/1.5 var(--terminal-mono);
+  font: 400 .875rem/1.45 var(--terminal-mono);
   overflow-wrap: anywhere;
 }
-html.quantistes #qlCalcDock > #calculate {
+html.quantistes #terminalSidebar .qx-level-action > #calculate {
   box-sizing: border-box;
-  min-width: 0;
-  max-width: 100%;
+  width: 100%;
   min-height: 2.75rem;
-  border-radius: 0 !important;
+  margin: 0;
+  padding: .55rem .85rem;
+  color: var(--terminal-bg);
+  background: var(--amber);
+  border: 1px solid var(--amber);
   font: 600 .875rem/1.25 var(--terminal-mono) !important;
+  text-align: center;
 }
-@media (max-width: 740px) {
-  html.quantistes #q15ParamsMount > #qlCalcDock { grid-template-columns: minmax(0, 1fr); }
+html.quantistes #terminalSidebar .qx-level-action > #calculate:disabled {
+  color: var(--muted);
+  background: var(--raised);
+  border-color: var(--rule);
+  opacity: 1;
+  cursor: not-allowed;
+}
+html.quantistes #terminalSidebar .qx-level-action > #calculate:hover:enabled {
+  background: #ffbd62;
 }
 html.quantistes body.q13-native .qx{display:none}
 

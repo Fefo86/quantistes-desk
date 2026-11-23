@@ -33,6 +33,7 @@ jobs:
       - run: node scripts/check-chart-paints.mjs
       - run: node scripts/check-local-market.mjs
       - run: node scripts/check-local-export.mjs out
+      - run: node scripts/check-level-action.mjs out
       - name: Prepara il pacchetto protetto
         run: python3 scripts/package-hostinger.py --output "$RUNNER_TEMP/pacchetti"
       - uses: actions/upload-artifact@v7.0.2

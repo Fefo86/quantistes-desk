@@ -18,6 +18,10 @@ const disabledAttributes = ' disabled title="API disattivata"';
 export function localMarketMarkup(html) {
   return html
     .replace(/<input\b[^>]*\sid="csvFile"[^>]*>/i, chainUploadField)
+    .replace(/<button\b[^>]*\sid="calculate"[^>]*>[^<]*<\/button>/i, button => {
+      const action = button.replace('id="calculate"', 'id="calculate" type="button" aria-describedby="qlCalcLabel computeHint"');
+      return '<div class="qx-level-action"><span id="qlCalcLabel"></span>' + action + '</div>';
+    })
     .replace(/<button\b[^>]*>/gi, tag => remoteButtonId.test(tag)
       ? tag.slice(0,-1) + disabledAttributes + '>'
       : tag);
@@ -56,7 +60,10 @@ root.QuantistesAPI=Object.freeze({urlFor:disabled,load:async()=>disabled()});})(
       return source.replace("const dock=$('dx-global-dock'),flow=$('view-flows');",
         "const daily=$('qdBar');if(daily&&daily.parentNode!==div)div.prepend(daily);\n  const dock=$('dx-global-dock'),flow=$('view-flows');");
     case 'quantistes-v23-ux-only.js':
-      return source.replace('data-ql-feed="connect">', 'data-ql-feed="connect"' + disabledAttributes + '>')
+      // The form owns its calculate button. The original status and click handlers still address it by ID.
+      return replaceSection(source, "  const dock=document.createElement('div');dock.id='qlCalcDock';",
+        "  input.addEventListener('click',", '', file)
+        .replace('data-ql-feed="connect">', 'data-ql-feed="connect"' + disabledAttributes + '>')
         .replace('button.title=bridge.textContent;', 'button.title="API disattivata";');
     case 'daily-hub.js': {
       let local = replaceSection(source,'async function fetchDealer(urlText,gen=generation){','async function click(e){',
