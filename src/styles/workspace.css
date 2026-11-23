@@ -34,6 +34,46 @@ html.quantistes :is(#q13App,#q15Settings,#q15Lookup) :is(.card,.qt360-card,.q13-
 html.quantistes :is(#q13App,#q15Settings,#q15Lookup) :is(input:not([type=range]):not([type=checkbox]):not([type=radio]),select,textarea){background-color:#0c0d0e!important;color:var(--amber)!important;border-color:#6d6353!important;border-radius:0!important;box-shadow:none!important}
 html.quantistes :is(#q13App,#q15Settings,#q15Lookup) select{appearance:none;padding-right:1.45rem!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='m1 1 4 4 4-4' fill='none' stroke='%23ddac6d'/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right .43rem center!important}
 html.quantistes :is(#q13App,#q15Settings,#q15Lookup) button{border-radius:0!important}
+
+html.quantistes #terminalSidebar .qx-chain-upload {
+  position: relative;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+  gap: .65rem;
+  min-height: 2.55rem;
+  padding: .4rem .6rem;
+  background: var(--panel);
+  border: 1px solid #6d6353;
+  font: 400 .8rem/1.4 var(--terminal-mono);
+}
+html.quantistes #terminalSidebar .qx-chain-upload > label {
+  margin: 0;
+  padding: .22rem .5rem;
+  color: var(--ink);
+  background: var(--raised);
+  font: inherit;
+}
+html.quantistes #terminalSidebar .qx-chain-upload > output {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--muted);
+}
+html.quantistes #terminalSidebar .qx-chain-upload > output[data-state="reading"] { color: var(--amber); }
+html.quantistes #terminalSidebar .qx-chain-upload > output[data-state="loaded"] { color: var(--green); }
+html.quantistes #terminalSidebar .qx-chain-upload > output[data-state="error"] { color: var(--red); }
+html.quantistes #terminalSidebar .qx-chain-upload:focus-within { outline: 2px solid var(--cyan); }
+html.quantistes #terminalSidebar .qx-chain-upload > #csvFile {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
 html.quantistes :is(#q13App,#q15Settings,#q15Lookup) :is(input,button,a,select,summary,textarea):focus-visible{outline:2px solid var(--cyan)!important;outline-offset:0}
 html.quantistes #q13App :is(.cardhead,.card-head,.q13-panel-head,.qt360-card-head,.flow-card-head,.oa-sectionhead,.studio-sectionhead,.ir-sectionhead){border-color:var(--rule)!important;background:#1a1b1e!important;color:var(--amber)!important}
 html.quantistes #q13App .q13-view :is(h1,h2,h3,h4){font-family:var(--terminal-mono)!important;text-shadow:none!important}

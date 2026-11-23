@@ -1,3 +1,5 @@
+import { addChainReceipt, chainUploadField } from './chain-upload.mjs';
+
 /*
  * Project the archived desk into a local-market-data build. Only transport entry
  * points and the associated controls vary. Source archives remain verifiable.
@@ -14,9 +16,11 @@ const remoteButtonId = /\bid="(?:skApiLoad-(?:mon|skew|side)|vc11Fetch(?:Set|-(?
 const disabledAttributes = ' disabled title="API disattivata"';
 
 export function localMarketMarkup(html) {
-  return html.replace(/<button\b[^>]*>/gi, tag => remoteButtonId.test(tag)
-    ? tag.slice(0,-1) + disabledAttributes + '>'
-    : tag);
+  return html
+    .replace(/<input\b[^>]*\sid="csvFile"[^>]*>/i, chainUploadField)
+    .replace(/<button\b[^>]*>/gi, tag => remoteButtonId.test(tag)
+      ? tag.slice(0,-1) + disabledAttributes + '>'
+      : tag);
 }
 
 function replaceSection(source, start, end, replacement, file, separator = '\n') {
@@ -35,7 +39,7 @@ export function localMarketSource(file, source) {
       return `(function(root){'use strict'; const disabled=()=>{throw Error(${JSON.stringify(chainNote)});};
 root.QuantistesAPI=Object.freeze({urlFor:disabled,load:async()=>disabled()});})(globalThis);`;
     case 'terminal-worker.js':
-      return replaceSection(source,'async function loadSkewAPI(){','for(const id of skewApiViews){\n const input=',
+      return replaceSection(addChainReceipt(source),'async function loadSkewAPI(){','for(const id of skewApiViews){\n const input=',
         `async function loadSkewAPI(){skewStatus(${JSON.stringify(chainNote)});}`,file)
         .replace("$('skApiLoad-'+id).disabled=busy;", "$('skApiLoad-'+id).disabled=true;");
     case 'vc10-intake.js':
