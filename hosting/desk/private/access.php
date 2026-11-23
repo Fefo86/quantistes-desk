@@ -55,6 +55,7 @@ function qd_callback(array $config): never {
 function qd_clear(): void {
     $_SESSION = [];
     session_destroy();
+    setcookie('__Host-QuantistesCSRF', '', ['expires' => time()-3600, 'path' => '/', 'secure' => true, 'httponly' => false, 'samesite' => 'Strict']);
     setcookie(session_name(), '', ['expires' => time()-3600, 'path' => '/', 'secure' => true, 'httponly' => true, 'samesite' => 'Lax']);
 }
 function qd_admitted(array $config): bool {

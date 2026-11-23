@@ -1,10 +1,9 @@
-// Wording from the institutional-desk module. The original router owns the 32 tools.
 export const sections = [
-  { id: 'score', title: 'Scoreboard', sub: 'Decisione ES' },
-  { id: 'market', title: 'Volatilità', sub: 'Mark CVI · distribuzione Q · livelli' },
-  { id: 'dealer', title: 'Dealer flow', sub: 'Inventario · scenari di copertura' },
-  { id: 'path', title: 'Probabilità fisica', sub: 'Percorsi · eventi · rischio' },
-  { id: 'audit', title: 'Ricerca', sub: 'Qualità del modello · verifica storica' },
-  { id: 'reports', title: 'Report istituzionali', sub: 'Letture datate e grafici per indicatore' },
-  { id: 'scalp', title: 'Scalping su flussi', sub: 'Strike e copertura condizionale' }
+  { id: 'score', code: 'ES', title: 'Scoreboard', context: 'Decisione ES' },
+  { id: 'market', code: 'VOL', title: 'Volatilità', context: 'SPXW · CVI' },
+  { id: 'dealer', code: 'FLOW', title: 'Dealer flow', context: 'Inventario e copertura' },
+  { id: 'path', code: 'PROB', title: 'Probabilità fisica', context: 'Percorsi ed eventi' },
+  { id: 'audit', code: 'RCH', title: 'Ricerca', context: 'Qualità del modello' },
+  { id: 'reports', code: 'RPT', title: 'Report istituzionali', context: 'Documenti e serie' },
+  { id: 'scalp', code: 'SCALP', title: 'Scalping su flussi', context: 'Strike e copertura' }
 ];

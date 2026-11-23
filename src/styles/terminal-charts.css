@@ -1,0 +1,174 @@
+/* Quantistes native instruments. The renderer owns its coordinates, data and input events. */
+html.quantistes {
+  --chart-paper: #090b0d;
+  --chart-panel: #121519;
+  --chart-grid: #292e35;
+  --chart-rule: #4e555f;
+  --chart-ink: #f0f2ee;
+  --chart-tick: #b8c0c7;
+  --chart-amber: #ffb258;
+  --chart-cyan: #47cde5;
+  --chart-magenta: #e78bd5;
+  --chart-green: #65d99b;
+  --chart-red: #ff7885;
+  --chart-type: var(--terminal-mono, "IBM Plex Mono", ui-monospace, monospace);
+}
+
+html.quantistes body #q13App #deskBoard .desk-figure,
+html.quantistes body #q13App #deskBoard .desk-figure #deskOutcomeChart,
+html.quantistes #q13App :is(.rf-plot,.uf-scope,.q13-plot,.qt360-plot,.q26-plot) {
+  background: var(--chart-paper) !important;
+  border-color: var(--chart-grid) !important;
+}
+html.quantistes body #q13App #deskBoard .desk-plot-wrap {
+  container: es-plot / inline-size;
+  box-sizing: border-box;
+  min-width: 0;
+  margin: 0 !important;
+  padding: .55rem .55rem .1rem;
+  background: var(--chart-paper) !important;
+  border-block: 1px solid var(--chart-grid);
+}
+html.quantistes body #q13App #deskBoard .desk-figure #deskOutcomeChart {
+  display: block;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: min(68vh, 880px) !important;
+  overflow: visible;
+  touch-action: pan-y pinch-zoom;
+  font: 400 14px var(--chart-type);
+  shape-rendering: geometricPrecision;
+}
+html.quantistes body #q13App #deskBoard #deskOutcomeChart text {
+  fill: var(--chart-tick) !important;
+  font-family: var(--chart-type) !important;
+  font-size: var(--es-label, 14px) !important;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: 0 !important;
+}
+html.quantistes body #q13App #deskBoard #deskOutcomeChart text[y="14"] {
+  fill: var(--chart-ink) !important;
+  font-size: var(--es-head, var(--es-label,14px)) !important;
+  font-weight: 500;
+}
+html.quantistes #deskOutcomeChart polyline {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+html.quantistes #deskOutcomeChart path[stroke="#292e35"] {
+  vector-effect: non-scaling-stroke;
+  stroke-width: .8;
+}
+html.quantistes #deskOutcomeChart .desk-cursor line,
+html.quantistes #q13App .rf-plot #irCross line {
+  vector-effect: non-scaling-stroke;
+  stroke-width: 1;
+}
+html.quantistes body #q13App #deskBoard .desk-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1rem !important;
+  background: var(--chart-paper);
+  color: var(--chart-tick) !important;
+  font: 400 .76rem/1.5 var(--chart-type) !important;
+}
+html.quantistes body #q13App #deskBoard .desk-legend i {
+  display: inline-block;
+  flex: none;
+  width: 1.6rem;
+  height: 2px;
+}
+html.quantistes body #q13App #deskBoard .desk-legend .heatkey {
+  width: 3.8rem !important;
+  height: .45rem !important;
+  background: linear-gradient(to right,
+    #10232d 0 12.5%,#163b4c 12.5% 25%,#1b5266 25% 37.5%,#206d80 37.5% 50%,
+    #2c8797 50% 62.5%,#4cacb6 62.5% 75%,#82cbd0 75% 87.5%,#cff1ee 87.5% 100%) !important;
+}
+html.quantistes body #q13App #deskBoard .desk-legend .legMed {
+  height: .45rem !important;
+  background: linear-gradient(var(--chart-amber),var(--chart-amber)) left top / 100% 2px no-repeat,
+    repeating-linear-gradient(90deg,#c1e7ed 0 4px,transparent 4px 7px) left bottom / 100% 1px no-repeat !important;
+}
+html.quantistes body #q13App #deskBoard #deskLegend:has(.heatkey) > span:last-child::before {
+  content: "";
+  width: 1rem;
+  height: .32rem;
+  background: var(--chart-magenta);
+}
+html.quantistes body #q13App #deskBoard .desk-legend .legTarget {
+  background: var(--chart-green) !important;
+}
+html.quantistes body #q13App #deskBoard .desk-legend .legStop {
+  background: repeating-linear-gradient(90deg,var(--chart-red) 0 8px,transparent 8px 12px) !important;
+}
+html.quantistes body #q13App #deskBoard .desk-legend .legOpen {
+  background: repeating-linear-gradient(90deg,var(--chart-cyan) 0 2px,transparent 2px 6px) !important;
+}
+html.quantistes body #q13App #deskBoard :is(#deskReadLine,#deskCellData),
+html.quantistes #q13App :is(.rf-instrument,.rf-caption,.uf-read,.dx-readout) {
+  font-family: var(--chart-type) !important;
+  font-variant-numeric: tabular-nums;
+  color: var(--chart-tick);
+}
+html.quantistes #q13App :is(.rf-plot,.q13-plot,.qt360-plot,.q26-plot) svg text,
+html.quantistes .view.active svg[viewBox] text,
+html.quantistes #deskChartModal .desk-copy text {
+  font-family: var(--chart-type) !important;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+html.quantistes :is(.q13-view,.view.active,#deskChartModal) .js-plotly-plot .modebar {
+  background: var(--chart-panel) !important;
+  border: 1px solid var(--chart-grid);
+}
+html.quantistes :is(.q13-view,.view.active,#deskChartModal) .modebar-btn path {fill: var(--chart-tick) !important;}
+html.quantistes :is(.q13-view,.view.active,#deskChartModal) .modebar-btn:is(:hover,.active) path {fill: var(--chart-amber) !important;}
+html.quantistes #q13App :is(.rf-plot,#deskOutcomeChart,.uf-scope):focus-visible {
+  outline: 2px solid var(--chart-amber);
+  outline-offset: -2px;
+}
+
+/* The ES viewBox remains in native coordinates. Axis text scales back up on narrow
+   panels. Move the marginal profile's captions onto their own line on phone screens. */
+@container es-plot (max-width: 850px) {
+  #deskOutcomeChart { --es-label: 16.5px; }
+}
+@container es-plot (max-width: 680px) {
+  #deskOutcomeChart { --es-label: 20.5px; --es-head: 18px; }
+}
+@container es-plot (max-width: 560px) {
+  #deskOutcomeChart { --es-label: 24px; --es-head: 22px; }
+}
+@container es-plot (max-width: 455px) {
+  #deskOutcomeChart { --es-label: 29px; --es-head: 25px; }
+}
+@container es-plot (max-width: 392px) {
+  #deskOutcomeChart { --es-label: 34px; --es-head: 29px; }
+}
+@container es-plot (max-width: 335px) {
+  #deskOutcomeChart { --es-label: 37px; --es-head: 32px; }
+}
+@container es-plot (max-width: 295px) {
+  #deskOutcomeChart { --es-label: 41px; --es-head: 37px; }
+  #deskOutcomeChart[viewBox="0 0 840 389"] { --es-head: 32px; }
+}
+@container es-plot (max-width: 600px) {
+  #deskOutcomeChart {margin-block: .25rem max(1rem, 6cqw) !important;}
+  #deskOutcomeChart[viewBox="0 0 930 389"] text[x="812"][y="14"] {transform:translateX(-130px);}
+  #deskOutcomeChart text[x="828"][y="14"] {text-anchor:end;transform:translateX(80px);}
+  #deskOutcomeChart text[x="828"][y="369"] {transform:translateY(34px);}
+  #deskOutcomeChart text[x="908"][y="369"] {transform:translateY(64px);}
+  #deskOutcomeChart polyline {vector-effect:non-scaling-stroke;stroke-width:1.35px;}
+  #deskOutcomeChart polyline[stroke-width="4.7"] {stroke-width:3px;}
+  #deskOutcomeChart polyline[stroke-width="2.65"] {stroke-width:1.7px;}
+  #deskOutcomeChart polyline[stroke-width="1.25"] {stroke-width:.85px;}
+}
+@media (max-width: 700px) {
+  html.quantistes body #q13App #deskBoard .desk-plot-wrap {
+    overflow: hidden !important;
+    padding: .8rem .7rem .35rem 1.4rem;
+  }
+}

@@ -1,44 +1,49 @@
 import Head from 'next/head';
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { Navigation } from '../ui/Navigation';
+import { useEffect, useState } from 'react';
 import { Masthead } from '../ui/Masthead';
 import { sections } from '../ui/sections';
 import { useDesk } from '../ui/useDesk';
+import { installDeskCopy } from '../ui/terminal-copy';
 
 export default function InstitutionalDesk() {
   const view = useDesk();
-  const [open,setOpen] = useState(false);
-  const [csrf,setCsrf] = useState('');
-  const menu = useRef(null);
+  const [csrf, setCsrf] = useState('');
   const section = sections.find(item => item.id === view.stage) || sections[0];
-  const close = useCallback((restore = true) => {
-    setOpen(false);
-    if (restore !== false) menu.current?.focus({preventScroll:true});
-  },[]);
   useEffect(() => {
     if (document.documentElement.dataset.access === 'wordpress') {
-      fetch('/auth/session',{credentials:'same-origin',cache:'no-store'}).then(r => {
-        if (r.status === 401) { window.location.replace('/'); return {}; }
-        return r.ok ? r.json() : {};
-      }).then(data => setCsrf(data.csrf || '')).catch(() => {});
+      const cookie = document.cookie.split('; ').find(field => field.startsWith('__Host-QuantistesCSRF='));
+      if (cookie) setCsrf(cookie.slice(cookie.indexOf('=') + 1));
     }
-    const mq = window.matchMedia('(min-width: 901px)');
-    const resize = () => { if (mq.matches) setOpen(false); };
-    mq.addEventListener('change',resize);
-    return () => mq.removeEventListener('change',resize);
-  },[]);
-  function navigate(stage) {
-    close(false);
-    window.QuantistesFlatDesk?.go(stage);
+  }, []);
+  useEffect(() => {
+    if (!view.ready) return;
+    const chart = document.querySelector('#deskBoard .desk-main-grid');
+    const attribution = document.getElementById('deskImpact');
+    if (chart && attribution?.parentNode === chart.parentNode) attribution.before(chart);
+  }, [view.ready]);
+  useEffect(() => installDeskCopy(), []);
+  useEffect(() => {
+    const consoleBar = document.querySelector('.qx-console');
+    if (!consoleBar || !window.ResizeObserver) return;
+    function measure() {
+      const height = consoleBar.getBoundingClientRect().height;
+      if (height) document.documentElement.style.setProperty('--console-height', height + 'px');
+    }
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(consoleBar);
+    return () => observer.disconnect();
+  }, []);
+  function navigate(stage, tool) {
+    window.QuantistesFlatDesk?.go(stage, tool);
     window.scrollTo({top:0,behavior:'instant'});
     requestAnimationFrame(() => document.getElementById('desk-intestazione')?.focus({preventScroll:true}));
   }
   return <>
-    <Head><title>Quantistes | Institutional Desk</title><meta name="description" content="Quantistes Institutional Desk. Scoreboard ES, volatilità, dealer flow, probabilità fisica, ricerca, report istituzionali e scalping su flussi."/></Head>
+    <Head><title>Quantistes | Institutional Desk</title><meta name="description" content="Terminale Quantistes per Scoreboard ES, volatilità, dealer flow, probabilità fisica, ricerca, report e scalping."/></Head>
     <div className="qx"><a className="qx-skip" href="#desk-intestazione">Vai all’area di lavoro</a>
-      <Navigation view={view} open={open} close={close} navigate={navigate} csrf={csrf}/>
-      <Masthead view={view} section={section} navOpen={open} toggleNav={() => setOpen(!open)} menuRef={menu}/>
+      <Masthead view={view} section={section} navigate={navigate} csrf={csrf}/>
     </div>
-    <noscript>Attiva JavaScript per utilizzare i calcoli locali del desk.</noscript>
+    <noscript>Attiva JavaScript per utilizzare i calcoli del desk.</noscript>
   </>;
 }

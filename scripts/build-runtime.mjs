@@ -2,6 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { localMarketSource, localMarketStyles } from './local-market.mjs';
+import { themeChartSource } from './theme-chart-source.mjs';
+import { terminalMaterials } from './terminal-materials.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const desk = path.join(root, 'desk');
@@ -51,7 +54,7 @@ for (const node of manifest.nodes) {
     if (html.trim()) { flush(); layout.push(html); }
     continue;
   }
-  const value = load(node);
+  const value = themeChartSource(node.id || node.path, localMarketSource(node.path, load(node)));
   if (node.id?.startsWith('inst-bin-')) {
     lazy.push([node.id, asset(node.id, 'txt', value)]);
     group.push([node.id, node.type, '']);
@@ -68,36 +71,13 @@ flush();
 const pdfAdapter = fs.readFileSync(path.join(root, 'src/ui/pdf-resources.js'), 'utf8');
 scriptAsset('pdf-resources', '(' + pdfAdapter.trim() + ')(' + JSON.stringify(Object.fromEntries(lazy)) + ');');
 
-// Apply the desk materials to presentation CSS only. Keep warm, gain/loss and chart
-// encodings distinct. The original styles remain independently editable in desk/styles.
-function graphite(hex) {
-  let raw = hex.slice(1);
-  if (raw.length === 3 || raw.length === 4) raw = [...raw].map(x => x + x).join('');
-  const channels = [0,2,4].map(i => parseInt(raw.slice(i, i+2), 16));
-  const [r,g,b] = channels;
-  if (b <= r || b <= g || r > g + 8 || b - r < 5) return hex;
-  const y = (0.2126*r + 0.7152*g + 0.0722*b);
-  const colors = y < 120 ? [y*0.94+2, y*0.99+3, y*0.90+3] : [y*0.98+3, y*1.01+2, y*0.94+3];
-  return '#' + colors.map(n => Math.min(255,Math.round(n)).toString(16).padStart(2,'0')).join('') + raw.slice(6);
-}
-function typeScale(css) {
-  return css.replace(/(["']?)\bConsolas\b\1/g, '"IBM Plex Mono"')
-    .replace(/((?:^|[{;])\s*font(?:-size)?\s*:\s*)([^;{}]+)/gi, (_, property, declaration) => {
-      const scaled = declaration.replace(/\b(\d+(?:\.\d+)?)px\b/, (original, size) => {
-        const px = Number(size);
-        return px >= 7 && px <= 24 ? (Math.max(px, 12) / 16) + 'rem' : original;
-      });
-      return property + scaled;
-    });
-}
-const materials = sheets.join('\n').replace(/#[\da-f]{3,8}\b/gi, color =>
-  [4,5,7,9].includes(color.length) ? graphite(color) : color);
-const originalCss = asset('workspaces', 'css', typeScale(materials));
-const uiFiles = ['tokens.css','chrome.css','workspace.css','mobile.css'];
-const theme = asset('institutional','css',uiFiles.map(file => fs.readFileSync(path.join(root, 'src/styles',file),'utf8')).join('\n'));
+const originalCss = asset('workspaces', 'css', terminalMaterials(sheets.join('\n')));
+const uiFiles = ['tokens.css','chrome.css','workspace.css','mobile.css','terminal-charts.css'];
+const theme = asset('institutional','css',uiFiles.map(file => fs.readFileSync(path.join(root, 'src/styles',file),'utf8')).join('\n') + localMarketStyles);
 const fontDir = path.join(root, 'public/ui-fonts');
+fs.rmSync(fontDir,{recursive:true,force:true});
 fs.mkdirSync(fontDir,{recursive:true});
-for (const [font, weights] of [['barlow',[400,500,600,700]],['ibm-plex-mono',[400,500,600]]]) {
+for (const [font, weights] of [['barlow',[700]],['ibm-plex-mono',[400,500,600]]]) {
   for (const weight of weights) {
     const name = font + '-latin-' + weight + '-normal.woff2';
     fs.copyFileSync(path.join(root, 'node_modules/@fontsource', font,'files',name),path.join(fontDir,name));

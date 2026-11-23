@@ -25,7 +25,7 @@ La build genera `out/` per il confezionamento e `dist/` per l’anteprima privat
 | Navigazione, intestazione, struttura React | `src/ui/Navigation.jsx`, `src/ui/Masthead.jsx`, `src/pages/index.jsx` |
 | Nomi delle sette sezioni | `src/ui/sections.js` |
 | Materiali, colori, spaziature e font | `src/styles/tokens.css`, `chrome.css`, `workspace.css`, `mobile.css` |
-| Superficie illustrativa Three.js e fallback vettoriale | `src/ui/QuantSurface.jsx` |
+| Riga comandi, grafici e connettori | `src/ui/CommandLine.jsx`, `scripts/theme-chart-source.mjs`, `src/styles/terminal-charts.css`, `scripts/local-market.mjs` |
 | Scoreboard, playbook e attribuzione | `desk/scoreboard/` |
 | Mark CVI, greche, term structure e tail risk | `desk/volatility/` |
 | Dealer flow e coperture | `desk/dealer/` |
@@ -40,10 +40,12 @@ La build genera `out/` per il confezionamento e `dist/` per l’anteprima privat
 
 Il router originale espone 32 strumenti e conserva le scelte di vista. React gestisce la cornice, i comandi principali e la navigazione responsive. Grafici e controlli analitici usano direttamente i motori e gli eventi della piattaforma. I blocchi condividono lo stesso documento. Gli script che alimentano i Web Worker mantengono ID, ordine e testo. Il lettore PDF riceve le risorse originali alla prima apertura di un documento. I dati degli import continuano a usare il browser e le modalità di archiviazione previste dal sorgente.
 
+I feed SineMath/ThetaData, il bridge ES/VIX e OptionsDepth sono disattivati prima di ogni richiesta e polling. Il terminale usa i dati incorporati e gli import locali. Il gateway mantiene lo scambio di autenticazione con WordPress.
+
 ## Parità
 
-`desk/document.json` descrive l’ordine originario e le impronte SHA-256. `npm run verify` ricostruisce l’impronta dell’intero HTML. `node scripts/check-export.mjs` controlla byte e ordine dei 111 programmi e dei 20 blocchi dati nell'export, compresi gli asset PDF/OCR su richiesta. Esegue i casi numerici di riferimento per ES, CVI/SPXW e ladder.
+`desk/document.json` descrive l’ordine originario e le impronte SHA-256. `npm run verify` ricostruisce l’impronta dell’intero HTML. `node scripts/check-export.mjs` verifica gli SHA-256 dei 111 programmi e dei 20 blocchi dati canonici e confronta l’export con le sole trasformazioni dichiarate per grafici e connettori, compresi gli asset PDF/OCR su richiesta. Esegue i casi numerici di riferimento per ES, CVI/SPXW e ladder.
 
-Per importare deliberatamente una nuova edizione, parti da un checkout separato ed esegui `python3 scripts/import-html.py /percorso/nuova-edizione.html`. Verifica le differenze in `desk/` e i riferimenti di parità prima di aggiornare la build. Le modifiche alla sola veste grafica si applicano in `src/`.
+Per importare deliberatamente una nuova edizione, parti da un checkout separato ed esegui `python3 scripts/import-html.py /percorso/nuova-edizione.html`. Verifica le differenze in `desk/` e i riferimenti di parità prima di aggiornare la build. Gli stili si modificano in `src/styles/`. Le regole di presentazione per i renderer legacy sono in `scripts/theme-chart-source.mjs`. Gli identificatori e le isole dati interni all’Atlas restano verificabili.
 
 Le licenze dei caratteri, delle librerie e i notice presenti nel documento originale sono inclusi in `licenses/` e `desk/data/`.

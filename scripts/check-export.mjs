@@ -5,6 +5,8 @@ import vm from 'node:vm';
 import { gunzipSync } from 'node:zlib';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { localMarketSource } from './local-market.mjs';
+import { themeChartSource } from './theme-chart-source.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const out = path.join(root, 'out');
 const html = fs.readFileSync(path.join(out,'index.html'),'utf8');
@@ -25,9 +27,13 @@ const expected = nodes.filter(n => n.kind === 'js' || n.kind === 'data');
 assert.equal(mounted.length,expected.length);
 for (const [i,item] of expected.entries()) {
   assert.equal(mounted[i].id || null,item.id);
-  assert.equal(createHash('sha256').update(mounted[i].textContent).digest('hex'),item.sha256,item.path);
+  const canonical = fs.readFileSync(path.join(root,'desk',item.path),'utf8');
+  assert.equal(createHash('sha256').update(canonical).digest('hex'),item.sha256,item.path);
+  const projected = themeChartSource(item.id || item.path,localMarketSource(item.path,canonical));
+  assert.equal(createHash('sha256').update(mounted[i].textContent).digest('hex'),
+    createHash('sha256').update(projected).digest('hex'),item.path);
 }
-console.log('Ordine e SHA-256 dei 111 programmi e dei 20 blocchi dati corrispondenti nell’export.');
+console.log('Verificati ordine e SHA-256 dei 111 programmi e dei 20 blocchi dati con le sole proiezioni di presentazione e di disattivazione dei connettori.');
 const ctx = vm.createContext({Intl,console,document:{readyState:'loading',addEventListener(){}},addEventListener(){}});
 ctx.window=ctx; ctx.self=ctx;
 const run = id => vm.runInContext(delivered.get(id).textContent,ctx);

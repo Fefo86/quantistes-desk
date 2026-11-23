@@ -1,9 +1,9 @@
 """Produce the compiled PHP-hosted Next.js build, the WP plugin and modular sources."""
 import argparse
+import base64
 import gzip
 import hashlib
 import json
-import re
 import zipfile
 from pathlib import Path
 
@@ -32,6 +32,9 @@ def php(s):
 
 with zipfile.ZipFile(target/"Quantistes-Hostinger.zip", "w") as z:
     tree(z, root/"hosting/desk")
+    font = (compiled/"ui-fonts/ibm-plex-mono-latin-400-normal.woff2").read_bytes()
+    login_font = "@font-face{font-family:'Desk Mono';src:local('Bloomberg Fixed U'),local('Bloomberg Fixed Unicode'),url(data:font/woff2;base64," + base64.b64encode(font).decode("ascii") + ") format('woff2');font-weight:400;font-display:swap}"
+    put(z, "private/login-font.php", b"<?php defined('QUANTISTES_GATEWAY') || exit; ?>\n" + login_font.encode())
     rows = []
     seen = set()
     for file in sorted(compiled.rglob("*")):
@@ -48,10 +51,6 @@ with zipfile.ZipFile(target/"Quantistes-Hostinger.zip", "w") as z:
             seen.add(digest)
         rows.append(f"    {php(name)} => [{php(digest)}, {php(mime)}, {len(raw)}, {len(body)}, {'true' if use_gzip else 'false'}],")
     put(z,"private/assets.php","<?php\nreturn [\n"+"\n".join(rows)+"\n];\n")
-    art = re.search(r'class="qx-surface"[^>]*>\s*(<svg\b.*?</svg>)',index,re.S)
-    if not art: raise ValueError("Superficie del login assente")
-    svg = re.sub(r' style="[^"]*"', '', art[1], count=1)
-    put(z,"private/surface.php","<?php defined('QUANTISTES_GATEWAY') || exit; ?>\n"+svg)
     for notice in sorted((root/"licenses").glob("*.txt")):
         put(z,"private/licenses/"+notice.name,notice.read_bytes())
 with zipfile.ZipFile(target/"Quantistes-WordPress.zip","w") as z:
@@ -61,6 +60,8 @@ with zipfile.ZipFile(target/"Quantistes-Sorgenti-Next.zip","w") as z:
         tree(z, root/folder,folder+"/")
     for name in ["package.json","package-lock.json","next.config.mjs","README.md","AGGIORNAMENTI.txt","INSTALLAZIONE.html","public/quantistes.svg",".gitignore"]:
         put(z,name,(root/name).read_bytes())
+    if (root/"LICENSE").is_file():
+        put(z,"LICENSE",(root/"LICENSE").read_bytes())
 (target/"Quantistes-Installazione.html").write_bytes((root/"INSTALLAZIONE.html").read_bytes())
 print("Build protetta:",len(rows),"URL,",len(seen),"file distinti.")
 for f in sorted(target.glob("Quantistes-*")):

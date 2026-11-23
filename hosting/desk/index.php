@@ -8,6 +8,7 @@ header('Cache-Control: private, no-store, max-age=0');
 header('X-LiteSpeed-Cache-Control: no-cache');
 header('Referrer-Policy: no-referrer');
 header('X-Content-Type-Options: nosniff');
+header("Content-Security-Policy: connect-src 'self' blob: data:");
 header('X-Frame-Options: SAMEORIGIN');
 header('X-Robots-Tag: noindex, nofollow');
 header('Vary: Cookie, Accept-Encoding');
@@ -60,6 +61,9 @@ try {
     }
     $index = require __DIR__ . '/private/assets.php';
     $key = $path === '/' || $path === '/index.php' ? '/index.html' : $path;
+    if ($key === '/index.html') {
+        setcookie('__Host-QuantistesCSRF', $csrf, ['path' => '/', 'secure' => true, 'httponly' => false, 'samesite' => 'Strict']);
+    }
     if (!isset($index[$key])) { http_response_code(404); exit; }
     [$file, $mime, $size, $packed, $gzip] = $index[$key];
     $stream = fopen(__DIR__ . '/private/files/' . $file . '.php', 'rb');

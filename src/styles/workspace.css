@@ -1,58 +1,102 @@
-/* The computed desk owns its controls, events and charts. These rules only style the view. */
-html.quantistes body.q13-on{--desk-mono:var(--qx-mono);--desk-display:var(--qx-sans);--qt10-bg:var(--qx-bg);--qt10-surface:var(--qx-panel);--qt10-raised:var(--qx-raised);--qt10-rule:var(--qx-line);--qt10-ink:var(--qx-ink);--qt10-muted:var(--qx-muted);--qt10-amber:var(--qx-amber);--qt10-up:var(--qx-up);--qt10-down:var(--qx-red);--qt10-cyan:#accec2;--accent:var(--qx-lime);--mono:var(--qx-mono);--sans:var(--qx-sans);scrollbar-color:#55634e var(--qx-bg)}
+html.quantistes body.q13-on,html.quantistes body.q13-native{
+  --desk-mono:var(--terminal-mono);--desk-display:var(--terminal-mono);--q25-mono:var(--terminal-mono);
+  --desk-bg:var(--terminal-bg);--desk-surface:var(--panel);--desk-ink:var(--ink);--desk-faint:var(--dim);
+  --desk-rule:var(--rule);--desk-amber:var(--amber);--desk-green:var(--green);--desk-down:var(--red);
+  --q25-bg:var(--terminal-bg);--q25-surface:var(--panel);--q25-surface2:var(--raised);--q25-border:var(--rule);--q25-borderhi:#505255;
+  --q25-text:var(--ink);--q25-muted:var(--muted);--q25-gold:var(--amber);--q25-teal:var(--cyan);--q25-blue:var(--cyan);
+  --qt10-bg:var(--terminal-bg);--qt10-surface:var(--panel);--qt10-raised:var(--raised);--qt10-rule:var(--rule);
+  --qt10-ink:var(--ink);--qt10-muted:var(--muted);--qt10-amber:var(--amber);--qt10-up:var(--green);--qt10-down:var(--red);--qt10-cyan:var(--cyan);
+  --accent:var(--amber);--mono:var(--terminal-mono);--sans:var(--terminal-mono)
+}
 html.quantistes body.q13-on:not(.q13-native) #q13App :is(.q13-header,#qlNav){display:none!important}
-html.quantistes body.q13-on:not(.q13-native) #q13App :is(.q13-layout,#q24Context){margin-left:var(--qx-rail)!important;width:calc(100% - var(--qx-rail))!important;max-width:none!important}
-html.quantistes body.q13-on:not(.q13-native) #q13App .q13-layout>.q13-main{background:var(--qx-bg)!important;padding:12px var(--qx-pad) 60px!important;margin:0!important;max-width:none!important}
-html.quantistes body.q13-on:not(.q13-native) #q13App #q24Context{background:#131710!important;border:0!important;border-bottom:1px solid var(--qx-faint)!important;padding:7px var(--qx-pad)!important;min-height:26px;gap:10px;font:400 .74rem/1.4 var(--qx-mono)!important}
-html.quantistes #q13App #q24Context :is(span,strong){font-family:var(--qx-mono)!important}
-html.quantistes #q13App #q24Context #q24StageTitle{color:#c0ceae!important}
-html.quantistes body.q13-on:not(.q13-native) #q13App .q13-screen-title h1{display:none!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App,
+html.quantistes body.q13-on:not(.q13-native) #q13App :is(.q13-layout,.q13-main){
+  width:100%!important;max-width:none!important;margin:0!important;color:var(--ink)!important;background:var(--terminal-bg)!important;
+  font-family:var(--terminal-mono)!important;font-variant-numeric:tabular-nums;
+}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q13-layout>.q13-main{padding:.55rem var(--edge) 3rem!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App #q24Context{min-height:0!important;margin:0!important;width:100%!important;background:#0c0d0e!important;border:0!important;border-bottom:1px solid var(--hairline)!important;padding:.18rem var(--edge)!important;color:var(--muted)!important;font:.76rem/1.32 var(--terminal-mono)!important}
+html.quantistes #q24Context .q24-context-left>span:has(#q24StageTitle),
+html.quantistes #q24Context .q24-dot{display:none!important}
+html.quantistes #q13App #q24Context :is(span,strong,b){font-family:var(--terminal-mono)!important}
 html.quantistes body.q13-on:not(.q13-native) #q13App .q13-screen-title{padding:0!important;margin:0!important;min-height:0!important}
-html.quantistes #q13App .q13-screen-title .desk-title-action{display:none!important}
-html.quantistes body.q13-on:not(.q13-native) #q13App .q13-screen-title:has(.desk-title-action){display:none!important}
-html.quantistes body.q13-on:not(.q13-native) #q13App .q13-screen-title>div:has(h1){display:none!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q13-screen-title>div:has(h1),
+html.quantistes #q13App .q13-screen-title .desk-title-action,
 html.quantistes body.q13-on:not(.q13-native) #q13App #q25-toolbar-score{display:none!important}
-html.quantistes body.q13-on:not(.q13-native) #q13App .q13-view>nav.q25-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:3px;padding:6px 0 9px!important;border-color:var(--qx-line)!important;background:transparent!important}
-html.quantistes body.q13-on:not(.q13-native) #q13App .q25-toolbar .q25-tool{color:var(--qx-muted)!important;background:var(--qx-panel)!important;border:1px solid var(--qx-line)!important;border-radius:3px!important;font:500 .78rem/1.25 var(--qx-mono)!important;min-height:32px;padding:6px 10px!important}
-html.quantistes body.q13-on:not(.q13-native) #q13App .q25-toolbar .q25-tool[aria-current=page]{background:#2d3922!important;color:var(--qx-lime)!important;box-shadow:inset 0 -2px var(--qx-lime)!important;border-color:#51623f!important}
-html.quantistes body.q13-on:not(.q13-native) #q13App .q13-view :is(button,input,select,summary,textarea,svg text),
-html.quantistes :is(#q15Settings,#q15Lookup) *{font-family:var(--qx-mono)!important}
-html.quantistes body.q13-on #q13App #deskBoard{--desk-mono:var(--qx-mono);--desk-display:var(--qx-sans);font:400 .9rem/1.5 var(--qx-sans)}
-html.quantistes #deskBoard[data-signal=NEUTRALE]{--state:var(--qx-amber)}
-html.quantistes body.q13-on #q13App #deskBoard .desk-parameters{background:var(--qx-panel)!important;border:1px solid var(--qx-line)!important;border-radius:6px!important;grid-template-columns:1.25fr 1.45fr 1.05fr .95fr .85fr .85fr .85fr .95fr auto;align-items:end;padding:13px 14px!important;gap:10px!important}
-html.quantistes body.q13-on #q13App #deskBoard .desk-parameters label{margin:0!important;display:grid;gap:6px;font:500 .745rem/1.3 var(--qx-sans)!important;letter-spacing:.025em!important;text-transform:none!important;color:#c1cbb9!important}
-html.quantistes body.q13-on #q13App #deskBoard .desk-parameters :is(input,select){font:400 .79rem/1.2 var(--qx-mono)!important;height:33px!important;min-height:33px!important;color:#e7eddd!important;background-color:#10150f!important;border:1px solid #3c4636!important;border-radius:3px!important;padding:4px 6px!important}
-html.quantistes body.q13-on #q13App #deskBoard .desk-parameters select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7'%3E%3Cpath d='m1 1 4 4 4-4' fill='none' stroke='%23b9c6ae'/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right 7px center!important;padding-right:20px!important}
-html.quantistes body.q13-on #q13App #deskBoard .desk-apply{height:33px!important;min-height:33px!important;padding:4px 13px!important;background:var(--qx-lime)!important;color:#192110!important;border:1px solid var(--qx-lime)!important;border-radius:3px!important;font:600 .76rem var(--qx-mono)!important}
-html.quantistes body.q13-on:not(.q13-native) #q13App #deskBoard .desk-lead{display:grid!important;grid-template-columns:minmax(0,.95fr) minmax(0,1.35fr);gap:0!important;margin:14px 0!important;border:1px solid var(--qx-line)!important;border-radius:6px!important;overflow:hidden}
-html.quantistes #q13App #deskBoard .desk-decision{display:grid!important;grid-template-columns:1fr!important;align-content:center;gap:5px!important;color:var(--qx-ink)!important;padding:16px 19px!important;border:0!important;border-left:3px solid var(--state)!important;background:linear-gradient(105deg,#272b1c,#1b2118 85%)!important}
-html.quantistes #q13App #deskBoard .desk-decision>.desk-kicker{grid-column:1!important;grid-row:auto!important}
-html.quantistes #q13App #deskBoard .desk-decision #deskVerdict{font:600 clamp(1.9rem,3.2vw,3.4rem)/.98 var(--qx-sans)!important;letter-spacing:-.04em!important;color:var(--state)!important;grid-column:1!important;grid-row:auto!important}
-html.quantistes #q13App #deskBoard .desk-decision #deskReason{grid-column:1!important;grid-row:auto!important;font:400 .91rem/1.38 var(--qx-sans)!important;color:#d6dfcd!important;max-width:66ch!important;margin:1px 0!important}
-html.quantistes #q13App #deskBoard .desk-decision .desk-split{grid-column:1!important;grid-row:auto!important;display:flex!important;gap:13px!important;margin:3px 0 0!important}
-html.quantistes #q13App #deskBoard .desk-split>div{display:flex;align-items:baseline;gap:5px}
-html.quantistes #q13App #deskBoard :is(.desk-split small,.desk-split b){font:400 .71rem/1.45 var(--qx-mono)!important}
-html.quantistes #q13App #deskBoard .desk-kicker{font:500 .73rem/1.4 var(--qx-mono)!important;letter-spacing:.075em!important}
-html.quantistes #q13App #deskBoard .desk-kicker i{background:var(--state)!important}
-html.quantistes #q13App #deskBoard #deskRun{color:var(--qx-amber)!important;background:#312c20!important;border:1px solid #52462f!important;border-radius:3px;padding:1px 5px;font:500 .67rem/1.3 var(--qx-mono)!important}
-html.quantistes #q13App #deskBoard .desk-readout{display:grid!important;grid-template-columns:1.1fr 1fr 1fr;align-items:center;background:var(--qx-panel)!important;border-color:var(--qx-line)!important}
-html.quantistes #q13App #deskBoard .desk-readout>div{min-width:0;padding:8px clamp(10px,1.15vw,28px)!important;border-color:var(--qx-line)!important}
-html.quantistes #q13App #deskBoard .desk-readout strong{font:500 clamp(1.35rem,1.9vw,2.75rem)/1.2 var(--qx-sans)!important;letter-spacing:-.03em!important;color:#edf1e6!important;white-space:normal!important;overflow-wrap:anywhere}
-html.quantistes #q13App #deskBoard .desk-readout small{font:500 .68rem/1.5 var(--qx-mono)!important;letter-spacing:.045em!important}
-html.quantistes #q13App #deskBoard .desk-readout span{font:400 .75rem/1.44 var(--qx-sans)!important}
-html.quantistes #q13App #deskBoard :is(.desk-chart-head,.desk-ledger-head,.studio-sectionhead,.da-head,.da-chain>div:last-child,#rdSummary){background:#20271c!important;border-color:var(--qx-line)!important}
-html.quantistes #q13App #deskBoard :is(.da-panel,.desk-figure,.desk-payoff,.desk-ledger,.desk-notes,#pbDetail){border:1px solid var(--qx-line)!important;border-radius:5px!important;background:var(--qx-panel)!important}
-html.quantistes #q13App #deskBoard :is(.desk-chart-head,.desk-ledger-head,.da-head){padding:10px 13px!important}
-html.quantistes #q13App #deskBoard :is(.desk-chart-head h2,.desk-ledger-head h2,.da-head b,.da-pair h3){font:600 1.13rem/1.25 var(--qx-sans)!important;color:var(--qx-ink)!important;letter-spacing:-.015em!important}
-html.quantistes #q13App #deskBoard :is(.desk-figure,.desk-figure .desk-chart){background:#121811!important}
-html.quantistes #q13App #deskBoard .desk-switch button[aria-pressed=true]{background:var(--qx-lime)!important;color:#182311!important;border-color:var(--qx-lime)!important}
-html.quantistes #q13App #deskBoard .desk-chart text{font-family:var(--qx-mono)!important}
-html.quantistes #q13App #deskBoard .desk-chart-head,.quantistes #q13App #deskBoard .desk-ledger-head{border-radius:4px 4px 0 0}
-html.quantistes #q13App #deskBoard .da-panel :is(p,small,span){line-height:1.45}
-html.quantistes #q13App #deskBoard .da-head span{font:400 .8rem/1.35 var(--qx-sans)!important}
-html.quantistes #q13App #deskBoard :is(.da-chain,.da-clock,.da-pair,.da-more){border-color:var(--qx-line)!important}
-html.quantistes #q13App #deskBoard :is(button,input,summary,select):focus-visible,html.quantistes #q15Lookup :focus-visible{outline:2px solid var(--qx-lime)!important;outline-offset:2px}
-html.quantistes :is(#q15Lookup .q15-lookup-card,#q15Settings .q15-settings-drawer){border:1px solid #5a694d!important;background:#171d15!important;border-radius:7px!important}
-html.quantistes :is(#q15Settings .q15-settings-head,#q15Lookup .q15-lookup-header){background:#242d20!important;border-color:#45513c!important}
-html.quantistes :is(#q15Settings .q15-settings-head b,#q15Lookup .q15-lookup-header b){font:600 1.05rem var(--qx-sans)!important;color:var(--qx-lime)!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q13-view>nav.q25-toolbar{background:#0c0d0f!important;border:1px solid var(--hairline)!important;border-bottom-color:#555!important;display:flex;align-items:center;flex-wrap:wrap;gap:1px!important;padding:2px!important;margin:0 0 .45rem!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q25-toolbar .q25-tool{background:#141517!important;color:var(--amber)!important;border:0!important;border-radius:0!important;font:500 .8rem/1.2 var(--terminal-mono)!important;min-height:1.9rem!important;padding:.31rem .65rem!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q25-toolbar .q25-tool[aria-current=page]{background:#303033!important;color:white!important;box-shadow:inset 0 -2px var(--orange)!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q25-toolbar .q25-tool:hover{background:#2a271f!important}
+html.quantistes #q13App .q25-toolbar .q25-pit{border:0!important;border-radius:0!important;background:transparent!important;color:var(--dim)!important}
+html.quantistes :is(#q13App,.layout,#q15Settings,#q15Lookup) :is(button,input,select,summary,textarea,table,svg text){font-family:var(--terminal-mono)!important}
+html.quantistes :is(#q13App,#q15Settings,#q15Lookup) :is(.card,.qt360-card,.q13-panel,.flow-card,.qp-card,.rt-card,.oa-section,.q25-composite,.q15-native-host,.q15-labcontent,.ir-card,.pd-card,.dx-card){background-color:var(--panel)!important;border-color:var(--rule)!important;border-radius:0!important;box-shadow:none!important}
+html.quantistes :is(#q13App,#q15Settings,#q15Lookup) :is(input:not([type=range]):not([type=checkbox]):not([type=radio]),select,textarea){background-color:#0c0d0e!important;color:var(--amber)!important;border-color:#6d6353!important;border-radius:0!important;box-shadow:none!important}
+html.quantistes :is(#q13App,#q15Settings,#q15Lookup) select{appearance:none;padding-right:1.45rem!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='m1 1 4 4 4-4' fill='none' stroke='%23ddac6d'/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right .43rem center!important}
+html.quantistes :is(#q13App,#q15Settings,#q15Lookup) button{border-radius:0!important}
+html.quantistes :is(#q13App,#q15Settings,#q15Lookup) :is(input,button,a,select,summary,textarea):focus-visible{outline:2px solid var(--cyan)!important;outline-offset:0}
+html.quantistes #q13App :is(.cardhead,.card-head,.q13-panel-head,.qt360-card-head,.flow-card-head,.oa-sectionhead,.studio-sectionhead,.ir-sectionhead){border-color:var(--rule)!important;background:#1a1b1e!important;color:var(--amber)!important}
+html.quantistes #q13App .q13-view :is(h1,h2,h3,h4){font-family:var(--terminal-mono)!important;text-shadow:none!important}
+html.quantistes #q13App .q13-view :is(h2,h3){color:var(--amber)!important}
+html.quantistes #q13App .q13-view table{border-collapse:collapse;font-variant-numeric:tabular-nums}
+html.quantistes #q13App .q13-view thead th{background:#212225!important;color:#e6d5bc!important;border-color:var(--rule)!important;font-weight:500!important}
+html.quantistes #q13App .q13-view tbody tr:hover>td{background-color:#1b1d20}
+html.quantistes :is(#q15Lookup .q15-lookup-card,#q15Settings .q15-settings-drawer){border:1px solid #656568!important;background:#111214!important;border-radius:0!important;color:var(--ink)!important}
+html.quantistes :is(#q15Lookup .q15-lookup-header,#q15Settings .q15-settings-head){background:#222326!important;border-bottom:1px solid var(--orange)!important}
+html.quantistes :is(#q15Lookup .q15-lookup-header b,#q15Settings .q15-settings-head b){color:var(--amber)!important;font:600 1.06rem/1.2 var(--terminal-mono)!important}
 html.quantistes body.q13-native .qx{display:none}
+
+html.quantistes body.q13-on #q13App #deskBoard{font:400 .87rem/1.42 var(--terminal-mono);color:var(--ink)}
+html.quantistes #q13App #deskBoard[data-signal=NEUTRALE],html.quantistes #q13App #deskBoard[data-signal=ATTESA]{--state:var(--amber)}
+html.quantistes #q13App #deskBoard[data-signal=LONG]{--state:var(--green)}
+html.quantistes #q13App #deskBoard[data-signal=SHORT]{--state:var(--red)}
+html.quantistes body.q13-on #q13App #deskBoard .desk-parameters{background:#111214!important;border:1px solid var(--rule)!important;display:grid;grid-template-columns:1.14fr 1.25fr 1.08fr 1fr .9fr .84fr .84fr .95fr auto;align-items:end;gap:.55rem!important;padding:.45rem .62rem!important}
+html.quantistes #q13App #deskBoard .desk-parameters label{color:var(--muted)!important;letter-spacing:.01em!important;font:400 .73rem/1.2 var(--terminal-mono)!important;text-transform:none!important;gap:.2rem}
+html.quantistes #q13App #deskBoard .desk-parameters :is(input,select){width:100%;min-height:1.9rem!important;height:1.9rem!important;padding:.18rem .39rem;font:500 .83rem var(--terminal-mono)!important}
+html.quantistes #q13App #deskBoard .desk-apply{min-height:1.92rem!important;height:1.92rem!important;padding:.28rem .78rem!important;color:#111!important;background:var(--amber)!important;border:1px solid var(--amber)!important;font:600 .78rem var(--terminal-mono)!important}
+html.quantistes body.q13-on #q13App #deskBoard .desk-lead{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.48fr);align-items:stretch;background:#0b0b0c!important;border:1px solid var(--rule)!important;margin:.55rem 0!important}
+html.quantistes #q13App #deskBoard .desk-decision{display:grid!important;grid-template-columns:1fr!important;align-content:center;gap:.22rem!important;padding:.6rem .85rem!important;background:#10100e!important;border:0!important;border-left:3px solid var(--state,var(--amber))!important}
+html.quantistes #q13App #deskBoard .desk-kicker{color:var(--dim)!important;font:500 .73rem/1.25 var(--terminal-mono)!important;letter-spacing:.045em!important}
+html.quantistes #q13App #deskBoard .desk-decision>*{grid-column:1!important;grid-row:auto!important}
+html.quantistes #q13App #deskBoard .desk-kicker i{display:none}
+html.quantistes #q13App #deskBoard #deskRun{color:var(--muted)!important;border:0!important;background:none!important;border-left:1px solid #606067!important;padding:0 0 0 .45rem;margin-left:.4rem;font:400 .72rem var(--terminal-mono)!important}
+html.quantistes #q13App #deskBoard #deskVerdict{color:var(--state,var(--amber))!important;font:600 clamp(1.48rem,1.9vw,2.15rem)/1.03 var(--terminal-mono)!important;letter-spacing:-.05em!important}
+html.quantistes #q13App #deskBoard #deskReason{color:#d5d5d6!important;max-width:78ch!important;margin:0!important;font:400 .82rem/1.34 var(--terminal-mono)!important}
+html.quantistes #q13App #deskBoard .desk-split{display:flex!important;gap:.9rem!important;margin:.08rem 0 0!important}
+html.quantistes #q13App #deskBoard .desk-split :is(small,b){font:400 .73rem/1.3 var(--terminal-mono)!important}
+html.quantistes #q13App #deskBoard .desk-readout{align-self:stretch;display:grid!important;grid-template-columns:1.17fr .95fr 1fr;background:#0a0b0c!important;border-color:var(--rule)!important}
+html.quantistes #q13App #deskBoard .desk-readout>div{display:flex;flex-direction:column;justify-content:center;min-width:0;gap:.23rem;padding:.5rem clamp(.5rem,1vw,1.3rem)!important;border-color:var(--rule)!important}
+html.quantistes #q13App #deskBoard .desk-readout small,.quantistes #q13App #deskBoard .desk-pay-bottom small{color:var(--muted)!important;font:400 .74rem/1.2 var(--terminal-mono)!important}
+html.quantistes #q13App #deskBoard .desk-readout strong{font:500 clamp(1.12rem,1.7vw,2.05rem)/1.15 var(--terminal-mono)!important;letter-spacing:-.055em!important;color:var(--ink)!important;white-space:normal!important;overflow-wrap:anywhere;margin:0!important}
+html.quantistes #q13App #deskBoard .desk-readout span{font:400 .76rem/1.35 var(--terminal-mono)!important;color:var(--dim)!important}
+html.quantistes #q13App #deskBoard .desk-main-grid{display:grid!important;grid-template-columns:minmax(0,2.05fr) minmax(260px,.95fr);gap:.55rem!important;margin:0 0 .55rem!important}
+html.quantistes #q13App #deskBoard :is(.da-panel,.desk-figure,.desk-payoff,.desk-ledger,.desk-notes,#pbDetail,.studio-section){border:1px solid var(--rule)!important;border-radius:0!important;background:var(--panel)!important}
+html.quantistes #q13App #deskBoard :is(.desk-chart-head,.desk-ledger-head,.studio-sectionhead,.da-head){background:#202124!important;border:0!important;border-bottom:1px solid #45464a!important;padding:.38rem .65rem!important;margin:0!important}
+html.quantistes #q13App #deskBoard :is(.desk-chart-head h2,.desk-ledger-head h2,.da-head b,.da-pair h3,.studio-sectionhead h2){color:var(--amber)!important;font:600 1.02rem/1.23 var(--terminal-mono)!important;letter-spacing:-.025em!important}
+html.quantistes #q13App #deskBoard .desk-chart-head>div:first-child{display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap}
+html.quantistes #q13App #deskBoard .desk-chart-head .desk-kicker{order:1;color:#b6b6b8!important;font-size:.71rem!important}
+html.quantistes #q13App #deskBoard .desk-switch{border:0!important;padding:0!important;gap:1px}
+html.quantistes #q13App #deskBoard .desk-switch button{background:#0d0e10!important;color:var(--muted)!important;border:1px solid #4a4b4d!important;font:500 .73rem var(--terminal-mono)!important;padding:.3rem .52rem!important}
+html.quantistes #q13App #deskBoard .desk-switch button[aria-pressed=true]{background:var(--amber)!important;color:#0a0b0b!important;border-color:var(--amber)!important}
+html.quantistes #q13App #deskBoard .desk-plot-wrap,.quantistes #q13App #deskBoard :is(.desk-chart,.desk-figure){background:#050607!important}
+html.quantistes #q13App #deskBoard .desk-chart{width:100%!important;height:auto!important;max-height:clamp(350px,36vh,770px)!important}
+html.quantistes #q13App #deskBoard .desk-legend{color:var(--muted)!important;font-size:.74rem!important;gap:.35rem 1.1rem!important;flex-wrap:wrap;padding:.42rem .7rem!important}
+html.quantistes #q13App #deskBoard :is(.desk-readline,#deskCellData,.desk-outnote){font:400 .76rem/1.36 var(--terminal-mono)!important;color:var(--muted)!important}
+html.quantistes #q13App #deskBoard .desk-readline{border-color:var(--hairline)!important;padding:.4rem .7rem!important;color:var(--amber)!important}
+html.quantistes #q13App #deskBoard .desk-events{padding:.3rem .82rem 0!important}
+html.quantistes #q13App #deskBoard .desk-event{margin:.54rem 0!important}
+html.quantistes #q13App #deskBoard .desk-event label{color:var(--ink)!important;font:500 .84rem var(--terminal-mono)!important}
+html.quantistes #q13App #deskBoard .desk-event b{color:var(--ink)!important;font:500 1.15rem var(--terminal-mono)!important}
+html.quantistes #q13App #deskBoard .desk-event.positive b{color:var(--green)!important}
+html.quantistes #q13App #deskBoard .desk-event.negative b{color:var(--red)!important}
+html.quantistes #q13App #deskBoard .desk-event small{color:var(--dim)!important;font:400 .73rem var(--terminal-mono)!important}
+html.quantistes #q13App #deskBoard .desk-meter{background:#242629!important;height:4px!important}
+html.quantistes #q13App #deskBoard .desk-event.positive .desk-meter i{background:var(--green)!important}
+html.quantistes #q13App #deskBoard .desk-event.negative .desk-meter i{background:var(--red)!important}
+html.quantistes #q13App #deskBoard .desk-event.quiet .desk-meter i{background:var(--cyan)!important}
+html.quantistes #q13App #deskBoard .desk-pay-bottom{border-color:var(--rule)!important;margin:.6rem .82rem .25rem!important}
+html.quantistes #q13App #deskBoard .desk-pay-bottom strong{font:500 1.55rem var(--terminal-mono)!important;color:var(--amber)!important}
+html.quantistes #q13App #deskBoard .desk-ledger :is(th,td){padding:.39rem .6rem!important;border-color:var(--hairline)!important}
+html.quantistes #q13App #deskBoard :is(.da-pair,.da-chain,.da-clock,.da-more){border-color:var(--rule)!important}
+html.quantistes #q13App #deskBoard .da-head span{font:400 .78rem/1.35 var(--terminal-mono)!important;color:var(--muted)!important}
+html.quantistes #q13App #deskBoard .desk-ledger td{font-size:.8rem!important}
+html.quantistes #q13App #deskBoard .desk-ledger th{color:var(--muted)!important;font:500 .76rem var(--terminal-mono)!important}
