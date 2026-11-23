@@ -1,0 +1,6 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+RewriteEngine On
+RewriteRule ^private(?:/|$) - [F,END,NC]
+RewriteRule ^index\.php$ - [END]
+RewriteRule ^ index.php [END]

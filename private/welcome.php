@@ -1,0 +1,15 @@
+<?php
+declare(strict_types=1);
+function qd_login(int $status = 200, string $note = ''): never {
+    http_response_code($status);
+    header('Content-Type: text/html; charset=utf-8');
+    if (session_status() === PHP_SESSION_ACTIVE) { session_write_close(); }
+?>
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>Accesso · Quantistes Institutional Desk</title>
+<style>
+*{box-sizing:border-box}body{margin:0;color:#e9ede6;background:#111510;font:16px/1.5 system-ui,sans-serif}header,footer,main{width:min(1180px,92%);margin:auto}header,footer{display:flex;align-items:center;gap:12px;height:84px;border-bottom:1px solid #343b31}header b{font-size:22px;letter-spacing:-1px}svg{display:block}.mark{width:34px;height:34px;color:#c1ed88}main{min-height:calc(100svh - 155px);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:5vw;padding:60px 0}.cap,footer{font:12px ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:#b5c2a9}.cap{display:flex;align-items:center;gap:12px}.cap:before{content:"";height:2px;width:30px;background:#c1ed88}h1{font-weight:540;font-size:clamp(58px,7vw,102px);letter-spacing:-.07em;line-height:.94;margin:25px 0}p{color:#bdc5b8;max-width:34ch;font-size:18px;margin:22px 0}.notice{color:#efbf88;font-size:15px}a{display:inline-block;text-decoration:none;background:#c3e995;color:#151b11;font-weight:650;padding:12px 19px;border-radius:5px}a:focus-visible{outline:3px solid #f3c78d;outline-offset:4px}.art{display:grid;place-items:center;overflow:hidden;aspect-ratio:1.2;background:radial-gradient(ellipse at center,#243020,#141a15 74%);border:1px solid #384233;border-radius:10px;position:relative}.art:before{content:"";position:absolute;inset:0;background:linear-gradient(#48543d22 1px,transparent 1px),linear-gradient(90deg,#48543d22 1px,transparent 1px);background-size:26px 26px}.art svg{z-index:1;width:110%;height:90%}footer{border-top:1px solid #343b31;border-bottom:0;height:68px;justify-content:space-between}@media(max-width:720px){main{grid-template-columns:1fr;gap:26px}.art{aspect-ratio:2}.art svg{height:100%}header{height:66px}}
+</style></head><body><header><svg class="mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M10 3h18l5 5-5 18-7 6H6l-4-5L7 8zm2 6L8 25h10l3-3-6-5h7l3-9H13zM22 25h7l5 8h-8z" fill="currentColor"/></svg><b>Quantistes</b></header><main><section><div class="cap">Area riservata</div><h1>Institutional<br>Desk</h1><p>Accedi con il tuo account Quantistes per aprire il desk SPX · ES.</p>
+<?php if ($note !== ''): ?><p class="notice" role="alert"><?= htmlspecialchars($note, ENT_QUOTES, 'UTF-8') ?></p><?php endif; ?>
+<a href="/auth/start">Accedi con WordPress</a></section><div class="art" aria-hidden="true"><?php if (is_file(__DIR__.'/surface.php')) { include __DIR__.'/surface.php'; } ?></div></main><footer><span>Quantistes.pro</span><span>SPX · ES</span></footer></body></html>
+<?php exit;
+}
