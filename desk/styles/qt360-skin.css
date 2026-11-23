@@ -1,0 +1,104 @@
+
+/* Quantistes 360 — namespaced enhancements preserving the original v10 palette and structure. */
+:root{--qt-term:#97d8ef;--qt-term-soft:rgba(157,221,242,.14);--qt-ink:#c5dcfc;--qt-deep:#071626;--qt-ice:#86cae5;--qt-gold:#87b5ff}
+body{font-family:Consolas;background:#071525}
+.qt-brand>span,.qt360-title,.qt360-card h3,.qt360-tile strong{font-family:Consolas}
+.qt-topbar{box-shadow:0 8px 38px #07152588;background:linear-gradient(135deg,#08192a,#08192a 60%,#091a2b);border-bottom:1px solid #284762}
+.qt-topbar:after{content:'';height:1px;position:absolute;left:0;right:0;bottom:0;background:linear-gradient(90deg,transparent,#d2d3c8aa,#8ab4ec88,transparent)}
+.qt-nav-rail{background:linear-gradient(180deg,#081829,#081929);}
+.qt-nav-rail .tab{transition:background .18s,transform .18s;letter-spacing:.01em}
+.qt-nav-rail .tab:hover{background:#0c2034;transform:translateX(2px)}
+.qt-nav-rail .tab.active{background:linear-gradient(90deg,#19334b,#0b1f33);border-left:2px solid #87b5ff}
+.qt-nav-rail .tab[data-tab='quant360']{border:1px solid #395772;border-left:2px solid #87b5ff;background:#0b1f32;color:#afe4f6;font-weight:700;margin:6px 4px 10px;width:calc(100% - 8px)}
+.qt-nav-rail .tab[data-tab='quant360'].active{box-shadow:inset 0 0 20px #dddaca12,0 0 18px #b2bec015;color:#e3decc}
+body:not(.qt-sane) .qt360-scan{pointer-events:none}
+.qt360-view{max-width:100%;overflow:visible!important;padding-bottom:48px;--qt360-bg:#08192a;--qt360-line:#1c374f;--qt360-low:#66aecf;--qt360-gold:#87b5ff;--qt360-mint:#94d5ed;--qt360-sky:#8fd1ea;--qt360-red:#dddaca}
+.qt360-view,.qt360-view *{box-sizing:border-box}
+.qt360-view button,.qt360-view input,.qt360-view select{font-family:Consolas}
+.qt360-hero{position:relative;isolation:isolate;overflow:hidden;border:1px solid #223f59;border-radius:12px;background:radial-gradient(circle at 75% 10%,#10263b 0,transparent 47%),linear-gradient(125deg,#0a1d2f 0%,#081828 75%);padding:27px 31px 25px;margin:0 0 18px;box-shadow:0 18px 50px #07152555}
+.qt360-hero:before{content:'';position:absolute;inset:0;background-image:linear-gradient(#718da608 1px,transparent 1px),linear-gradient(90deg,#718da608 1px,transparent 1px);background-size:25px 25px;z-index:-1;mask-image:linear-gradient(90deg,transparent 10%,#071525 100%)}
+.qt360-hero:after{content:'Q / 360';font-family:Consolas;color:#d3d4c80b;font-weight:900;line-height:1;font-size:clamp(100px,13vw,250px);position:absolute;right:-12px;top:10px;z-index:-1;letter-spacing:-.09em}
+.qt360-toprow,.qt360-kpis,.qt360-actions,.qt360-tabs,.qt360-topline,.qt360-statrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.qt360-toprow{justify-content:space-between;margin-bottom:13px}
+.qt360-eyebrow,.qt360-sys,.qt360-smallcap{font:11px/1.5 Consolas;letter-spacing:.19em;text-transform:uppercase;color:#91d3ec}
+.qt360-sys{border:1px solid #1d3b59;padding:6px 10px;border-radius:2px;color:#99daf0;background:#0b203340;letter-spacing:.08em}
+.qt360-sys::before{content:'●';color:#89cde7;margin-right:7px;animation:qt360blink 2s infinite}
+@keyframes qt360blink{50%{opacity:.4}}
+.qt360-title{font-size:clamp(25px,3.4vw,46px);line-height:1.13;font-weight:800;letter-spacing:-.055em;margin:8px 0 7px;color:#f2e8cf;text-shadow:0 2px 25px #071525}
+.qt360-title b{color:#87b5ff}
+.qt360-sub{max-width:850px;color:#81aee8;font-size:13px;line-height:1.7;margin:7px 0 14px}
+.qt360-actions button{background:#0b1e31;border:1px solid #224363;color:#b4e6f7;border-radius:4px;padding:9px 13px;font-size:11px;font-weight:700}
+.qt360-actions button:hover{border-color:#87b5ff;color:#87b5ff;background:#12293e}
+.qt360-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:15px 0}
+.qt360-tile{min-width:0;padding:17px 15px 15px;border-radius:7px;border:1px solid #1e3952;background:linear-gradient(160deg,#0a1e30,#08192a);position:relative;box-shadow:inset 0 1px #f5f3e907}
+.qt360-tile::before{content:'';height:2px;background:linear-gradient(90deg,#87b5ff,transparent);position:absolute;top:0;left:12px;right:45px;opacity:.65}
+.qt360-tile .qt360-smallcap{color:#6298d7;font-size:10px;letter-spacing:.11em}
+.qt360-tile strong{display:block;font-size:clamp(18px,2vw,31px);font-weight:700;line-height:1.2;color:#f3e8cf;margin:7px 0 4px;font-variant-numeric:tabular-nums}
+.qt360-tile span:last-child{font:10px/1.4 Consolas;color:#679cda}
+.qt360-tabs{gap:2px;margin:17px 0 0;padding:4px;background:#091a2c;border:1px solid #1a3854;border-radius:7px;overflow-x:auto;flex-wrap:nowrap}
+.qt360-tabs button{border:1px solid transparent;white-space:nowrap;border-radius:5px;padding:10px 13px;background:transparent;color:#659ad9;font:700 11px/1.2 Consolas;letter-spacing:.05em}
+.qt360-tabs button:hover{background:#0c2135;color:#b0cef7}
+.qt360-tabs button.on{border-color:#34536d;background:linear-gradient(120deg,#152d43,#0b1f32);color:#9bc0f3;box-shadow:inset 0 1px #d2d3c820}
+.qt360-panel{display:none;animation:qt360fade .16s ease-out}
+.qt360-panel.on{display:block}
+@keyframes qt360fade{from{opacity:.5;transform:translateY(3px)}to{opacity:1;transform:none}}
+.qt360-card{min-width:0;background:linear-gradient(150deg,#0a1d2f,#08192a);border:1px solid #1e3952;border-radius:8px;padding:19px;margin-top:13px;box-shadow:0 3px 16px #07152522;position:relative}
+.qt360-card h3{margin:0 0 7px;color:#b5e6f7;font-size:14px;letter-spacing:.02em;font-weight:700}
+.qt360-desc{color:#669bd9;font-size:12px;line-height:1.55;margin:2px 0 14px;max-width:1000px}
+.qt360-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.qt360-grid.three{grid-template-columns:1.35fr .8fr .8fr}
+.qt360-form{display:grid;grid-template-columns:repeat(4,minmax(115px,1fr));gap:12px 13px;align-items:end}
+.qt360-form label{color:#7ac1df;font:11px/1.4 Consolas;letter-spacing:.03em}
+.qt360-form label select,.qt360-form label input{margin-top:6px;min-height:38px;background:#081829;border:1px solid #2b4a65;color:#bbd5fa;padding:9px 10px;font-size:13px;font-variant-numeric:tabular-nums}
+.qt360-form label input:focus,.qt360-form label select:focus{outline:1px solid #79a8e3;border-color:#79a8e3}
+.qt360-form button{min-height:38px;border:1px solid #87b5ff;background:#87b5ff;color:#08192a;font-weight:800;letter-spacing:.08em;white-space:nowrap}
+.qt360-btn{font-size:11px;font-weight:700;padding:8px 12px;border-radius:4px;border:1px solid #214262!important;background:#0b1f32!important;color:#a3dff4!important}
+.qt360-btn:hover{background:#173047!important}
+.qt360-btn.primary{background:#87b5ff!important;border-color:#87b5ff!important;color:#081829!important}
+.qt360-chip{font:10px/1.25 Consolas;letter-spacing:.05em;display:inline-flex;align-items:center;padding:5px 8px;border:1px solid #23405a;border-radius:3px;background:#0a1c2e;color:#88cce7}
+.qt360-chip.ok{border-color:#254869;color:#8ed1ea;background:#0b1f32}
+.qt360-chip.note{border-color:#2c547a;color:#91b9f0;background:#0c2135}
+.qt360-chip.bad{border-color:#2a5075;color:#e6e0cc;background:#0e2439}
+.qt360-line{height:1px;background:linear-gradient(90deg,#1b3956,transparent);margin:14px 0}
+.qt360-plot{min-height:410px;width:100%;max-width:100%;position:relative;overflow:hidden;background:#081828;border:1px solid #152d44;border-radius:6px}
+.qt360-plot.tall{min-height:580px}
+.qt360-plot.medium{min-height:330px}
+.qt360-plot .js-plotly-plot{max-width:100%}
+.qt360-caption{font:10.5px/1.65 Consolas;color:#568bc6;margin-top:7px}
+.qt360-statrow{gap:7px 16px;justify-content:space-between;padding:11px 0;color:#94d6ee;font:11px Consolas}
+.qt360-statrow b{color:#86b2ea}
+.qt360-output{font:11px/1.8 Consolas;color:#8cd0e9;white-space:pre-wrap;max-height:300px;overflow:auto;background:#081828;border:1px solid #1b354d;border-radius:4px;padding:14px}
+.qt360-legend{display:flex;gap:10px 19px;flex-wrap:wrap;color:#81c7e3;font:11px Consolas}
+.qt360-dot{height:7px;width:7px;border-radius:100%;display:inline-block;margin-right:6px;background:var(--qt360-gold)}
+.qt360-table{width:100%;border-collapse:collapse;font:11px/1.6 Consolas;color:#aae2f5}
+.qt360-table th{font-size:10px;color:#659ad8;text-align:left;letter-spacing:.05em;position:sticky;top:0;background:#0a1e30;z-index:2}
+.qt360-table td,.qt360-table th{padding:11px 8px;border-bottom:1px solid #1a344c;vertical-align:top}
+.qt360-table tbody tr:hover{background:#0e24386b}
+.qt360-atlas{max-height:500px;overflow:auto;border:1px solid #1a344c}
+.qt360-atlas input{width:100%}
+.qt360-progress{height:5px;background:#1b364d;overflow:hidden;border-radius:10px}
+.qt360-progress span{height:100%;display:block;background:linear-gradient(90deg,#345570,#93d5ed)}
+.qt360-badge{font:10px Consolas;padding:3px 6px;display:inline-block;border-radius:2px}
+.qt360-badge.native{color:#9dddf2;border:1px solid #1e3e5c;background:#0b1f32}
+.qt360-badge.partial{color:#8eb7ee;border:1px solid #345570;background:#0c2034}
+.qt360-badge.wait{color:#dcdaca;border:1px solid #244768;background:#0c2135}
+.qt360-status{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:9px}
+.qt360-path-detail{padding:11px 14px;margin-top:9px;border:1px solid #25435d;background:#0b1d31;color:#ade3f6;font:11px/1.8 Consolas;min-height:44px}
+.qt360-placeholder{padding:25px;font-family:Consolas;color:#73a4e0;text-align:center}
+.qt360-foot{color:#498fb5;font:10px/1.7 Consolas;letter-spacing:.02em;border-top:1px solid #19334a;margin-top:18px;padding-top:11px}
+.qt360-hero .qt360-bootline{font:10px/1.5 Consolas;color:#6ab2d3;letter-spacing:.06em}
+.qt360-sectmark{font-family:Consolas;letter-spacing:.02em;color:#7eace6;font-size:12px}
+.qt360-view .modebar-btn path{fill:#73bbdb!important}
+.qt360-view .modebar{background:#0b2033!important;border:1px solid #1b3854;border-radius:3px}
+.qt360-view .modebar-btn:hover{background:#23405a!important}
+.qt360-view button:focus-visible{outline:2px solid #87b5ff;outline-offset:2px}
+@media(max-width:1200px){.qt360-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.qt360-form{grid-template-columns:repeat(3,minmax(0,1fr))}.qt360-grid.three{grid-template-columns:1fr 1fr}}
+@media(max-width:820px){.qt360-grid,.qt360-grid.three{grid-template-columns:1fr}.qt360-form{grid-template-columns:repeat(2,minmax(0,1fr))}.qt360-hero{padding:18px}.qt360-card{padding:12px}.qt360-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.qt360-form,.qt360-kpis{grid-template-columns:1fr}.qt360-title{font-size:26px}.qt360-tabs button{padding:10px 9px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.qt360-view *,.qt360-sys:before{animation:none!important;transition:none!important}}
+/* The original global intake, diagnostics and metric ribbons remain available on
+   their native tabs. Focus the 360 workspace when its tab is selected. */
+#qtWorkArea:has(> #view-quant360.active) > :is(.heading,#dx-global-dock,#qdBar,#status,.metrics,#deskQuality,.footer){display:none!important}
+#qtWorkArea:has(> #view-quant360.active){padding-top:12px}
+#qtWorkArea:has(> #view-quant360.active) > #view-quant360{margin-top:0}
+

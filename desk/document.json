@@ -1,0 +1,2724 @@
+{
+  "source": "Quantistes_Institutional_Desk.html",
+  "sha256": "c8f27ec391a87b2db862eaca5db3875e256835785f24fa9860f405f1bb80aa92",
+  "nodes": [
+    {
+      "path": "views/000-structure.html",
+      "sha256": "81105ad2dc9a5502eb2ba4abf919040261987b68ba3fd7523b3741329a0cd427",
+      "kind": "markup",
+      "body": false
+    },
+    {
+      "path": "styles/base-001.css",
+      "sha256": "5105dbd2e758b411c7da95ca5136d8c269172a958214f9855d5c6f31f4cc5255",
+      "kind": "css",
+      "id": null,
+      "type": "",
+      "opening": "<style>",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/distribution-style.css",
+      "sha256": "af8b4a6cc99e24988ccb9bbe5d2458eb7e7d493f2cecdea74e453035f4966743",
+      "kind": "css",
+      "id": "distribution-style",
+      "type": "",
+      "opening": "<style id=\"distribution-style\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/event-explorer-style.css",
+      "sha256": "efdc30952e13effaf00d53b6df5eb64ad6a9cacb557fd6cefffe518f4149d26b",
+      "kind": "css",
+      "id": "event-explorer-style",
+      "type": "",
+      "opening": "<style id=\"event-explorer-style\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/base-005.css",
+      "sha256": "b4dea3f9848b6e15dd1af1e23b193bdd3d3e015e1cdbb3c39a2216b72338a8ab",
+      "kind": "css",
+      "id": null,
+      "type": "",
+      "opening": "<style>",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/base-006.css",
+      "sha256": "52b3e6f4181e00c345408d983cd4701a1e64b26f7e764bf728d1634cbda40fb0",
+      "kind": "css",
+      "id": null,
+      "type": "",
+      "opening": "<style>",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/base-007.css",
+      "sha256": "96b35f8d99613b4f100a8d896f4a60661cdc6d5c9070c8a3342aa405ba458716",
+      "kind": "css",
+      "id": null,
+      "type": "",
+      "opening": "<style>",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/base-008.css",
+      "sha256": "9a1db220a0bd3af374eb2b1bb0ade0890029097272cedb2e1246ea521d17ea47",
+      "kind": "css",
+      "id": null,
+      "type": "",
+      "opening": "<style>",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/base-009.css",
+      "sha256": "30cf49d3d61b753a3284f6f347ad2d8d7fea380d820530cad51883fecc07d450",
+      "kind": "css",
+      "id": null,
+      "type": "",
+      "opening": "<style>",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/terminal-theme.css",
+      "sha256": "4cbbf98dc5052f86a30c1f2d93f91ffbc74772463bd6385374f98a5a1d8676ba",
+      "kind": "css",
+      "id": "terminal-theme",
+      "type": "",
+      "opening": "<style id=\"terminal-theme\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/base-011.css",
+      "sha256": "61a159ee157bef93b147bcfa1595206607f14883008a2606d0551da8c5bd6e86",
+      "kind": "css",
+      "id": null,
+      "type": "",
+      "opening": "<style>",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/tool-help-style.css",
+      "sha256": "b7a8aeaa4541ca63665606dbf8195897957fce40cae5547edef9b967fe5f0cf6",
+      "kind": "css",
+      "id": "tool-help-style",
+      "type": "",
+      "opening": "<style id=\"tool-help-style\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "views/013-structure.html",
+      "sha256": "069cf97758a1e27c50f6cf72c6444509cd08c944de9d30d50dc4778580a5f1d5",
+      "kind": "markup",
+      "body": false
+    },
+    {
+      "path": "styles/qt-brand-style.css",
+      "sha256": "ff7ff734517cf08af0f2ce62ad6c6713ced6dc698df75cbee7a512c79839a6ac",
+      "kind": "css",
+      "id": "qt-brand-style",
+      "type": "",
+      "opening": "<style id=\"qt-brand-style\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "views/015-structure.html",
+      "sha256": "cbd4c51a309461f1b791b6923577cd7a21974bd596d0561aca46c55901f2891b",
+      "kind": "markup",
+      "body": false
+    },
+    {
+      "path": "styles/smile-responsive-v9.css",
+      "sha256": "a6b504a4e5e3ed04c79e0a13aeddb26681f092ea4b491dfedda6f1c87e804fcd",
+      "kind": "css",
+      "id": "smile-responsive-v9",
+      "type": "",
+      "opening": "<style id=\"smile-responsive-v9\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/m8-home-style.css",
+      "sha256": "1af8e1aa0eb39610094c3999583e2266817d4900512f04b06ef59425d1f808d7",
+      "kind": "css",
+      "id": "m8-home-style",
+      "type": "",
+      "opening": "<style id=\"m8-home-style\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/vc9-style.css",
+      "sha256": "289657f14be78f9f9c908e9788a42f729c33c2bdb91ddd96cc1932a7d1da8612",
+      "kind": "css",
+      "id": "vc9-style",
+      "type": "",
+      "opening": "<style id=\"vc9-style\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/terminal-plot-css.css",
+      "sha256": "2d4140ee975cf5ff3a456918db7b6359283db224139bc25199e5bad21601dc94",
+      "kind": "css",
+      "id": "terminal-plot-css",
+      "type": "",
+      "opening": "<style id=\"terminal-plot-css\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/vc10-upload-style.css",
+      "sha256": "60f19c45b2d002416efc9c4f75a3c8446e023a54e25fa59114aa60598f998dd2",
+      "kind": "css",
+      "id": "vc10-upload-style",
+      "type": "",
+      "opening": "<style id=\"vc10-upload-style\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/qd-ops.css",
+      "sha256": "0f8cdc7fdd8830db84204636f957bfbce376ec7dea9ac16b7118fdadc7e11240",
+      "kind": "css",
+      "id": "qd-ops",
+      "type": "",
+      "opening": "<style id=\"qd-ops\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/sk-api-css.css",
+      "sha256": "3056e288008471d7e3c61e6f24a2eeb81109eacdeaeb3b3976273fd0b0200abf",
+      "kind": "css",
+      "id": "sk-api-css",
+      "type": "",
+      "opening": "<style id=\"sk-api-css\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/surface-api-css.css",
+      "sha256": "50c97b07d014f0e95d60e1e0a43ba9581f543a9fde173976b7bb79b2d47a4812",
+      "kind": "css",
+      "id": "surface-api-css",
+      "type": "",
+      "opening": "<style id=\"surface-api-css\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/base-025.css",
+      "sha256": "3b88f9bd9556252461a30a56d8d61ec3c86084d3045e4211fb7928c44839a47b",
+      "kind": "css",
+      "id": null,
+      "type": "",
+      "opening": "<style>",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/base-026.css",
+      "sha256": "9057e9fd99b8b4b1f87af2e2b6344794817a3df8eb7b6d7d056cfd9bc3a04054",
+      "kind": "css",
+      "id": null,
+      "type": "",
+      "opening": "<style>",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/base-027.css",
+      "sha256": "c117df2d73dd898294d7958ad88da94720d28624fa30111193e38dd1886d6f1b",
+      "kind": "css",
+      "id": null,
+      "type": "",
+      "opening": "<style>",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/diagnostic-style.css",
+      "sha256": "5146478dda126fe5c5406cf5a062f0f31be1ed2ef14f11a7e29860371c867e57",
+      "kind": "css",
+      "id": "diagnostic-style",
+      "type": "",
+      "opening": "<style id=\"diagnostic-style\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/qt-guide-redesign.css",
+      "sha256": "019b33b572de20b166cd4691b66bde72da4c022501b72d125e6eb234a422e63c",
+      "kind": "css",
+      "id": "qt-guide-redesign",
+      "type": "",
+      "opening": "<style id=\"qt-guide-redesign\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/qt-failure-triage-css.css",
+      "sha256": "1a0011abea06cd202f893bcc6fb05e993e711c18cfbd41b2303fabb7a5e8b331",
+      "kind": "css",
+      "id": "qt-failure-triage-css",
+      "type": "",
+      "opening": "<style id=\"qt-failure-triage-css\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/cvi-surface-refinement.css",
+      "sha256": "b85c2fc4324fe6a68cff83736c060edd07786642396c59fd770b7dba68528558",
+      "kind": "css",
+      "id": "cvi-surface-refinement",
+      "type": "",
+      "opening": "<style id=\"cvi-surface-refinement\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/vc14-canonical-style.css",
+      "sha256": "e1a0b49253d8682ac40001d3acbfc5e93e5e771777531ed9bfa285e789a37d7c",
+      "kind": "css",
+      "id": "vc14-canonical-style",
+      "type": "",
+      "opening": "<style id=\"vc14-canonical-style\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/qt-ssvi-global-styles.css",
+      "sha256": "95170a328ebe590cc9efadeffbc52d7d5900a9d09bb537fdc5a32282f827ca00",
+      "kind": "css",
+      "id": "qt-ssvi-global-styles",
+      "type": "",
+      "opening": "<style id=\"qt-ssvi-global-styles\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/qt-global-lab-css.css",
+      "sha256": "72f8540ed9d231653e1a36a07a5679664205b03ebc13ac73891df2ac1a5f5d4a",
+      "kind": "css",
+      "id": "qt-global-lab-css",
+      "type": "",
+      "opening": "<style id=\"qt-global-lab-css\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/flowdesk-styles.css",
+      "sha256": "e64b65c89299f54658253494beecfba191e550e55642b882c00ec0aaeae6b670",
+      "kind": "css",
+      "id": "flowdesk-styles",
+      "type": "",
+      "opening": "<style id=\"flowdesk-styles\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/flow-advanced-v3-style.css",
+      "sha256": "d46e66d38bd7c90175f315d4b08e183c8fb4dd82b82df2478d916299352ff61c",
+      "kind": "css",
+      "id": "flow-advanced-v3-style",
+      "type": "",
+      "opening": "<style id=\"flow-advanced-v3-style\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/qt360-skin.css",
+      "sha256": "d95774a7b5ff534205a3b35326c9b949ab04ef5928fa20a96b0344e38e0f0905",
+      "kind": "css",
+      "id": "qt360-skin",
+      "type": "",
+      "opening": "<style id=\"qt360-skin\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/quantistes-v12-design.css",
+      "sha256": "a4e995d19d936db7866ee87e344df232c3c86224aa91f4959b30b15c18c2b374",
+      "kind": "css",
+      "id": "quantistes-v12-design",
+      "type": "",
+      "opening": "<style id=\"quantistes-v12-design\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/quantistes-v24-design.css",
+      "sha256": "849496434a20934c4cf5350e68cd439da6f5e7a34a68e7ef7996fdd96b7e7d61",
+      "kind": "css",
+      "id": "quantistes-v24-design",
+      "type": "",
+      "opening": "<style id=\"quantistes-v24-design\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/quantistes-v25-flat-design.css",
+      "sha256": "a9c62dff706f3d2e0bb08a036728f1b9ce5391be8f08a8788fc427140317a07c",
+      "kind": "css",
+      "id": "quantistes-v25-flat-design",
+      "type": "",
+      "opening": "<style id=\"quantistes-v25-flat-design\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/quantistes-v26-flat-width.css",
+      "sha256": "034ac2fa66f9c2535ab95b8d54e80b25bfa3e762082140da1ed354f70000f3b4",
+      "kind": "css",
+      "id": "quantistes-v26-flat-width",
+      "type": "",
+      "opening": "<style id=\"quantistes-v26-flat-width\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/desk-fonts.css",
+      "sha256": "75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+      "kind": "css",
+      "id": "desk-fonts",
+      "type": "",
+      "opening": "<style id=\"desk-fonts\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/regimes-layout.css",
+      "sha256": "28a6b16cad687e05593f4b9597b3cfbc25279eef9d900b5d7be0d0f16d3d13df",
+      "kind": "css",
+      "id": "regimes-layout",
+      "type": "",
+      "opening": "<style id=\"regimes-layout\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "styles/inst-report-style.css",
+      "sha256": "e28141a9cbfaaf4bf7020270c5af20805085a8e232ec022278e55d965fe9a68a",
+      "kind": "css",
+      "id": "inst-report-style",
+      "type": "",
+      "opening": "<style id=\"inst-report-style\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/daily-desk-style.css",
+      "sha256": "26810885909ec770564ff6449fce67f71358c383e3c38ab69ea9a8d3895a5a77",
+      "kind": "css",
+      "id": "daily-desk-style",
+      "type": "",
+      "opening": "<style id=\"daily-desk-style\">",
+      "closing": "</style>",
+      "body": false
+    },
+    {
+      "path": "views/053-structure.html",
+      "sha256": "d5124378b43ca67cb8e93f5e4f8d5ebbd604d998f2fa29201ac8d585c0d08315",
+      "kind": "markup",
+      "body": false
+    },
+    {
+      "path": "views/054-monitor.html",
+      "sha256": "adc7d7a0c8465272381aabf4811c07860f6416dba8d9806361b84d85f319b930",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/055-levels.html",
+      "sha256": "35e4ca09abe4599ba01e700a85ffc0d9a79731daf55396d6e5f6ca956c4cdd03",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/056-crash.html",
+      "sha256": "eff7ff070243d72216129ecc8c732971effdebcd94d700b639fa9eaf05c0a2be",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/057-tailbook.html",
+      "sha256": "d01a3b622a726bf7dea710a6688aae2077c4cb017df85c2b2317a9731bcb90ee",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/058-smile.html",
+      "sha256": "f5f2cae2d6ad6bbaabb77fe5ac7b347c2229c2a848a40ef97325f9128a907b7e",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/059-implied.html",
+      "sha256": "f7bcd5eddee12812ce488fd0545926ec4a26eaacf26a0b699c3d1d8c3d575e47",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/060-export.html",
+      "sha256": "535bbec22175069b49b862eb0b94561fb04c5baea44d000e389c17597392f1cd",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/061-audit.html",
+      "sha256": "89a5a3b36f150755abc8f174f852fc6ff65304f3e3b596f7209da413cb9073a4",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/062-history.html",
+      "sha256": "378df1f4a29eef5f0732d2f000230394e0070e56cf78fac576731729da62d2d2",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/063-systematic.html",
+      "sha256": "e7adff0b7ec10dcefc0c548c93c89277087a0200670cd79a8607056f7b93acee",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/064-volcube.html",
+      "sha256": "eff682eba23a9aae3cf648c6ddae6f84b54ab455a9c0e84db5bb71ed440bb706",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/065-surface.html",
+      "sha256": "4c7774706fbe99ad6e6a8550bf63d33840d6da22a5b4935c0c4d5fa7e06667d2",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/066-research.html",
+      "sha256": "a3b87aad7789531248ad16b0e9118602cb15153eeca7a17bb9e75de0c16c0c0f",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/067-method.html",
+      "sha256": "a3b19305432afa2f28551feaf34dea22f80b038aa14d3b4db86fc67f78407819",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/068-distributions.html",
+      "sha256": "6010b1b6c718ac1dc714c1124392d8423ac19cf121e4e5cada370524c3fdea21",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/069-quant360.html",
+      "sha256": "dfaa52ba56d796315da743901251af47eff061ade7beb45509e5d4d7c61e67f4",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "views/070-flows.html",
+      "sha256": "53f1bb115015a7d38fa0b863720f8b5bcf402e5fc837b98bf6caafd2b204db09",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "scoreboard/desk-measures.js",
+      "sha256": "3b444d69f656eacf7d87241663ea3ee3bc2565c3b8707508b519b201c9b14d65",
+      "kind": "js",
+      "id": "desk-measures",
+      "type": "",
+      "opening": "<script id=\"desk-measures\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/terminal-plots.js",
+      "sha256": "fac053b3a61e36fd40d06ef8c30ac4eb3922ba64cdc0d2638fdd8caf69123545",
+      "kind": "js",
+      "id": "terminal-plots",
+      "type": "",
+      "opening": "<script id=\"terminal-plots\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/desk-calendar.js",
+      "sha256": "ca9ff9a8315dbeef6193fa55bc5656e00a4c7762623b2639ae0724a34ad4a49b",
+      "kind": "js",
+      "id": "desk-calendar",
+      "type": "",
+      "opening": "<script id=\"desk-calendar\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "volatility/core-data.js",
+      "sha256": "8618bdfc2eb7a7a1d6f4029527eafe02f0a92cc645a2b1f91aeac43f86b5203d",
+      "kind": "js",
+      "id": "core-data",
+      "type": "",
+      "opening": "<script id=\"core-data\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/sinemath-api.js",
+      "sha256": "4dae37956c69b7408ba73bccc5e42fcb0de49186b5f1d386cbc35b19e5f92f3b",
+      "kind": "js",
+      "id": "sinemath-api",
+      "type": "",
+      "opening": "<script id=\"sinemath-api\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "volatility/core-fit.js",
+      "sha256": "24f0dc9e39444f54897e3ea256eb236013e32a1f5031a494c28f3a45c9724c51",
+      "kind": "js",
+      "id": "core-fit",
+      "type": "",
+      "opening": "<script id=\"core-fit\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/core-cert.js",
+      "sha256": "897c5e8f4f0511410d6da81a37b30bdbe45aa7c98d47fa08ecbb15610576ed62",
+      "kind": "js",
+      "id": "core-cert",
+      "type": "",
+      "opening": "<script id=\"core-cert\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/core-lab-engine.js",
+      "sha256": "79a5a6154f507b4dae366c2d6fd129798921301c82891ff5baee954b0a0607e9",
+      "kind": "js",
+      "id": "core-lab-engine",
+      "type": "",
+      "opening": "<script id=\"core-lab-engine\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/core-marks.js",
+      "sha256": "b263c4cdff6725a0661866e970cf106c1663237970fa4a6f3d46750e49d33905",
+      "kind": "js",
+      "id": "core-marks",
+      "type": "",
+      "opening": "<script id=\"core-marks\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/core-bounds.js",
+      "sha256": "1e0d12d96547885525ebb57a39e46e61c3a9f11fb228641781704b9d04c61379",
+      "kind": "js",
+      "id": "core-bounds",
+      "type": "",
+      "opening": "<script id=\"core-bounds\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/core-intraday.js",
+      "sha256": "169c1527c4fe0eb0fcbf1d77c1aecb6f962924154b6ea3e18351d82134e656d0",
+      "kind": "js",
+      "id": "core-intraday",
+      "type": "",
+      "opening": "<script id=\"core-intraday\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/quant-core-script.js",
+      "sha256": "4724beaabd319e157ac5f9373b3a87e18386e62458796b90c4cb1872217e37c6",
+      "kind": "js",
+      "id": "quant-core-script",
+      "type": "",
+      "opening": "<script id=\"quant-core-script\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/terminal-worker.js",
+      "sha256": "4ac0997569170dcaab8038993efc081b6036295a64b15ac9037dacf8d191a4b8",
+      "kind": "js",
+      "id": null,
+      "type": "",
+      "opening": "<script>",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "probability/distribution_core.js",
+      "sha256": "fb6bcf93e5544c8d71d2a9399782657e1136365a2b61341d2635f560671c5fb5",
+      "kind": "js",
+      "id": "distribution_core",
+      "type": "",
+      "opening": "<script id=\"distribution_core\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "probability/distribution_extensions.js",
+      "sha256": "ed3fa89c3c60c4f7a78df5115463e8b32c6daf5c2a85d881cdc993cf5469e21e",
+      "kind": "js",
+      "id": "distribution_extensions",
+      "type": "",
+      "opening": "<script id=\"distribution_extensions\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "probability/distribution_ui.js",
+      "sha256": "0f2e2786b05d2ae3c4385f6334cf45e5fdfbb032ab65807d0a51a14f0c89d7c3",
+      "kind": "js",
+      "id": "distribution_ui",
+      "type": "",
+      "opening": "<script id=\"distribution_ui\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "probability/event-explorer.js",
+      "sha256": "5b12fbc0ee7442f12a0793baaa3bd4be3d33890b9118d40e43118f1631773cb6",
+      "kind": "js",
+      "id": "event-explorer",
+      "type": "",
+      "opening": "<script id=\"event-explorer\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/native_q_robustness.js",
+      "sha256": "ac4fe353cd298830b3fbf6acf2c157b28559c1d77b7f3135559481771cd881fb",
+      "kind": "js",
+      "id": "native_q_robustness",
+      "type": "",
+      "opening": "<script id=\"native_q_robustness\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "research/implied-research.js",
+      "sha256": "43b090a90319216e4faffd8efdf176c437d17e7d7baf904589412ac23619eadf",
+      "kind": "js",
+      "id": "implied-research",
+      "type": "",
+      "opening": "<script id=\"implied-research\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/native-feature-core.js",
+      "sha256": "8ee3edfcbd8373281a71b1fc0453fbeb47b647fdf75d6bc420256ad0898a92d1",
+      "kind": "js",
+      "id": "native-feature-core",
+      "type": "",
+      "opening": "<script id=\"native-feature-core\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/implied-workbench.js",
+      "sha256": "e282030b7b07f3ec21ac3a4a8a8ff217d96a59dbc34f7230725746485f3557ba",
+      "kind": "js",
+      "id": "implied-workbench",
+      "type": "",
+      "opening": "<script id=\"implied-workbench\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "research/time-research-core.js",
+      "sha256": "bd7a5130b8a5f0257e41278594686f9e7628bdc88fd3b0f8b840672c94eae97f",
+      "kind": "js",
+      "id": "time-research-core",
+      "type": "",
+      "opening": "<script id=\"time-research-core\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "research/regime-research-core.js",
+      "sha256": "77b46eaf57662ad1a16191a6431f23677d8fa8a4613e21258e1cbf1b45054bb9",
+      "kind": "js",
+      "id": "regime-research-core",
+      "type": "",
+      "opening": "<script id=\"regime-research-core\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "research/regime-research-ui.js",
+      "sha256": "039635f7ae96585205697599fc97ce6c61c719b13fa5da4b03f04bb23bb6ebad",
+      "kind": "js",
+      "id": "regime-research-ui",
+      "type": "",
+      "opening": "<script id=\"regime-research-ui\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "research/time-research-ui.js",
+      "sha256": "c27a3d12720e621f7cfc3d1361daccea26e594322c33a8d5f57fb3b72949310d",
+      "kind": "js",
+      "id": "time-research-ui",
+      "type": "",
+      "opening": "<script id=\"time-research-ui\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "research/systematic-core.js",
+      "sha256": "98b62a87113f0d95018f6d540c438a1357d3674ad689df6e318b158da399d59d",
+      "kind": "js",
+      "id": "systematic-core",
+      "type": "",
+      "opening": "<script id=\"systematic-core\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "research/systematic-ui.js",
+      "sha256": "5772ef6e809cc38703c73ec8307032bd23460d6c52080952992e8419bdf09183",
+      "kind": "js",
+      "id": "systematic-ui",
+      "type": "",
+      "opening": "<script id=\"systematic-ui\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "research/research-engine.js",
+      "sha256": "89e08ad947f5b1d6d35f16a3715d21ca3282e7ad09bf19616d97493cb1fab6f6",
+      "kind": "js",
+      "id": "research-engine",
+      "type": "",
+      "opening": "<script id=\"research-engine\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "volatility/surface.js",
+      "sha256": "3c9a81d25cfac2c843c5fc219c95899d9a68c27e8d2106757f44d4ed03601932",
+      "kind": "js",
+      "id": "surface",
+      "type": "",
+      "opening": "<script id=\"surface\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "research/research-ui.js",
+      "sha256": "be37c41f12b995829807ac0d32498a95e75ba8182e32216bae23d84f434ebca0",
+      "kind": "js",
+      "id": "research-ui",
+      "type": "",
+      "opening": "<script id=\"research-ui\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "terminal/independent-browser.js",
+      "sha256": "90272a68724f03138c93015328ae766ca07cf26d70c9097620fc53a5327a87c8",
+      "kind": "js",
+      "id": "independent-browser",
+      "type": "",
+      "opening": "<script id=\"independent-browser\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "terminal/terminal-navigation.js",
+      "sha256": "683b0d44a5829814202ab7c28686b8653c2588c5b677130eb6f47c4d9c3a025c",
+      "kind": "js",
+      "id": "terminal-navigation",
+      "type": "",
+      "opening": "<script id=\"terminal-navigation\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "volatility/wall-tail-diagnostics.js",
+      "sha256": "745c1c7c8fa3c4aaf2d2f6b2523f8050b4165b8bbad3377e3fd5a4b6ea282ced",
+      "kind": "js",
+      "id": "wall-tail-diagnostics",
+      "type": "",
+      "opening": "<script id=\"wall-tail-diagnostics\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "volatility/tail-envelope.js",
+      "sha256": "c61ccfb938f951f7184a91c4d24e0768c902e3dda5d3048fac52e8bf5bd48f53",
+      "kind": "js",
+      "id": "tail-envelope",
+      "type": "",
+      "opening": "<script id=\"tail-envelope\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/tail-splice.js",
+      "sha256": "687369c3114d3c0d2f723e902d55fde1fcfa13370910cfb9857ad8d0d90dac98",
+      "kind": "js",
+      "id": "tail-splice",
+      "type": "",
+      "opening": "<script id=\"tail-splice\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/tail-ui.js",
+      "sha256": "8c55e02bd3260d5f9293f835ea31efd747f7038bba3e786a60d7dc13e3a23d25",
+      "kind": "js",
+      "id": "tail-ui",
+      "type": "",
+      "opening": "<script id=\"tail-ui\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/crash-risk.js",
+      "sha256": "6022a21609f0fcefcd6b2e2e0ee9729c1249fc8e8537ebd5a45bd3e96a73cb99",
+      "kind": "js",
+      "id": "crash-risk",
+      "type": "",
+      "opening": "<script id=\"crash-risk\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/crash-ui.js",
+      "sha256": "0d581e264769fe15ce51a8f34fa5f44e6b7cdf6bcb1c53462f548afc9319b7f6",
+      "kind": "js",
+      "id": "crash-ui",
+      "type": "",
+      "opening": "<script id=\"crash-ui\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/desk-quote-export.js",
+      "sha256": "18b2cd030f7f20095cf22dde6269534f039786f144f9e1c001b6a58b818e12ef",
+      "kind": "js",
+      "id": "desk-quote-export",
+      "type": "",
+      "opening": "<script id=\"desk-quote-export\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/m8-monitor-ui.js",
+      "sha256": "a4c0035c46c3fb120377523c999616827933ebd7512c07111fa8827eb8e13117",
+      "kind": "js",
+      "id": "m8-monitor-ui",
+      "type": "",
+      "opening": "<script id=\"m8-monitor-ui\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "volatility/vc9-engine.js",
+      "sha256": "57b0a0fbf89468c8fe746a21e005b8d3255db43f9c0c5b4f94818d989ef43f82",
+      "kind": "js",
+      "id": "vc9-engine",
+      "type": "",
+      "opening": "<script id=\"vc9-engine\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/cvi-surface-canonical.js",
+      "sha256": "e461fbf5591be3792e1df43e592b5301b52fb7c37cee6aec1e7722f2895bc3b6",
+      "kind": "js",
+      "id": "cvi-surface-canonical",
+      "type": "",
+      "opening": "<script id=\"cvi-surface-canonical\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/quant-ssvi-global.js",
+      "sha256": "0ff2e48ed964a90f62c837040138effe0345982f3b440f19c54ab948800dfd41",
+      "kind": "js",
+      "id": "quant-ssvi-global",
+      "type": "",
+      "opening": "<script id=\"quant-ssvi-global\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/qt-global-smooth.js",
+      "sha256": "689a3f6af6f3b65fe8d1eb1ad15be0e89ead6169ef76b930b3e9ad676a390d8a",
+      "kind": "js",
+      "id": "qt-global-smooth",
+      "type": "",
+      "opening": "<script id=\"qt-global-smooth\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/qt-global-cflex.js",
+      "sha256": "cbbcf1019ac9c69f147da40d296566dd355710c1d4d31b6e34e02fb320b46490",
+      "kind": "js",
+      "id": "qt-global-cflex",
+      "type": "",
+      "opening": "<script id=\"qt-global-cflex\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/qt-global-router.js",
+      "sha256": "f2f5dedf16699893715adf9c6cfd6e1d588c67a9f4fa203fa27aceb1a4133559",
+      "kind": "js",
+      "id": "qt-global-router",
+      "type": "",
+      "opening": "<script id=\"qt-global-router\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/vc9-chart.js",
+      "sha256": "96b3dabe2fe404f6bc2f5ace2da9afcb918bd29567e5c0f1f33e256ef6ed49bf",
+      "kind": "js",
+      "id": "vc9-chart",
+      "type": "",
+      "opening": "<script id=\"vc9-chart\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "volatility/qt-ssvi-ui.js",
+      "sha256": "b9c70c9538f2902e60e1b894465576479f274b3a5ec0cce42c6744a69fa97bcf",
+      "kind": "js",
+      "id": "qt-ssvi-ui",
+      "type": "",
+      "opening": "<script id=\"qt-ssvi-ui\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "volatility/qt-global-lab-ui.js",
+      "sha256": "a82aeff01f7d00c766aa754e033753672f3150dc6d701a10f2f61d868c10541f",
+      "kind": "js",
+      "id": "qt-global-lab-ui",
+      "type": "",
+      "opening": "<script id=\"qt-global-lab-ui\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "volatility/vc10-intake.js",
+      "sha256": "7206698f22612b8e863a604809e921bfbea01a79b993a33fc42d6ede9fc03ef9",
+      "kind": "js",
+      "id": "vc10-intake",
+      "type": "",
+      "opening": "<script id=\"vc10-intake\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "research/qt-manual-script.js",
+      "sha256": "c7d78a3265a6e971031182af3c748a3ea8434c6a901bc5d42938c049836a314b",
+      "kind": "js",
+      "id": "qt-manual-script",
+      "type": "",
+      "opening": "<script id=\"qt-manual-script\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/qt-cflex-focus-override.js",
+      "sha256": "5b7b52db5b86d9085a3375b716623707f0fbbfed09d330caa7d58603f66d0831",
+      "kind": "js",
+      "id": "qt-cflex-focus-override",
+      "type": "",
+      "opening": "<script id=\"qt-cflex-focus-override\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n\n"
+    },
+    {
+      "path": "styles/qt-cflex-prod-style.css",
+      "sha256": "1d48e6401cde2723a8075344d25e245480a31728e27d66a01cde4d1600e3df01",
+      "kind": "css",
+      "id": "qt-cflex-prod-style",
+      "type": "",
+      "opening": "<style id=\"qt-cflex-prod-style\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "volatility/qt-cflex-production-candidate.js",
+      "sha256": "7ddc7d698b39cb35a7247541aa5de4b7816f6c48b2e573f9144296043d064f81",
+      "kind": "js",
+      "id": "qt-cflex-production-candidate",
+      "type": "",
+      "opening": "<script id=\"qt-cflex-production-candidate\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/quantistes-flow-embedded.txt",
+      "sha256": "5ace7a71c6fee827ad3b7058bd8c8e278d1522bf779bc233b74e9775ae479670",
+      "kind": "data",
+      "id": "quantistes-flow-embedded",
+      "type": "text/plain",
+      "opening": "<script id=\"quantistes-flow-embedded\" type=\"text/plain\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "dealer/quantistes-flow-engine.js",
+      "sha256": "6f05e66a0804335a3f18f6e48e96a67436d4d1501faff7146086165945a42c5f",
+      "kind": "js",
+      "id": "quantistes-flow-engine",
+      "type": "",
+      "opening": "<script id=\"quantistes-flow-engine\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n\n"
+    },
+    {
+      "path": "styles/flow-probability-style.css",
+      "sha256": "70297778d922d43069930748b1ec3c02a24f1ae27a346830a41ed00907ac2458",
+      "kind": "css",
+      "id": "flow-probability-style",
+      "type": "",
+      "opening": "<style id=\"flow-probability-style\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n\n"
+    },
+    {
+      "path": "dealer/flow-probability-engine.js",
+      "sha256": "61a023e4478fbdf4ff8011b525f9b4af31691f44ca8fab3ca6f7d1931fb5cb51",
+      "kind": "js",
+      "id": "flow-probability-engine",
+      "type": "",
+      "opening": "<script id=\"flow-probability-engine\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "dealer/flow-advanced-v3.js",
+      "sha256": "155cdc27295082161993d3e05b6b5bf7db9cfff486d7540e968ec989ab0089fb",
+      "kind": "js",
+      "id": "flow-advanced-v3",
+      "type": "",
+      "opening": "<script id=\"flow-advanced-v3\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n\n"
+    },
+    {
+      "path": "styles/quantistes-deskgrade-style.css",
+      "sha256": "c02a3f895207e2cfb07f200586f0e2a99730176763f66d513b42fc5f7995c725",
+      "kind": "css",
+      "id": "quantistes-deskgrade-style",
+      "type": "",
+      "opening": "<style id=\"quantistes-deskgrade-style\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n\n\n"
+    },
+    {
+      "path": "styles/quantistes-flow-v6-style.css",
+      "sha256": "35604cd6f82e8789fb4b4dbb41bbcdfbc2669d5895b2451501f2fab922a168f8",
+      "kind": "css",
+      "id": "quantistes-flow-v6-style",
+      "type": "",
+      "opening": "<style id=\"quantistes-flow-v6-style\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n\n"
+    },
+    {
+      "path": "styles/quantistes-v7-theme.css",
+      "sha256": "9c7902715443986218dc1e835fca54275a99b1170cf02f556cea397a7ccd7e05",
+      "kind": "css",
+      "id": "quantistes-v7-theme",
+      "type": "",
+      "opening": "<style id=\"quantistes-v7-theme\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/quantistes-v7-operational.js",
+      "sha256": "6916072d175b0416e0941502c9f225f5adba100c8076d7564f52daba973045e4",
+      "kind": "js",
+      "id": "quantistes-v7-operational",
+      "type": "",
+      "opening": "<script id=\"quantistes-v7-operational\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/quantistes-physical-style.css",
+      "sha256": "f87245ab83af2312aa5627dfd41b09a08ad13697a046d8d6155b303ff74a4892",
+      "kind": "css",
+      "id": "quantistes-physical-style",
+      "type": "",
+      "opening": "<style id=\"quantistes-physical-style\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/qt-physical-data.txt",
+      "sha256": "85395eac1428842dcda5f00dc7304d932c205bcd9ebdf0f09773c1553dab1341",
+      "kind": "data",
+      "id": "qt-physical-data",
+      "type": "text/plain",
+      "opening": "<script id=\"qt-physical-data\" type=\"text/plain\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "probability/quantistes-physical-runtime.js",
+      "sha256": "cf740c65148f7c270a618d081c2fa69eae7db856ac3f89df76589d36b007c323",
+      "kind": "js",
+      "id": "quantistes-physical-runtime",
+      "type": "",
+      "opening": "<script id=\"quantistes-physical-runtime\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/qt-v9-daily-style.css",
+      "sha256": "15e25a608bf75bd66b78e54ed0aed41784c97214dd5ef10852e88c8f5497f4ea",
+      "kind": "css",
+      "id": "qt-v9-daily-style",
+      "type": "",
+      "opening": "<style id=\"qt-v9-daily-style\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/qt-daily-runtime.js",
+      "sha256": "e2e165b8242ac28552a139cad6fc1591f6f7d6bb6b426a85e9bb677ec5b307e8",
+      "kind": "js",
+      "id": "qt-daily-runtime",
+      "type": "",
+      "opening": "<script id=\"qt-daily-runtime\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "views/193-structure.html",
+      "sha256": "4b15b5b2c3619f065ebe6f0731452e6f7e7161ac3435df20027d824a773ed6fb",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "styles/qt-dynamic-p-style.css",
+      "sha256": "cbaac122e6e55c5f4149e5364b646fb2f43067d2d5580b6a5d6629312146710e",
+      "kind": "css",
+      "id": "qt-dynamic-p-style",
+      "type": "",
+      "opening": "<style id=\"qt-dynamic-p-style\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/qt-dynamic-p-history.txt",
+      "sha256": "dadc78c9ae68d791d236f13859aa81705a2918bbe566724c661e3fe6949b85e6",
+      "kind": "data",
+      "id": "qt-dynamic-p-history",
+      "type": "text/plain",
+      "opening": "<script id=\"qt-dynamic-p-history\" type=\"text/plain\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/qt-dynamic-p-validation.json",
+      "sha256": "90a0c293c12a48b2903ebabf5f0e449e6a85e65adc33d6c9fff36ae1032e71b3",
+      "kind": "data",
+      "id": "qt-dynamic-p-validation",
+      "type": "application/json",
+      "opening": "<script id=\"qt-dynamic-p-validation\" type=\"application/json\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "probability/qt-dynamic-p-core.js",
+      "sha256": "ba747d0b797fbcb05fb1baf0266f15123a570a1f8b665e19d612293108ceb59a",
+      "kind": "js",
+      "id": "qt-dynamic-p-core",
+      "type": "",
+      "opening": "<script id=\"qt-dynamic-p-core\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "probability/qt-dynamic-p-charts.js",
+      "sha256": "3b05cbc71f07185afce13c9052f2abc148ec67592921d0fde73af24649c5e4e9",
+      "kind": "js",
+      "id": "qt-dynamic-p-charts",
+      "type": "",
+      "opening": "<script id=\"qt-dynamic-p-charts\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "probability/qt-dynamic-p-runtime.js",
+      "sha256": "537297b0caa44bf9905494bd486d94433f099028ccaf1712d4b09cd737fff0c1",
+      "kind": "js",
+      "id": "qt-dynamic-p-runtime",
+      "type": "",
+      "opening": "<script id=\"qt-dynamic-p-runtime\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/qt360-paths-data.txt",
+      "sha256": "7da971c04373ff2c293c3ae7a176a663adb1ca4cf2aea69452ecefbcd64a1f14",
+      "kind": "data",
+      "id": "qt360-paths-data",
+      "type": "text/plain",
+      "opening": "<script id=\"qt360-paths-data\" type=\"text/plain\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/qt360-validation-data.json",
+      "sha256": "b3f5b9c8c6bf2d6e774e3819ab3e8f36ca34e8821d825d70b7ea9461a7245841",
+      "kind": "data",
+      "id": "qt360-validation-data",
+      "type": "application/json",
+      "opening": "<script id=\"qt360-validation-data\" type=\"application/json\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/qt360-manual-map.json",
+      "sha256": "cec0c9710b2a0f091ee5611697534eff7bc2e960c300718c71800ac477942dd8",
+      "kind": "data",
+      "id": "qt360-manual-map",
+      "type": "application/json",
+      "opening": "<script id=\"qt360-manual-map\" type=\"application/json\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "vendor/qt360-plotly.js",
+      "sha256": "a17ce753e6c7b014ac47cab7fa07b4a7f351916ff7f33ac2d18caf00d82ed7a0",
+      "kind": "js",
+      "id": "qt360-plotly",
+      "type": "",
+      "opening": "<script id=\"qt360-plotly\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "probability/qt360-runtime.js",
+      "sha256": "33415300c1be1db09ce658a4475c153d3a4509b54792152cee3d8fe144d2be82",
+      "kind": "js",
+      "id": "qt360-runtime",
+      "type": "",
+      "opening": "<script id=\"qt360-runtime\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/quantistes-v12-runtime.js",
+      "sha256": "8ede931b2ebf688eb82d65f86bf9207d669198514e8ca82edd37f5a1f812ff5b",
+      "kind": "js",
+      "id": "quantistes-v12-runtime",
+      "type": "",
+      "opening": "<script id=\"quantistes-v12-runtime\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n\n"
+    },
+    {
+      "path": "styles/quantistes-v13-style.css",
+      "sha256": "5a326018e69d7885b0ee048bf6d36e78b779e92d6d48b0de1a2887d6db2e5eb5",
+      "kind": "css",
+      "id": "quantistes-v13-style",
+      "type": "",
+      "opening": "<style id=\"quantistes-v13-style\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "path": "views/219-structure.html",
+      "sha256": "3a47f0b00736697a7c8db4b7121ff7967d7826bbf80a6bd03113b3867b2da317",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "terminal/quantistes-v13-runtime.js",
+      "sha256": "cf335f755f6e02a4dc591692dd8b7a1db97784316e0b4e204592bae14d085bdf",
+      "kind": "js",
+      "id": "quantistes-v13-runtime",
+      "type": "",
+      "opening": "<script id=\"quantistes-v13-runtime\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n\n"
+    },
+    {
+      "path": "styles/quantistes-v15-style.css",
+      "sha256": "6351ed03a2a246bb46b68aae303a6449cb07fd0dcfb13019115b6224febb43b7",
+      "kind": "css",
+      "id": "quantistes-v15-style",
+      "type": "",
+      "opening": "<style id=\"quantistes-v15-style\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/quantistes-v15-runtime.js",
+      "sha256": "e2f9ee5072abe1292324b0fd3d6fb570027af7a4d1d3f791960158f17b884201",
+      "kind": "js",
+      "id": "quantistes-v15-runtime",
+      "type": "",
+      "opening": "<script id=\"quantistes-v15-runtime\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "views/225-structure.html",
+      "sha256": "9b56be22b16fcfe6a34d11629c1250383711edd51afdfb7018b92c173a832a2f",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "styles/q16-terminal-style.css",
+      "sha256": "6d13bbf5ea5f60fcfdbbe45f5183a1850b98eeb8b15d368e6ba13cc2729d5e3a",
+      "kind": "css",
+      "id": "q16-terminal-style",
+      "type": "",
+      "opening": "<style id=\"q16-terminal-style\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "path": "views/227-structure.html",
+      "sha256": "ef5dd29ac5b4a4ff50f9a671c543f63334009dd993df45d1d5c3d7997ec03d6e",
+      "kind": "markup",
+      "body": true
+    },
+    {
+      "path": "data/q16ChartDocument.txt",
+      "sha256": "81c157307cbf2fa8bd16c947833678d97fabe8a48138f8e15ecfb0c7e0989139",
+      "kind": "data",
+      "id": "q16ChartDocument",
+      "type": "application/x-base64",
+      "opening": "<script type=\"application/x-base64\" id=\"q16ChartDocument\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/qtMetricCatalog.json",
+      "sha256": "b102e27346dbf24a7fe7e28959f49b56c18110fff191fa640ef0b9d47f3b53c7",
+      "kind": "data",
+      "id": "qtMetricCatalog",
+      "type": "application/json",
+      "opening": "<script type=\"application/json\" id=\"qtMetricCatalog\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/qtQ16Runtime.js",
+      "sha256": "6ac5491c1e5d3913099dfdbaa0fe872ccb4fbaf3729b0de4b0b75715257833a4",
+      "kind": "js",
+      "id": "qtQ16Runtime",
+      "type": "",
+      "opening": "<script id=\"qtQ16Runtime\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n\n"
+    },
+    {
+      "path": "styles/quantistes-v23-legacy-style.css",
+      "sha256": "e5aa014539a1f2fd338f0d30aa7fdb75ad0de76ffa7a7d446c945cfae2a34dce",
+      "kind": "css",
+      "id": "quantistes-v23-legacy-style",
+      "type": "",
+      "opening": "<style id=\"quantistes-v23-legacy-style\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/quantistes-v23-ux-only.js",
+      "sha256": "598e286ec11fa4999a667dfb00b23c16815907fb0ffcf8bf3ba9a7cfbcadb6ef",
+      "kind": "js",
+      "id": "quantistes-v23-ux-only",
+      "type": "",
+      "opening": "<script id=\"quantistes-v23-ux-only\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/quantistes-v24-runtime.js",
+      "sha256": "5f249603f799a1f65a95f321f91224873e68fa40c8bf9b2d56a0316436c0c9a0",
+      "kind": "js",
+      "id": "quantistes-v24-runtime",
+      "type": "",
+      "opening": "<script id=\"quantistes-v24-runtime\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/quantistes-v25-flat-runtime.js",
+      "sha256": "28fa79dc051969f112f9cb3e268b86fff31742b0edfb84c51fe7eaa4c77afb43",
+      "kind": "js",
+      "id": "quantistes-v25-flat-runtime",
+      "type": "",
+      "opening": "<script id=\"quantistes-v25-flat-runtime\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "probability/quantistes-v26-realized-multitf.js",
+      "sha256": "f4b9707c80ff0abadcbe318750b8b09f066d8ab593a14cf548157ee2c310544d",
+      "kind": "js",
+      "id": "quantistes-v26-realized-multitf",
+      "type": "",
+      "opening": "<script id=\"quantistes-v26-realized-multitf\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/exchange-terminal.css",
+      "sha256": "83ca7869dfbef8a5585bedd315de664c1563863c2d2537ae28424cef48aff8b4",
+      "kind": "css",
+      "id": "exchange-terminal",
+      "type": "",
+      "opening": "<style id=\"exchange-terminal\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scoreboard/studio-playbooks.js",
+      "sha256": "c582aedb1081d228d403db73cecbd1e7624a8145d3aa18d4bb4c26236ed8fec7",
+      "kind": "js",
+      "id": "studio-playbooks",
+      "type": "",
+      "opening": "<script id=\"studio-playbooks\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "scoreboard/studio-fields.js",
+      "sha256": "fb0fd1946f04e852fcf0387106acc6f6446c2cdb778f86f391cc2a925212c88d",
+      "kind": "js",
+      "id": "studio-fields",
+      "type": "",
+      "opening": "<script id=\"studio-fields\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "scoreboard/studio-studio.js",
+      "sha256": "bb47ec5d594b6272c979b02ad53acdef933b308205b3738d1f44910dc16d0184",
+      "kind": "js",
+      "id": "studio-studio",
+      "type": "",
+      "opening": "<script id=\"studio-studio\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "scoreboard/institutional-desk.js",
+      "sha256": "6992c761d7a12137d2d5e68135bd4aa929aca5856aba73b14bc09de40ab7fcc0",
+      "kind": "js",
+      "id": "institutional-desk",
+      "type": "",
+      "opening": "<script id=\"institutional-desk\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scoreboard/desk-chart-inspector.js",
+      "sha256": "79a47b5235567a264542da497dcf0c18ebe82a157ce4adb008e43cacedb3c4f9",
+      "kind": "js",
+      "id": "desk-chart-inspector",
+      "type": "",
+      "opening": "<script id=\"desk-chart-inspector\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/font-licenses.txt",
+      "sha256": "c43bc5fc8494436df922fe43b6cfcb42857ab5a7f6b576e3e759d81f286334ff",
+      "kind": "data",
+      "id": "font-licenses",
+      "type": "text/plain",
+      "opening": "<script type=\"text/plain\" id=\"font-licenses\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "styles/studio-edition.css",
+      "sha256": "7e26711f8be74ad37fdd0f16e5dd3d69b1a94b460074721b0633b03d62728b7a",
+      "kind": "css",
+      "id": "studio-edition",
+      "type": "",
+      "opening": "<style id=\"studio-edition\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "path": "data/studio-font-notices.txt",
+      "sha256": "1315a62758a603a3e6e87a79b8389563789c59c1740b9db8bc2b20e2e2145458",
+      "kind": "data",
+      "id": "studio-font-notices",
+      "type": "text/plain",
+      "opening": "<script type=\"text/plain\" id=\"studio-font-notices\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "path": "styles/blue-terminal.css",
+      "sha256": "b9c3564e0cc6923066c23d1141cb4e7d5fed0daf961764fec13e5321276e2873",
+      "kind": "css",
+      "id": "blue-terminal",
+      "type": "",
+      "opening": "<style id=\"blue-terminal\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/inst-bin-pdf.txt",
+      "sha256": "2307221423500c3d13740e74424c9af4eb7d820ba8af3bf89ccbd660d7f8609e",
+      "kind": "data",
+      "id": "inst-bin-pdf",
+      "type": "application/octet-stream",
+      "opening": "<script type=\"application/octet-stream\" id=\"inst-bin-pdf\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/inst-bin-pdfworker.txt",
+      "sha256": "6211068fde3bf83f9e45c87deb0a98da9544744943654e28a804d2bc905c27e5",
+      "kind": "data",
+      "id": "inst-bin-pdfworker",
+      "type": "application/octet-stream",
+      "opening": "<script type=\"application/octet-stream\" id=\"inst-bin-pdfworker\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/inst-bin-ocr.txt",
+      "sha256": "e4b202af3d6de30c64203ab6187259fa501df723b78b96111b66cc3fe2b92127",
+      "kind": "data",
+      "id": "inst-bin-ocr",
+      "type": "application/octet-stream",
+      "opening": "<script type=\"application/octet-stream\" id=\"inst-bin-ocr\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/inst-bin-ocrworker.txt",
+      "sha256": "f17de64dac8c2df55e0992f6af10a67dc1f41fb68a0a5abc84cb9f901eeff3c7",
+      "kind": "data",
+      "id": "inst-bin-ocrworker",
+      "type": "application/octet-stream",
+      "opening": "<script type=\"application/octet-stream\" id=\"inst-bin-ocrworker\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/inst-bin-ocrcore.txt",
+      "sha256": "ef87b25956846d9e4d9a2c588ccb01e6eba41ea2d8b760d22af6952df9b0dee2",
+      "kind": "data",
+      "id": "inst-bin-ocrcore",
+      "type": "application/octet-stream",
+      "opening": "<script type=\"application/octet-stream\" id=\"inst-bin-ocrcore\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/inst-bin-eng.txt",
+      "sha256": "62a748561511d48f90c95600d250cc1caabfe697020bd82421476bbfedfe4836",
+      "kind": "data",
+      "id": "inst-bin-eng",
+      "type": "application/octet-stream",
+      "opening": "<script type=\"application/octet-stream\" id=\"inst-bin-eng\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/inst-bin-fonts.txt",
+      "sha256": "a17668ccd5f75974112ed36265f6ecb4dbfadf277a5f6f2724820104c774bab4",
+      "kind": "data",
+      "id": "inst-bin-fonts",
+      "type": "application/octet-stream",
+      "opening": "<script type=\"application/octet-stream\" id=\"inst-bin-fonts\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/inst-notices.json",
+      "sha256": "0618018324dfbbaf927764dc8ad3ca02aba6247bd2b2338b9b03b195aa3a521a",
+      "kind": "data",
+      "id": "inst-notices",
+      "type": "application/json",
+      "opening": "<script type=\"application/json\" id=\"inst-notices\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "data/ir-bofa-example.json",
+      "sha256": "4bc0bca52b3445878eaead3992b5fd60735cfada5e47ba60ed5b53c08b8540d4",
+      "kind": "data",
+      "id": "ir-bofa-example",
+      "type": "application/json",
+      "opening": "<script type=\"application/json\" id=\"ir-bofa-example\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-core.js",
+      "sha256": "19b79f7b527df8ae941111d6d2bbf47b5c8d9ffc76bacfca284d76de49a2bc7b",
+      "kind": "js",
+      "id": "report-core",
+      "type": "",
+      "opening": "<script id=\"report-core\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-intel.js",
+      "sha256": "0103e8b2c355e25c8cad761d11689bac7034e0c298d8176e10a755974104a3cb",
+      "kind": "js",
+      "id": "report-intel",
+      "type": "",
+      "opening": "<script id=\"report-intel\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-signals.js",
+      "sha256": "0ccf24b1f44b4b056f56fb37948477fb615d256066b6bc72a8ee66c1aac5a74a",
+      "kind": "js",
+      "id": "report-signals",
+      "type": "",
+      "opening": "<script id=\"report-signals\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/daily-markets.js",
+      "sha256": "9ec2c7da1ff7b8ef920530a72f49a7bcad0d9e7a70bd6969ab8f3f1209e60ecf",
+      "kind": "js",
+      "id": "daily-markets",
+      "type": "",
+      "opening": "<script id=\"daily-markets\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/dealer-adapter.js",
+      "sha256": "abad7c18a8c45bd5a1a4a75744ec32b77f324641848e15a2a58549f58251b784",
+      "kind": "js",
+      "id": "dealer-adapter",
+      "type": "",
+      "opening": "<script id=\"dealer-adapter\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-engine.js",
+      "sha256": "525be0d2bad3d77d9e6232c9f8419376a4b379a2db99d80b7840bae065250c02",
+      "kind": "js",
+      "id": "report-engine",
+      "type": "",
+      "opening": "<script id=\"report-engine\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-bofa.js",
+      "sha256": "3a971a0dd850f595d8f10d06c40d99ea19f510a85d1aecd30f3f400f0f2e36f1",
+      "kind": "js",
+      "id": "report-bofa",
+      "type": "",
+      "opening": "<script id=\"report-bofa\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-pdf.js",
+      "sha256": "c93d990b8acdaaff76b2b0c8c93d7ede6e4f7c2f36d3c9bfe43be3699afa9439",
+      "kind": "js",
+      "id": "report-pdf",
+      "type": "",
+      "opening": "<script id=\"report-pdf\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-store.js",
+      "sha256": "dbb43c8ffbd552697809584f01b3f67ec65f4e237d682a9ff853b9a102009c12",
+      "kind": "js",
+      "id": "report-store",
+      "type": "",
+      "opening": "<script id=\"report-store\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-tape.js",
+      "sha256": "4ad7fac3e99998d5b319628be4cb633e7d53ee63b86c3be48a750f80fed60414",
+      "kind": "js",
+      "id": "report-tape",
+      "type": "",
+      "opening": "<script id=\"report-tape\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-links.js",
+      "sha256": "8c00ff4e48ba9ab1d1ae2e9e1f2b46429004f805996609c0b18040292f736bce",
+      "kind": "js",
+      "id": "report-links",
+      "type": "",
+      "opening": "<script id=\"report-links\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-history.js",
+      "sha256": "92fd02964e3e62aec73c88b1b72504bdf4f28ed3f7f5101203e535d29d6a590c",
+      "kind": "js",
+      "id": "report-history",
+      "type": "",
+      "opening": "<script id=\"report-history\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-model.js",
+      "sha256": "44fce797f82f9724b606b4c19e516c0a6163829724fbd6898899456910f6bc5f",
+      "kind": "js",
+      "id": "report-model",
+      "type": "",
+      "opening": "<script id=\"report-model\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-ui.js",
+      "sha256": "89ed7bf24367ca8d17319621394b7aea5ce41650c05e9f312796a1e878d0ccae",
+      "kind": "js",
+      "id": "report-ui",
+      "type": "",
+      "opening": "<script id=\"report-ui\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scoreboard/decision-fusion.js",
+      "sha256": "88d27be5c07b92c64ae109e0ce762c113f08cf8ccf2b40a625d539455e55cb08",
+      "kind": "js",
+      "id": "decision-fusion",
+      "type": "",
+      "opening": "<script id=\"decision-fusion\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scoreboard/decision-rank.js",
+      "sha256": "630088936944a4f08a182fb25358a030be3527535ea807593ce4dc00a42bb1f6",
+      "kind": "js",
+      "id": "decision-rank",
+      "type": "",
+      "opening": "<script id=\"decision-rank\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-figures.js",
+      "sha256": "b8c14cdb057ab849ba099cdf5d576fbacf8c542c576b37ecee37cff9feb202ee",
+      "kind": "js",
+      "id": "report-figures",
+      "type": "",
+      "opening": "<script id=\"report-figures\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/report-charts.js",
+      "sha256": "e88399f5703332dc2b1c868bb708dcd4d6e34e20bee19038e37c7241f8c84f1b",
+      "kind": "js",
+      "id": "report-charts",
+      "type": "",
+      "opening": "<script id=\"report-charts\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "reports/daily-hub.js",
+      "sha256": "25dc6b919bf689781c1669e50e2ccc1bc212f47c99df975d490096630c1006b0",
+      "kind": "js",
+      "id": "daily-hub",
+      "type": "",
+      "opening": "<script id=\"daily-hub\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/desk-console-colors.css",
+      "sha256": "fa148eb1b85454b6d4b6a9673aba6186dfe0d7041a03dcafeb12a310239a3c58",
+      "kind": "css",
+      "id": "desk-console-colors",
+      "type": "",
+      "opening": "<style id=\"desk-console-colors\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/decision-chart-design.css",
+      "sha256": "1e2e17cc37d8ab11866e28b750d9553d94502821f1f1ea6e3065f119699087a5",
+      "kind": "css",
+      "id": "decision-chart-design",
+      "type": "",
+      "opening": "<style id=\"decision-chart-design\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/scalp-engine.js",
+      "sha256": "532572f71794628f3b8a1f23f4e44fb64720c2b57c0be13916d4e63849b92fb4",
+      "kind": "js",
+      "id": "scalp-engine",
+      "type": "",
+      "opening": "<script id=\"scalp-engine\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/scalp-sources.js",
+      "sha256": "072b327bf721fbdbd534efb1c811a6563155ac32da0dc990018abde5f64894c2",
+      "kind": "js",
+      "id": "scalp-sources",
+      "type": "",
+      "opening": "<script id=\"scalp-sources\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/scalp-attribution.js",
+      "sha256": "361f68e68202c7fa02f0d35b4721e05a720bb2356e8b504337fc4166f5a3bf31",
+      "kind": "js",
+      "id": "scalp-attribution",
+      "type": "",
+      "opening": "<script id=\"scalp-attribution\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/strike-diagnostics.js",
+      "sha256": "ad00faadde21a02da97882525a82aec6eca5be879d0f6c0c44d879b72dba8a2a",
+      "kind": "js",
+      "id": "strike-diagnostics",
+      "type": "",
+      "opening": "<script id=\"strike-diagnostics\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/scalp-ui.js",
+      "sha256": "b09eb723ad781b0c419a054ce8922b8a9686d0a284f429cd4efe825b1fb26766",
+      "kind": "js",
+      "id": "scalp-ui",
+      "type": "",
+      "opening": "<script id=\"scalp-ui\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "terminal/global.js",
+      "sha256": "4c427013fd7afbf6a11fb2d820a47bc30c0e3b3270c4be2966a66229a69d3574",
+      "kind": "js",
+      "id": "global",
+      "type": "",
+      "opening": "<script id=\"global\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/terminal-global.css",
+      "sha256": "008b62bb849823e712b637b129ec536cbbf469f8bfcb04c8f9b98fa1adac5d22",
+      "kind": "css",
+      "id": "terminal-global",
+      "type": "",
+      "opening": "<style id=\"terminal-global\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/terminal-report-compact.css",
+      "sha256": "c662306ae37e729afd396f78c34cd5a79925dd271c9d2279a196cc83bfdb8267",
+      "kind": "css",
+      "id": "terminal-report-compact",
+      "type": "",
+      "opening": "<style id=\"terminal-report-compact\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/terminal-scalp-ui.css",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "css",
+      "id": "terminal-scalp-ui",
+      "type": "",
+      "opening": "<style id=\"terminal-scalp-ui\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/terminal-scalp-shared.css",
+      "sha256": "ad139f3b06c214149e223ed6dcbd012b11d8b122794422f4d807c445a71a09e5",
+      "kind": "css",
+      "id": "terminal-scalp-shared",
+      "type": "",
+      "opening": "<style id=\"terminal-scalp-shared\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/terminal-strike-diagnostics.css",
+      "sha256": "787018fc85de4c78707f614f1da2857cc9c48748ca9d32f05a075fb9af9a2dc6",
+      "kind": "css",
+      "id": "terminal-strike-diagnostics",
+      "type": "",
+      "opening": "<style id=\"terminal-strike-diagnostics\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/oa-reference.js",
+      "sha256": "5d781fce5e4df4887330d97cea1c0a23d7e0bd657fe1377e34d1ca84bc91028d",
+      "kind": "js",
+      "id": "oa-reference",
+      "type": "",
+      "opening": "<script id=\"oa-reference\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/oa-replay.js",
+      "sha256": "5a0b42740d4791605f070d6d030b4007b81050124217fa107e73a882a283d1e4",
+      "kind": "js",
+      "id": "oa-replay",
+      "type": "",
+      "opening": "<script id=\"oa-replay\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/oa-native.js",
+      "sha256": "8135275acac2c711c8d9dcf9f4ce1e55412bf7712ff61cfbbc2ec84b7c60efd1",
+      "kind": "js",
+      "id": "oa-native",
+      "type": "",
+      "opening": "<script id=\"oa-native\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/oa-entries.js",
+      "sha256": "979ea15e1688ea2890e2661bdaa41d244cf4014c20c96888c34222bc13fd83e3",
+      "kind": "js",
+      "id": "oa-entries",
+      "type": "",
+      "opening": "<script id=\"oa-entries\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/oa-panels.js",
+      "sha256": "4f6c12272286c0f59eefcbaaded897298a528a5379fcfe70e36b70c2a410c523",
+      "kind": "js",
+      "id": "oa-panels",
+      "type": "",
+      "opening": "<script id=\"oa-panels\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/oa-metrics.js",
+      "sha256": "421ff30894ed1643484d7eca03acc1584fdda14ddef0e316deebcb18890a1732",
+      "kind": "js",
+      "id": "oa-metrics",
+      "type": "",
+      "opening": "<script id=\"oa-metrics\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/oa-profile.js",
+      "sha256": "481a114b9a6a68da0d491404852690f2aab8f517904eedf0072ff2459b0baa18",
+      "kind": "js",
+      "id": "oa-profile",
+      "type": "",
+      "opening": "<script id=\"oa-profile\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/desk-strike-field.js",
+      "sha256": "56b41c8e46aa98f9732ca68da14544f5932ca35e09e241f1ca2df3bb06b7d7f5",
+      "kind": "js",
+      "id": "desk-strike-field",
+      "type": "",
+      "opening": "<script id=\"desk-strike-field\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "scalping/oa-dashboard.js",
+      "sha256": "53afe3325da15a14e9649915f830ca5d5b15b5ae6283fcf7f103e97dc0dcc96d",
+      "kind": "js",
+      "id": "oa-dashboard",
+      "type": "",
+      "opening": "<script id=\"oa-dashboard\">",
+      "closing": "</script>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/oa-dashboard-css.css",
+      "sha256": "7c4589328031fdce73d380bf60bbd15c3c402760117242b85ff15ba6f4ac62ed",
+      "kind": "css",
+      "id": "oa-dashboard-css",
+      "type": "",
+      "opening": "<style id=\"oa-dashboard-css\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/oa-entries-css.css",
+      "sha256": "869862614f02299116e195ba64d0ae432d03be54624196d2bae61ec0a6c2b031",
+      "kind": "css",
+      "id": "oa-entries-css",
+      "type": "",
+      "opening": "<style id=\"oa-entries-css\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/oa-route-css.css",
+      "sha256": "0f51ee87ae1232805a8e6774d699147cbf514b54ea0c1dad9b4cfc2c8dfd1ad7",
+      "kind": "css",
+      "id": "oa-route-css",
+      "type": "",
+      "opening": "<style id=\"oa-route-css\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/desk-design-system.css",
+      "sha256": "ee68ca0b0139c86b28ad2d82b07ee5793d5b8dfc12d6dc63955fa94c65d0f23a",
+      "kind": "css",
+      "id": "desk-design-system",
+      "type": "",
+      "opening": "<style id=\"desk-design-system\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "kind": "space",
+      "raw": "\n"
+    },
+    {
+      "path": "styles/desk-public-layout.css",
+      "sha256": "9eee73baeaa37dec8b43289b434a7265a0ffd44bc67096018fcc6944472d7510",
+      "kind": "css",
+      "id": "desk-public-layout",
+      "type": "",
+      "opening": "<style id=\"desk-public-layout\">",
+      "closing": "</style>",
+      "body": true
+    },
+    {
+      "path": "views/367-structure.html",
+      "sha256": "75927c062dd5e067be29e56d121e356bfe76692a2ea6a640fa77db2320118b8e",
+      "kind": "markup",
+      "body": true
+    }
+  ]
+}

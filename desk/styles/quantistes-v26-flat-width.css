@@ -1,0 +1,134 @@
+
+/* QUANTISTES v26 — true viewport-width, one-page scroll / no legacy nesting */
+body.q13-on:not(.q13-native) .q13-layout,
+body.q13-on:not(.q13-native) .q13-layout > .q13-main,
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel],
+body.q13-on:not(.q13-native) .q15-instrument,
+body.q13-on:not(.q13-native) .q15-labcontent,
+body.q13-on:not(.q13-native) .q15-native-host,
+body.q13-on:not(.q13-native) .q15-native-host > .view,
+body.q13-on:not(.q13-native) .q15-native-host > .q25-composite,
+body.q13-on:not(.q13-native) .q25-composite > .view,
+body.q13-on:not(.q13-native) .q15-native-host #view-quant360,
+body.q13-on:not(.q13-native) #view-quant360 .qt360-panel,
+body.q13-on:not(.q13-native) #view-quant360 .qt360-grid,
+body.q13-on:not(.q13-native) #view-flows,
+body.q13-on:not(.q13-native) #view-flows .flow-shell,
+body.q13-on:not(.q13-native) #view-flows .flow-inner,
+body.q13-on:not(.q13-native) #view-method,
+body.q13-on:not(.q13-native) #qtManual {
+  width:100%!important;min-width:0!important;max-width:none!important;
+  height:auto!important;max-height:none!important;
+  overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important;
+}
+body.q13-on:not(.q13-native) .q13-layout > .q13-main {
+  padding:clamp(16px,1.6vw,36px) clamp(13px,1.6vw,60px) 110px!important;
+  margin:0!important;
+}
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel] > .q15-instrument,
+body.q13-on:not(.q13-native) .q15-labcontent,
+body.q13-on:not(.q13-native) .q15-native-host,
+body.q13-on:not(.q13-native) .q25-composite,
+body.q13-on:not(.q13-native) .q25-composite > .view,
+body.q13-on:not(.q13-native) #view-quant360 .qt360-panel{
+  padding-left:0!important;padding-right:0!important;margin-left:0!important;margin-right:0!important;
+  border-left:0!important;border-right:0!important;box-shadow:none!important;
+}
+body.q13-on:not(.q13-native) #view-quant360 .qt360-panel,
+body.q13-on:not(.q13-native) #view-flows .flow-inner,
+body.q13-on:not(.q13-native) #view-flows .flow-shell{padding-top:0!important;padding-bottom:0!important}
+body.q13-on:not(.q13-native) :is(.q15-native-host,.q25-composite,.qt360-grid,.flow-inner) > :is(.qt360-card,.q13-panel,.card,.flow-card,.qp-card){margin-left:0!important;margin-right:0!important;max-width:none!important}
+body.q13-on:not(.q13-native) .q15-native-host :is(.qt360-plot,.qt360-grid,.qt360-card,.qp-chartbox,.pd-chart,.m8-layout,.m8-chart-card,.m8-mid){min-width:0!important;max-width:none!important}
+body.q13-on:not(.q13-native) .q15-native-host .qt360-card{width:100%!important}
+/* Keep the single actionable mark/residuals smile; native mirror remains hidden, with its engine intact. */
+body.q13-on:not(.q13-native) [data-q13-panel="market"].q25-tool-skewfit #view-smile > .card:has(#smileChart),
+body.q13-on:not(.q13-native) [data-q13-panel="market"].q25-tool-skewfit #view-smile > .sk-api,
+body.q13-on:not(.q13-native) [data-q13-panel="market"].q25-tool-skewfit #view-monitor .m8-tools {display:none!important}
+body.q13-on:not(.q13-native) [data-q13-panel="market"].q25-tool-skewfit #view-monitor .m8-layout{
+  display:grid!important;grid-template-columns:minmax(0,1.7fr) minmax(310px,.75fr)!important;gap:16px!important;
+  align-items:stretch!important;max-width:none!important;width:100%!important;
+}
+/* Legacy method body was trapped in column 1 after its TOC was suppressed. */
+body.q13-on:not(.q13-native) #view-method #qtManual,
+body.q13-on:not(.q13-native) #view-method .qt-guide-layout,
+body.q13-on:not(.q13-native) #view-method .qt-guide-body,
+body.q13-on:not(.q13-native) #view-method .qt-guide-chapter,
+body.q13-on:not(.q13-native) #view-method .qt-guide-appendix{
+ width:100%!important;max-width:none!important;min-width:0!important;margin-left:0!important;margin-right:0!important;
+}
+body.q13-on:not(.q13-native) #view-method .qt-guide-layout{display:block!important;grid-template-columns:minmax(0,1fr)!important}
+body.q13-on:not(.q13-native) #view-method .qt-guide-body{display:block!important;grid-column:1/-1!important}
+body.q13-on:not(.q13-native) #view-method .qt-guide-hero{max-width:none!important;width:100%!important}
+body.q13-on:not(.q13-native) #view-method .qt-guide-chapter{padding:clamp(16px,1.8vw,32px)!important}
+body.q13-on:not(.q13-native) #view-method .qt-guide-chapter :is(p,ul,ol,pre,table){max-width:none!important}
+/* Full-height pages, not independently scrollable cards. Preserve hover/canvas events. */
+body.q13-on:not(.q13-native) .q15-native-host .view,
+body.q13-on:not(.q13-native) .q15-native-host .q25-composite,
+body.q13-on:not(.q13-native) .q15-native-host #view-method,
+body.q13-on:not(.q13-native) .q15-native-host #view-quant360,
+body.q13-on:not(.q13-native) .q15-native-host #view-smile,
+body.q13-on:not(.q13-native) .q15-native-host #view-monitor{overflow:visible!important;max-height:none!important;height:auto!important}
+/* Extended ES empirical P from observed consecutive 1-minute increments. */
+#qt360-panel-path.q26-enhanced > .qt360-card,
+#qt360-panel-path.q26-enhanced > .qt360-grid{display:none!important}
+#qt360-panel-path.q26-enhanced.q26-show-legacy > .qt360-card,
+#qt360-panel-path.q26-enhanced.q26-show-legacy > .qt360-grid{display:block!important}
+#qt360-panel-path.q26-enhanced.q26-show-legacy > .qt360-grid{display:grid!important}
+#qt360-panel-path.q26-enhanced.q26-show-legacy #q26Graphs{display:none!important}
+#q26Realized{--q26-teal:#7cc3e0;--q26-gold:#90b8ef;--q26-blue:#93d4ed;--q26-muted:#6ea0dd;color:#c4dbfb;font-family:Consolas;width:100%;max-width:none;min-width:0}
+#q26Realized .q26-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin:0 0 16px;padding:4px 0 16px;border-bottom:1px solid #1d3b59}
+#q26Realized .q26-head h2{font:750 clamp(19px,1.55vw,30px)/1.17 Consolas;letter-spacing:-.025em;color:#9ec2f4;margin:0}
+#q26Realized .q26-head small{display:block;color:var(--q26-muted);font:11px/1.6 Consolas;margin-top:7px}
+#q26Realized .q26-origin{border:1px solid #304f6a;color:#8db6ee;padding:7px 11px;border-radius:4px;font:700 10px Consolas;white-space:nowrap}
+#q26Realized .q26-controls{display:grid;grid-template-columns:repeat(6,minmax(0,1fr)) auto;align-items:end;gap:10px;margin-bottom:14px}
+#q26Realized .q26-controls label{min-width:0;display:flex;flex-direction:column;gap:6px;font:700 10px/1.3 Consolas;letter-spacing:.04em;color:#83afe8;margin:0}
+#q26Realized .q26-controls :is(input,select){min-height:42px;border:1px solid #1e3e5c;background:#0b1d31;color:#cadffd;font:700 13px Consolas;padding:8px 10px;border-radius:4px;width:100%;min-width:0}
+#q26Realized .q26-controls :is(input,select):focus-visible{outline:2px solid #7bc2df;outline-offset:1px}
+#q26Realized .q26-controls button,#q26Legacy{min-height:42px;border:1px solid #87b5ff;color:#0a1c2e;background:#8db6ee;font:800 11px Consolas;padding:10px 17px;border-radius:4px;white-space:nowrap}
+#q26Legacy{background:#0f2539;color:#a6e0f4;border-color:#325d88}
+#q26Realized .q26-stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:14px 0 20px}
+#q26Realized .q26-stat{border-top:2px solid #2b5278;background:linear-gradient(180deg,#0b1f32,#091c2e);min-width:0;padding:14px 15px 12px}
+#q26Realized .q26-stat:first-child{border-top-color:#87b5ff}
+#q26Realized .q26-stat small{display:block;font:700 10px Consolas;color:#7bc2df;letter-spacing:.08em}
+#q26Realized .q26-stat strong{display:block;margin:10px 0 6px;font:800 clamp(18px,1.65vw,32px)/1.13 Consolas;color:#9ac0f3;white-space:normal;word-break:break-word}
+#q26Realized .q26-stat em{font:10px/1.45 Consolas;color:#699ddb;font-style:normal;display:block}
+#q26Realized .q26-graph-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;margin:20px 0 5px;padding-top:6px}
+#q26Realized .q26-graph-head h3{color:#8fb8ef;font:750 13px Consolas;letter-spacing:.045em;margin:0}
+#q26Realized .q26-graph-head span{color:#6ea0dd;font:10px Consolas}
+#q26Realized .q26-main-plot{width:100%;height:520px;min-height:440px;background:#091a2b;border:1px solid #1c3a57;border-radius:5px}
+#q26Realized .q26-chart-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px}
+#q26Realized .q26-chart-pair > section{min-width:0;border-top:1px solid #1d3d5a;padding-top:8px}
+#q26Realized .q26-plot{width:100%;height:360px;min-width:0}
+#q26Realized #q26Status{color:#84b0e9;line-height:1.7;font-size:11px;margin:15px 0 17px;border-bottom:1px solid #1e3a52;padding:10px 0}
+#q26Realized #q26Status[data-bad="true"]{color:#e7e1cc}
+#q26Realized .q26-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin:12px 0 20px}
+#q26Realized .q26-footer span{font:10px Consolas;color:#6298d7;max-width:900px}
+#q26Realized button:disabled{opacity:.4}
+@media(min-width:3000px){#q26Realized .q26-main-plot{height:660px}#q26Realized .q26-plot{height:460px}}
+@media(max-width:1400px){#q26Realized .q26-controls{grid-template-columns:repeat(4,minmax(0,1fr))}#q26Realized .q26-controls button{width:100%}}
+@media(max-width:900px){body.q13-on:not(.q13-native) [data-q13-panel="market"].q25-tool-skewfit #view-monitor .m8-layout{grid-template-columns:1fr!important}#q26Realized .q26-stats{grid-template-columns:repeat(2,minmax(0,1fr))}#q26Realized .q26-chart-pair{grid-template-columns:1fr}#q26Realized .q26-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:550px){#q26Realized .q26-controls{grid-template-columns:repeat(2,minmax(0,1fr))}#q26Realized .q26-stats{grid-template-columns:1fr 1fr}#q26Realized .q26-stat{padding:9px}#q26Realized .q26-stat strong{font-size:18px}#q26Realized .q26-main-plot{height:390px;min-height:380px}#q26Realized .q26-plot{height:330px}body.q13-on:not(.q13-native) .q13-layout > .q13-main{padding-inline:12px!important}}
+/* Main diagnostic first. Unique density, Wall Street tails and skew geometry follow naturally. */
+#q25Composite-skewfit > #view-monitor{order:0!important}
+#q25Composite-skewfit > #view-smile{order:1!important}
+/* Dealer Flow: remove the last two independently scrolling vertical subpanes.
+   The complete strike register remains accessible; narrow layouts can pan its columns horizontally. */
+body.q13-on:not(.q13-native) #view-flows #opConfluence{
+  height:auto!important;max-height:none!important;overflow:visible!important;
+}
+body.q13-on:not(.q13-native) #view-flows .op-table-scroll{
+  height:auto!important;max-height:none!important;overflow-x:auto!important;overflow-y:visible!important;
+}
+/* Physical P, Research indicator registry and research matrix: the last
+   overflow-limited data lists. One vertical document scrollbar, no cards with their own wheel. */
+body.q13-on:not(.q13-native) #flow-panel-physical .qp-tablewrap,
+body.q13-on:not(.q13-native) #view-flows #flow-panel-physical .qp-tablewrap,
+body.q13-on:not(.q13-native) #q16RegList,
+body.q13-on:not(.q13-native) #qt360AtlasTable{
+  height:auto!important;max-height:none!important;min-height:0!important;
+  overflow-y:visible!important;
+}
+body.q13-on:not(.q13-native) #flow-panel-physical .qp-tablewrap,
+body.q13-on:not(.q13-native) #q16RegList,
+body.q13-on:not(.q13-native) #qt360AtlasTable{overflow-x:auto!important}
+

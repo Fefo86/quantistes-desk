@@ -1,0 +1,4 @@
+
+.stress-field{display:flex;gap:9px;align-items:end;flex-wrap:wrap;margin-bottom:14px}.stress-field label{margin:0 0 5px}
+.stress-field button{min-height:39px}.stress-detail{margin:13px 0}.stress-detail summary{cursor:pointer;color:var(--blue);padding:5px 0}
+#stressRoot .cardbody>p+p{margin-top:9px}.main,.sidebar,.view{min-width:0}

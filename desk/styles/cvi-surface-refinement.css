@@ -1,0 +1,7 @@
+
+#view-volcube .vc9-chartwrap {min-height:450px;background:#081828;}
+#view-volcube #vc9Chart {display:block;width:100%;height:450px;touch-action:none;}
+#view-volcube #vc9Blend, #view-volcube #vc9Render {min-width:160px;max-width:270px;}
+#view-volcube .vc9-controls{flex-wrap:wrap;}
+#view-volcube #vc9Context{max-width:100%;white-space:normal;line-height:1.6;}
+@media(max-width:650px){#view-volcube #vc9Chart{height:340px}#view-volcube .vc9-chartwrap{min-height:340px}}

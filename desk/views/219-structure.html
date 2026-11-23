@@ -1,0 +1,69 @@
+
+<template id="q13Template"><div id="q13App" class="q13" aria-label="Quantistes Confluence Terminal">
+ <header class="q13-header">
+  <div class="q13-mark" aria-hidden="true">Q<span>▰</span></div>
+  <div class="q13-brand"><span>QUANTISTES / VOLATILITY INTELLIGENCE</span><strong>CONFLUENCE <em>TERMINAL</em></strong></div>
+  <div class="q13-clock"><span id="q13Clock">NEW YORK · --:--</span><b id="q13RunMode" class="q13-pill gold">REPLAY / ARCHIVE</b><span id="q13SourceMsg">ES · VIX</span></div>
+  <div class="q13-actions"><button class="q13-btn accent" id="q13Demo">▶ REPLAY</button><button class="q13-btn" id="q13ImportChain">+ CHAIN SPXW</button><label class="q13-btn q13-upload" for="q13SnapshotFile">+ ES SNAPSHOT<input hidden id="q13SnapshotFile" type="file" accept=".json,.csv"></label><button class="q13-btn" id="q13Bridge">○ CONNECT</button><button class="q13-btn ghost" id="q13Advanced">ADVANCED ↗</button></div>
+ </header>
+ <div class="q13-ribbon"><div><span class="q13-indicator">◉</span> RESEARCH CONSOLE</div><div id="q13StampBar">AS-OF NON-LIVE · DATI STORICI 2026</div><div class="q13-ribbon-right">SPXW / ES · NEW YORK</div></div>
+ <div class="q13-layout">
+  <aside class="q13-sidebar">
+   <div class="q13-sidecap">DESK WORKFLOW <span>01—05</span></div>
+   <nav aria-label="Workflow principale" id="q13Nav">
+    <button data-q13-view="score" class="on"><span>00</span><div><b>SCOREBOARD</b><small>Decision cockpit</small></div><i>◆</i></button>
+    <button data-q13-view="market"><span>01</span><div><b>MARKET STATE</b><small>Volatility / Skew / Q</small></div><i id="q13RailM">○</i></button>
+    <button data-q13-view="dealer"><span>02</span><div><b>POSITIONING</b><small>Gamma / Vanna / Charm</small></div><i id="q13RailD">○</i></button>
+    <button data-q13-view="path"><span>03</span><div><b>DISTRIBUTIONS</b><small>Physical P / Path atlas</small></div><i id="q13RailP">○</i></button>
+    </nav>
+   <div class="q13-sideline"></div><button class="q13-sideutil" data-q13-view="audit">⌁ MODELLI E FONTI</button><div class="q13-sidestate"><span class="q13-dot"></span><b id="q13SideStatus">MODEL INITIALIZING</b><small id="q13SideSource">Attivo: storico verificabile</small></div>
+  </aside>
+  <main class="q13-main">
+   <section data-q13-panel="score" class="q13-view on">
+    <div class="q13-screen-title"><div><div class="q13-eyebrow">DECISION LAYER / ALL INPUTS CONVERGE HERE</div><h1>SCOREBOARD</h1><p>Una lettura. Quattro motori. Nessun segnale senza evidenza allineata.</p></div><button class="q13-btn" data-q13-view="market">START ANALYSIS →</button></div>
+    </section>
+   <section data-q13-panel="market" class="q13-view">
+    <div class="q13-screen-title"><div><div class="q13-eyebrow">01 / REGIME · WHAT IS PRICED</div><h1>MARKET <span>STATE</span></h1><p>Chain SPXW → forward → CVI skew → risk-neutral Q → IPPO levels.</p></div><button class="q13-btn" id="q13OpenNativeQ">OPEN CHAIN ENGINE ↗</button></div>
+    <div class="q13-strip" id="q13MarketKpis"></div>
+    <div class="q13-panel"><div class="q13-panel-head"><h2>SPX VOLATILITY SMILE</h2><span class="q13-small" id="q13SkewStatus">AWAITING SNAPSHOT</span></div><div class="q13-plot" id="q13Skew"></div></div>
+    <div class="q13-grid q13-duo"><div class="q13-panel"><div class="q13-panel-head"><h2>Q · TERMINAL SURVIVAL</h2><span class="q13-small">Pᴽ(Sₜ &gt; K)</span></div><div class="q13-plot" id="q13Survival"></div></div><div class="q13-panel"><div class="q13-panel-head"><h2>REGIME · VIX / VVIX</h2><span class="q13-small">ACTUAL HISTORICAL SERIES</span></div><div class="q13-plot" id="q13Regime"></div></div></div>
+    <div class="q13-panel"><div class="q13-panel-head"><h2>IPPO · QUANTILE LEVEL LADDER</h2><span class="q13-small" id="q13LevelsMeta">SPXW / CVI-BASED</span></div><div id="q13MarketLevels" class="q13-level-ladder"><div class="q13-placeholder">Carica una chain SPX per calcolare i livelli della volatilità.</div></div></div>
+    </section>
+   <section data-q13-panel="dealer" class="q13-view">
+    <div class="q13-screen-title"><div><div class="q13-eyebrow">02 / POSITIONING · WHO NEEDS TO HEDGE</div><h1>DEALER <span>RESPONSE</span></h1><p>Esposizioni firmate per strike → Δ hedge per spot, vol e decay → zone di pressione.</p></div><label class="q13-btn q13-upload" for="q13DealerFile">+ SIGNED STRIKE LADDER<input id="q13DealerFile" type="file" hidden accept=".json,.csv"></label></div>
+    <div class="q13-banner" id="q13DealerNotice">In attesa di posizioni dealer firmate per strike. Un semplice OI non identifica il segno dell'inventario market maker.</div>
+    <div class="q13-strip" id="q13DealerKpis"></div>
+    <div class="q13-panel"><div class="q13-panel-head"><h2>STRIKE EXPOSURE LADDER</h2><span class="q13-small">GAMMA / VANNA / CHARM · DEALER SIGNED</span></div><div class="field-tools"><label>Sensibilità per strike<select id="stLadderGreek"><option value="delta">DELTA</option><option value="gamma" selected>GAMMA</option><option value="vanna">VANNA</option><option value="charm">CHARM</option><option value="speed">SPEED</option><option value="color">COLOR</option></select></label></div><div class="q13-plot" id="q13DealerPlot"></div></div>
+    <div class="q13-panel"><div class="q13-panel-head"><h2>HEDGE PRESSURE FIELD · SPOT × TIME</h2><span class="q13-small">LOCAL LINEAR PROJECTION · UNCALIBRATED SCENARIO</span></div><div class="q13-plot large" id="q13HedgeHeat"></div><div class="q13-fieldfooter">Δ hedge = −Σ<sub>K</sub> [Γ<sub>K</sub>ΔSPX + Vanna<sub>K</sub>ΔIV + Charm<sub>K</sub>Δt] · in unità dichiarate dal file. I greeks non sono ricomputati lungo il sentiero; la mappa è una sensibilità, non un forecast eseguibile.</div></div>
+    </section>
+   <section data-q13-panel="path" class="q13-view">
+    <div class="q13-screen-title"><div><div class="q13-eyebrow">03 / PROBABILITY · THE DISTRIBUTION IS A PATH SPACE</div><h1>PHYSICAL <span>PATH ATLAS</span></h1><p>Regime-conditioned ES analogs · percorsi, quantili, first passage, strike interaction.</p></div><div class="q13-inlinetools"><label>RTH SEGMENT<select id="q13Session"><option value="all">ALL RTH</option><option value="open">OPEN / 09:30—11:30</option><option value="mid">MID / 11:30—14:00</option><option value="close">CLOSE / 14:00+</option></select></label><button class="q13-btn" id="q13FanReset">RESET VIEW</button></div></div>
+    <div class="q13-inputgrid desk-path-inputs"><label>ES ANCHOR<input id="q13Spot" type="number" min="1" step="0.25"></label><label>VIX<input id="q13Vix" type="number" step="0.1" min="6" max="100"></label><label>TARGET ES<input id="q13Target" type="number" min="1" step="0.25"></label><label>REGIME<input id="q13Band" type="number" value="3" min="0.5" max="15" step="0.5"></label></div><div class="q13-strip" id="q13PathKpis"></div>
+    <div class="q13-panel q13-fan-panel"><div class="q13-panel-head"><h2>ES PHYSICAL PATH ENSEMBLE</h2><div class="q13-legend"><span><i style="background:#dcd9ca"></i> MEDIAN</span><span><i style="background:#80ade7"></i> 90% CONE</span><span><i style="background:#82c8e3"></i> HISTORICAL CORRIDORS</span></div></div>
+     <div class="q13-chart-caption"><span id="q13FanCaption">Select DEMO to load verified ES history</span><output id="stAtlasFacts"></output><span id="q13FanStatus">MOVE CROSSHAIR / CLICK TO LOCK</span></div>
+     <div class="q13-fan-area" id="q13FanWrap"><svg id="q13FanSvg" viewbox="0 0 1200 560" preserveaspectratio="xMidYMid meet" role="img" aria-label="ES Physical Path Ensemble: crosshair e analoghi storici"></svg><div id="q13CrossTooltip" class="q13-cross-tip" hidden></div></div>
+     <div class="q13-fan-controls"><span id="q13PointerRead">T+0.0 MIN · ES —</span><div class="q13-inlinetools"><button class="q13-btn" id="q13PathPrev">← PATH</button><button class="q13-btn" id="q13PathNext">PATH →</button><button class="q13-btn" id="q13PathUnlock">UNLOCK</button></div></div>
+    </div>
+    <div class="q13-grid q13-duo"><div class="q13-panel"><div class="q13-panel-head"><h2>SELECTED CORRIDOR</h2><span id="q13CorridorClass" class="q13-small">HISTORICAL EMPIRICAL MASS</span></div><div id="q13PathInspect" class="q13-path-inspect">Passa sul fan per leggere prezzo, orario e probabilità dei corridoi; fai clic per bloccarne uno.</div><div class="q13-biasbar" id="q13PathFactors"></div><div class="q13-optionline"><label>HEDGE SCENARIO β <input type="range" min="0" max="2" step="0.1" value="0" id="q13HedgeBeta"></label><b id="q13BetaValue">OFF / β 0.0</b></div><div class="q13-caution" id="q13PathGate">Senza dealer firmato e calibration beta non esiste una probabilità Q→P flow-conditioned validata.</div><details id="q13HedgeDetail" class="q13-detail"><summary>PER-STRIKE HEDGE DECOMPOSITION ↘</summary><div class="q13-grid q13-duo"><div class="q13-plot" id="q13HedgeByStrike"></div><div class="q13-plot" id="q13HedgeByTime"></div></div></details></div>
+    <div class="q13-panel"><div class="q13-panel-head"><h2>SCENARIO MASS</h2><span class="q13-small">DISJOINT PATH CLUSTERS</span></div><div id="q13ScenarioList"></div><div class="q13-cutout" id="q13Targets"></div></div></div>
+    <div class="q13-panel"><div class="q13-panel-head"><h2>HIGHEST-MASS PATH CORRIDORS</h2><span class="q13-small">NEAREST-ANALOG CELLS · NOT EXACT-PATH ODDS</span></div><div class="q13-tablewrap"><table class="q13-table"><thead><tr><th>PATH ID</th><th>SESSION</th><th>SCENARIO</th><th>5-MIN MOVE</th><th>CORRIDOR MASS</th><th>FLOW SENS.</th></tr></thead><tbody id="q13PathRows"></tbody></table></div></div>
+    <div class="q13-panel"><div class="q13-panel-head"><h2>SPX · PHYSICAL P AT EXPIRY</h2><div class="q13-inlinetools"><span class="q13-small" id="q13SpXMeta">HISTORICAL REPLAY / NOT ES P</span><button class="q13-btn" id="q13SpXReplay">▶ REPLAY SPX</button></div></div><div class="q13-plot" id="q13SpXPlot"><div class="q13-placeholder">Carica la demo o avvia il replay SPX per visualizzare la distribuzione fisica a scadenza.</div></div><div class="q13-fieldfooter">P SPX: orizzonte alla scadenza. P ES: orizzonte 5 minuti. Confronto Q/P solo se chain, orologio e scadenza coincidono; non combinare automaticamente probabilità di orizzonti diversi.</div></div>
+    </section>
+   <section data-q13-panel="audit" class="q13-view">
+    <div class="q13-screen-title"><div><div class="q13-eyebrow">MODEL GOVERNANCE</div><h1>QUALITÀ <span>DEL MARK</span></h1><p>Qualità delle quotazioni, sensibilità e regimi di volatilità.</p></div><button class="q13-btn" id="q13OpenManual">ORIGINAL MODEL LIBRARY ↗</button></div>
+    </section>
+    <section data-q13-panel="reports" class="q13-view" aria-label="Report istituzionali">
+      <div class="q13-screen-title"><div><h1>Report istituzionali</h1></div></div>
+      <div id="irChartsHome"></div>
+      <div id="irArchiveHome"></div>
+    </section>
+    <section data-q13-panel="scalp" class="q13-view" aria-label="Scalping su flussi opzionari">
+      <div class="q13-screen-title"><div><h1>Scalping su flussi</h1></div></div>
+      
+      <div id="oaDashboard" aria-label="Scalping su flussi opzionari"></div>
+    </section>
+  </main>
+  </div>
+</div>
+<div id="q13Return" class="q13-return" hidden><button id="q13BackButton">← RETURN TO CONFLUENCE TERMINAL</button><span>MODEL LAB / NATIVE ENGINE</span></div>
+</template>

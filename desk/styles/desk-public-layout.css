@@ -1,0 +1,81 @@
+
+[data-desk-internal],#oaDashboard [hidden]{display:none!important}
+#oaDashboard .oa-dash{gap:7px;container-type:inline-size}
+#oaDashboard .oa-pages{display:flex;align-items:center;flex-wrap:wrap;gap:2px;border-bottom:1px solid #385467;padding:0 0 3px;background:#111f2c}
+#oaDashboard .oa-pages button{border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;color:#b1c5ce;padding:8px 13px;min-height:32px;font:600 12px Consolas,monospace}
+#oaDashboard .oa-pages button:hover{color:#e4eae3;background:#1d3342}
+#oaDashboard .oa-pages button[aria-pressed=true]{color:#e9efe4;border-bottom-color:#a9d5cf;background:#1c3441}
+#oaDashboard .oa-pages .oa-historical{margin-left:auto;color:#cfb587;font-weight:400}
+#oaDashboard .oa-command{display:flex;gap:9px;align-items:flex-end;flex-wrap:wrap;padding:7px 10px;background:#10202e;border:1px solid #294453}
+#oaDashboard .oa-command label,#oaDashboard .oa-filterbar label{display:flex;align-items:center;gap:6px;font:11px Consolas,monospace;color:#b8cad1}
+#oaDashboard .oa-command select,#oaDashboard .oa-filterbar select,#oaDashboard .oa-filterbar input{min-height:28px;max-width:min(400px,80vw)}
+#oaDashboard .oa-metadata{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:11px Consolas,monospace;color:#bdcdd5}
+#oaDashboard .oa-metadata>span{color:#adcfc8}
+#oaDashboard #oaBook{padding:0;min-width:0;width:100%;max-width:none;box-sizing:border-box}
+#oaDashboard .oa-sectionhead{display:flex;align-items:baseline;justify-content:space-between;padding:10px 12px 5px;gap:12px}
+#oaDashboard .oa-sectionhead h2,#oaDashboard .oa-session h2,#oaDashboard #oaDialogTitle{font:600 15px/1.25 Consolas,monospace;letter-spacing:.01em;color:#f1eee1;margin:0}
+#oaDashboard .oa-sectionhead span{font-size:11px;color:#a8bfc9}
+#oaDashboard .oa-filterbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:5px 12px 9px}
+#oaDashboard #oaViewport{width:100%;max-width:100%;max-height:min(72vh,900px);overflow:auto;overscroll-behavior:contain;scrollbar-gutter:auto;box-sizing:border-box;border-top:1px solid #3a5566}
+#oaDashboard #oaLadder{width:100%;min-width:1050px;table-layout:fixed;counter-reset:none;font:11px/1.32 Consolas,monospace;font-variant-numeric:tabular-nums;border:0;border-spacing:0;border-collapse:separate}
+#oaDashboard #oaLadder :is(th,td){min-width:0;max-width:none;box-sizing:border-box;padding:6px 4px;text-align:center;word-break:normal;overflow-wrap:normal;vertical-align:middle;border:0;border-right:1px solid #263b49;border-bottom:1px solid #243747;white-space:nowrap}
+#oaDashboard #oaLadder thead th{position:sticky;top:0;z-index:4;background:#263946;color:#d2dedf;font-weight:600;font-size:10px;letter-spacing:.015em}
+#oaDashboard #oaLadder thead th:first-child{left:0;z-index:5}
+#oaDashboard #oaLadder tbody th{position:sticky;left:0;z-index:2}
+#oaDashboard #oaLadder tbody [data-field=price] button{font:600 11px Consolas,monospace;background:transparent;padding:3px 1px;border:0;color:#dcdfc7}
+#oaDashboard #oaLadder tbody tr{cursor:pointer}
+#oaDashboard #oaLadder [data-field=trade],#oaDashboard #oaLadder [data-field=dealerAction]{text-align:left;white-space:normal;line-height:1.34;padding-inline:7px}
+#oaDashboard #oaLadder [data-field=gamma] span{font-size:inherit;color:inherit;opacity:.83}
+#oaDashboard #oaLadder tbody td[data-field=gamma]{white-space:normal}
+#oaDashboard #oaLadder [data-field=esgFlow],#oaDashboard #oaLadder [data-field=escFlow]{text-align:right}
+#oaDashboard #oaLadder tbody [data-field=trade] b{font-size:10.5px;font-weight:600;letter-spacing:0}
+#oaDashboard #oaLadder [data-trade-color=orange] [data-field=trade]{color:#e9bd89}
+#oaDashboard #oaLadder [data-trade-color=green] [data-field=trade]{color:#a6d4b8}
+#oaDashboard #oaLadder [data-trade-color=up] [data-field=trade]{color:#9ccce0}
+#oaDashboard #oaLadder [data-gmark=cyan] [data-field=gamma]{outline:1px solid #77cbd6;outline-offset:-2px}
+#oaDashboard #oaLadder [data-gmark=red] [data-field=gamma]{outline:1px solid #d58183;outline-offset:-2px}
+#oaDashboard #oaLadder [data-atm=true] th:first-child{color:#e7cda1;box-shadow:inset 3px 0 #e0bf8b}
+#oaDashboard #oaLadder[data-view=ladder] thead [data-field=price]{width:5.4%}
+#oaDashboard #oaLadder[data-view=ladder] thead [data-field=gamma]{width:8.6%}
+#oaDashboard #oaLadder[data-view=ladder] thead [data-field=charm]{width:5.3%}
+#oaDashboard #oaLadder[data-view=ladder] thead :is([data-field=esgFlow],[data-field=escFlow]){width:6.5%}
+#oaDashboard #oaLadder[data-view=ladder] thead [data-field=gTag]{width:5.9%}
+#oaDashboard #oaLadder[data-view=ladder] thead [data-field=velocity]{width:6%}
+#oaDashboard #oaLadder[data-view=ladder] thead [data-field=flip]{width:4.2%}
+#oaDashboard #oaLadder[data-view=ladder] thead [data-field=cg]{width:8%}
+#oaDashboard #oaLadder[data-view=ladder] thead [data-field=alert]{width:5.9%}
+#oaDashboard #oaLadder[data-view=ladder] thead [data-field=trade]{width:13.1%}
+#oaDashboard #oaLadder[data-view=ladder] thead [data-field=dealerAction]{width:24.6%}
+#oaDashboard #oaLadder[data-view=greeks] thead [data-field=trade]{width:14%}
+#oaDashboard #oaLadder[data-view=greeks] thead [data-field=dealerAction]{width:24%}
+#oaDashboard #oaLadder[data-view=greeks] tbody :is([data-field=regime],[data-field=status],[data-field=caseId]){white-space:normal;overflow-wrap:anywhere}
+#oaDashboard .oa-session{display:grid;gap:12px;min-width:0}
+#oaDashboard .oa-session h2{margin:6px 0 9px}
+#oaDashboard #oaContext,#oaDashboard #oaDynamics{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:7px}
+#oaDashboard .oa-dynamics .oa-room{grid-column:auto}
+#oaDashboard .oa-session form,#oaDashboard .oa-import>div,#oaDashboard .oa-rules{display:flex;flex-wrap:wrap;gap:9px;align-items:end}
+#oaDashboard #oaDialog{font:12px/1.45 Consolas,monospace;color:#d6e3e6;border:1px solid #698796;border-radius:3px;background:#122332;width:min(850px,calc(100vw - 30px));max-width:calc(100vw - 22px);max-height:86vh;margin:auto;padding:0;overflow:auto;box-shadow:0 22px 80px #000a}
+#oaDashboard #oaDialog:not([open]){display:none!important}
+#oaDashboard #oaDialog::backdrop{background:rgba(5,13,21,.76)}
+#oaDashboard .oa-dialog-head{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:8px;padding:12px 16px;background:#203845;border-bottom:1px solid #45606f}
+#oaDashboard .oa-dialog-head h2{flex:1}
+#oaDashboard #oaStep{display:flex;gap:5px}
+#oaDashboard #oaDialog #oaInspect{padding:14px 16px;max-height:none;overflow:visible;background:transparent;border:0;display:grid;gap:12px;scrollbar-gutter:auto}
+#oaDashboard .oa-ticket-lead{display:grid;grid-template-columns:1.1fr .7fr 1fr;gap:10px}
+#oaDashboard .oa-ticket-lead small,#oaDashboard .oa-ticket-lead b,#oaDashboard .oa-ticket-lead strong{display:block}
+#oaDashboard .oa-ticket-lead small{color:#abbec9;margin-bottom:3px}
+#oaDashboard .oa-ticket-lead strong{color:#eed7b0}
+#oaDashboard #oaInspect h3,#oaDashboard #oaInspect h4{margin:0 0 6px;color:#dfebea;font:600 13px Consolas,monospace}
+#oaDashboard #oaInspect .uf-action{margin:0;padding:8px 10px;background:#1d3440;border-left:2px solid #94c4bf}
+#oaDashboard #oaInspect .oa-entry,#oaDashboard #oaInspect .uf-ticket,#oaDashboard #oaInspect .sd10,#oaDashboard #oaInspect .oa-ticket-risk{padding:10px 0 0;border:0;border-top:1px solid #3a5262;background:transparent}
+#oaDashboard #oaInspect .oa-entry-rule{background:#152a38;border:1px solid #2e4957}
+#oaDashboard :is(button,input,select):focus-visible{outline:2px solid #a2dace;outline-offset:1px}
+@media(max-width:690px){#oaDashboard .oa-pages button{padding:6px 8px}#oaDashboard .oa-pages .oa-historical{margin-left:0}#oaDashboard .oa-filterbar,#oaDashboard .oa-command{gap:6px}#oaDashboard .oa-ticket-lead{grid-template-columns:1fr 1fr}#oaDashboard .oa-ticket-lead>div:last-child{grid-column:1/-1}#oaDashboard #oaViewport{max-height:68vh}}
+@media print{#oaDashboard #oaViewport{max-height:none;overflow:visible}#oaDashboard #oaLadder{min-width:0;font-size:8px}}
+
+
+#q13App #deskScalpTape .ds-tape-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding:8px 10px;border-bottom:1px solid #395262;color:#b7cbd1}
+#q13App #deskScalpTape .ds-tape-head h2{font:600 13px Consolas,monospace;color:#e1e9df;margin:0}
+#q13App #deskScalpTape .ds-tape-head b{color:#a7d4c6}
+#q13App #deskScalpTape .ds-tape-head span{margin-left:auto;font-size:11px}
+

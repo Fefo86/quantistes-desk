@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root = fileURLToPath(new URL('../', import.meta.url));
+const out = path.join(root,'out');
+const shell = fs.readFileSync(path.join(out,'index.html'),'utf8');
+const head = fs.readFileSync(path.join(root,'.next-assets/head.html'),'utf8');
+const body = fs.readFileSync(path.join(root,'.next-assets/body.html'),'utf8');
+const marker = '<div id="qt-runtime-slot"></div>';
+if (!shell.includes(marker)) throw Error('Punto di montaggio Next.js assente');
+const result = shell.replace('</head>', () => head + '</head>').replace(marker, () => body);
+fs.writeFileSync(path.join(out,'index.html'),result);
+const dist = path.join(root,'dist');
+fs.rmSync(dist,{recursive:true,force:true});
+fs.cpSync(out,dist,{recursive:true});
+fs.writeFileSync(path.join(dist,'index.html'),result.replace('data-access="wordpress"', 'data-access="preview"'));
+console.log('Export Hostinger in out/, anteprima privata in dist/.');

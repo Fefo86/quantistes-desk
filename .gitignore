@@ -1,0 +1,8 @@
+node_modules/
+.next/
+out/
+dist/
+public/terminal/
+public/ui-fonts/
+*.log
+.next-assets/

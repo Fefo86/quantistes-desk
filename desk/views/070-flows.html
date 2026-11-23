@@ -1,0 +1,258 @@
+<section class="view" id="view-flows" aria-label="Dealer Flow Intelligence">
+<div class="flow-shell" id="flowShell">
+  <header class="flow-hero">
+    <div><div class="flow-kicker">QUANTISTES / FLOW &amp; VOLATILITY TERMINAL</div><h2>Options Flow Terminal <span>SPXW / ES</span></h2><p>Gamma, charm, posizionamento, topologia, hedge response e livelli CVI per la sessione selezionata.</p></div>
+    <div class="flow-hero-right"><div class="flow-led"><i></i><strong id="flowStatePill">CARICAMENTO SAMPLE</strong></div><div class="flow-asof" id="flowAsOf">—</div><div class="flow-hero-mini">FLUSSI SAMPLE · RIBASAMENTO DEMO</div></div>
+  </header>
+  <div class="flow-warning" id="flowDateWarning">Simulazione · flussi 2025 su prezzi opzioni 2026.</div>
+  <div class="flow-toolbar">
+    <div class="flow-tool-group"><button class="flow-primary" id="flowDemoBtn" data-qcode="FLOWS-DEMO" data-qname="Collega all7 ai flussi sample" data-qtype="Azione" data-qview="flows">CARICA DEMO COMPLETA · ALL7 + FLOW</button><button id="flowRefreshBtn" data-qcode="FLOWS-REFRESH" data-qname="Ricalcola connessioni" data-qtype="Azione" data-qview="flows">RICALCOLA</button></div>
+    <div class="flow-tool-group flow-uploads">
+      <label>GAMMA CSV<input id="flowGammaFile" type="file" accept=".csv,text/csv" data-qcode="FLOWS-CSV-GAMMA" data-qname="Importa scenari gamma" data-qtype="Importazione" data-qview="flows"></label>
+      <label>CHARM CSV<input id="flowCharmFile" type="file" accept=".csv,text/csv" data-qcode="FLOWS-CSV-CHARM" data-qname="Importa scenari charm" data-qtype="Importazione" data-qview="flows"></label>
+      <label>POSITIONAL CSV<input id="flowPosFile" type="file" accept=".csv,text/csv" data-qcode="FLOWS-CSV-POS" data-qname="Importa dealer positional" data-qtype="Importazione" data-qview="flows"></label>
+    </div>
+  </div>
+  <div class="flow-controlgrid">
+    <label>Fonte SPX di partenza <input id="flowBaseAnchor" type="number" min="1" step="0.5" value="6070" data-qcode="FLOWS-SOURCE-ANCHOR" data-qname="SPX sample di riferimento" data-qtype="Numero" data-qview="flows"><small>Ancora di prezzo illustrativa; non è uno spot storico verificato.</small></label>
+    <label>Riferimento SPX all7 <input id="flowTargetAnchor" type="number" min="1" step="0.01" value="7323.63" data-qcode="FLOWS-TARGET-ANCHOR" data-qname="SPX target demo" data-qtype="Numero" data-qview="flows"><small>Stesso rapporto per tutti gli scenari e gli strike.</small></label>
+    <label>Basis ES – SPX <input id="flowBasis" type="number" step="0.25" value="0" data-qcode="FLOWS-ES-BASIS" data-qname="Basis ES verso SPX" data-qtype="Numero" data-qview="flows"><small>0 è un placeholder: inserisci il basis ES osservato.</small></label>
+    <label>Filtro posizionamento <select id="flowExpiry" data-qcode="FLOWS-EXPIRY" data-qname="Filtra scadenza dealer" data-qtype="Selettore" data-qview="flows"><option value="ALL">Tutte le scadenze source</option></select><small>Le scadenze di gennaio sono rimappate per distanza dalla data originaria.</small></label>
+  </div>
+  <nav class="flow-subnav" aria-label="Sezioni del Flow Desk">
+    <button class="on" data-flow-panel="ops">01 · OPERATIVE DESK</button><button data-flow-panel="physical" id="qpNavButton">02 · PHYSICAL P · 09:45</button><button data-flow-panel="overview">02 · GAMMA / CHARM</button><button data-flow-panel="position">03 · DEALER STATE</button><button data-flow-panel="hedge">04 · HEDGE ENGINE</button><button data-flow-panel="paths" data-qcode="FLOWS-PATHS" data-qname="Flow-weighted distributions e simulazione paths" data-qtype="Navigazione" data-qview="flows">05 · DISTRIBUZIONI &amp; PATHS</button><button data-flow-panel="method">06 · REFERENCE</button>
+  </nav>
+  <section class="flow-inner" id="flow-panel-dynamic" aria-label="Quantistes Dynamic Physical Probability Desk">
+ <div class="dx-head"><div><div class="dx-eyebrow">QUANTISTES / INTRADAY PHYSICAL INTELLIGENCE / SPX CASH</div><h2>DYNAMIC <em>P</em> · MARKET STRUCTURE DESK</h2><p>Distribuzioni empiriche a orizzonte residuo · strike ladder completa · prime visite · continuation / rejection · Q CVI contemporanea</p></div><div id="dxQuality" class="dx-headstatus">ATTESA CHAIN · NY</div></div>
+ <div id="dxKpis" class="dx-kpis"></div>
+ <div class="dx-controls">
+  <label>Modalità statistica<select id="dxMode"><option value="auto">AUTO · P09 / P TIME / P PATH</option><option value="pool">P TIME · storico orario</option><option value="prefix">P PATH · condizionata al percorso</option></select></label>
+  <label>Strike in esame<input id="dxStrike" type="number" step="0.25" placeholder="prezzo SPX"></label>
+  <label>Fascia pinning · punti<input id="dxPin" type="number" min="1" max="250" value="10" step="1"></label>
+  <label>Reazione · punti<input id="dxReact" type="number" min="1" max="250" value="12" step="1"></label>
+  <label>Finestra reversal · min<select id="dxReactWindow"><option value="15">15 minuti</option><option value="30" selected>30 minuti</option><option value="60">60 minuti</option></select></label>
+  <button id="dxRecompute" class="dx-button">AGGIORNA PROBABILITÀ</button>
+ </div>
+ <div class="dx-card dx-focus"><div class="dx-card-title"><b>STRIKE INTELLIGENCE · PROBABILITÀ OPERATIVE</b><small>SPX cash · fino al fixing 16:00 ET</small></div>
+  <div id="dxEvents" class="dx-events"></div><div id="dxEventRead" class="dx-readout"></div></div>
+ <div class="dx-grid">
+  <article class="dx-card dx-wide"><div class="dx-card-title"><b>PHYSICAL PATH FAN · P HISTORICAL / P09</b><small>Fasce 50/80/90% · mediana · Q soltanto terminale · crosshair</small></div><div class="dx-chartbox"><canvas id="dxFan" height="420"></canvas><canvas class="dx-overlay" id="dxFanOverlay" height="420"></canvas></div><div class="dx-readout" id="dxFanRead">Seleziona uno strike e scorri il grafico per leggere orario, prezzo e intervalli probabilistici.</div></article>
+  <article class="dx-card"><div class="dx-card-title"><b>TERMINAL SURVIVAL · P vs Q CVI</b><small>Probabilità di chiusura oltre K, Q solo se target contemporaneo</small></div><div class="dx-chartbox"><canvas id="dxCDF" height="325"></canvas><canvas id="dxCDFOverlay" class="dx-overlay" height="325"></canvas></div><div class="dx-readout" id="dxCDFRead">P empirica di chiusura, Q CVI e differenziale.</div></article>
+  <article class="dx-card"><div class="dx-card-title"><b>FIRST-PASSAGE HEATMAP · LEVEL × TIME</b><small>Probabilità di tocco cumulata · orizzonte residuo</small></div><div class="dx-chartbox"><canvas id="dxTouch" height="325"></canvas><canvas id="dxTouchOverlay" class="dx-overlay" height="325"></canvas></div><div class="dx-readout" id="dxTouchRead">Seleziona una cella per leggere il livello e l'orario di primo tocco.</div></article>
+  <article class="dx-card dx-wide"><div class="dx-card-title"><b>Cutoff dinamico · P, Q ed esiti condizionati</b><small>Ogni strike della chain selezionata</small></div>
+   <div class="dx-tablebar"><input id="dxSearch" placeholder="Cerca strike…" type="search"><select id="dxRange"><option value="ALL">Tutti gli strike</option><option value="0.5">±0,5% spot</option><option value="1">±1% spot</option><option value="2">±2% spot</option><option value="4">±4% spot</option></select><button id="dxExportCSV">ESPORTA STRIKE CSV</button><button id="dxExportJSON" data-desk-internal="" hidden inert aria-hidden="true"></button><span id="dxTableCount"></span></div>
+   <div class="dx-tablewrap"><table class="dx-table" id="dxTable"><thead><tr><th data-col="K">STRIKE</th><th data-col="distance">Δ SPX</th><th data-col="pAbove">P CLOSE &gt;</th><th data-col="qAbove">Q CLOSE &gt;</th><th data-col="pTouch">P TOUCH</th><th data-col="pReversal">REV | HIT</th><th data-col="pBreakout">BRK | HIT</th><th data-col="pAmbiguous">INCERTO | HIT</th><th data-col="pPin">P PIN</th><th data-col="hitESS">HIT ESS</th></tr></thead><tbody></tbody></table></div><div class="dx-note">Probabilità reversals/continuation condizionate al raggiungimento dello strike. Se il campione effettivo dei tocchi è insufficiente o l'ordine intraminuto non è risolvibile, il valore non viene presentato come certo.</div></article>
+  <article class="dx-card"><div class="dx-card-title"><b>FIRST EVENT · TARGET / STOP</b><small>Barriere sui percorsi storici · parità intraminuto conservata</small></div><div class="dx-tools"><label>Target SPX<input id="dxTarget" type="number" step="0.25"></label><label>Stop SPX<input id="dxStop" type="number" step="0.25"></label><button id="dxRunPair">CALCOLA</button></div><div id="dxPairMetrics" class="dx-events dx-events-small"></div><div id="dxPairRead" class="dx-readout">Definisci target e stop sullo stesso orizzonte del modello.</div></article>
+  <article class="dx-card"><div class="dx-card-title"><b>VERTICAL OPTION · P PHYSICAL / Q CVI</b><small>Payoff a scadenza odierna · bid/ask dello snapshot corrente</small></div><div class="dx-tools"><label>Tipo<select id="dxStructureType"><option value="CALL">CALL VERTICAL</option><option value="PUT">PUT VERTICAL</option></select></label><label>Strike long<input id="dxLongK" type="number" step="5"></label><label>Strike short<input id="dxShortK" type="number" step="5"></label><button id="dxRunStructure">VALUTA</button></div><div id="dxStructureMetrics" class="dx-events dx-events-small"></div><div class="dx-readout" id="dxStructureRead">Quotazioni bid/ask richieste sullo stesso cutoff, scadenza odierna.</div></article>
+  <article class="dx-card dx-wide"><div class="dx-card-title"><b>IPPO / WALL STREET · Q-P CONFLUENCE REGISTER</b><small>Livelli CVI originali · primo tocco P · Q terminale</small></div><div class="dx-tablewrap" id="dxLevels"></div><div class="dx-note">Il matching P ↔ Q richiede lo stesso snapshot, la stessa scadenza e il medesimo fixing. I Sample dealer storici di date differenti non diventano flussi intraday osservati.</div></article>
+  <article class="dx-card dx-wide" data-desk-internal="" hidden inert aria-hidden="true"><div class="dx-card-title"><b>CALIBRATION &amp; QUALITY MONITOR</b><small>Qualità del campione · fonte storica · out-of-sample 2026</small></div><div id="dxAudit"></div></article>
+ </div>
+</section>
+
+<div class="flow-inner" id="flow-panel-physical" aria-label="Quantistes Physical Probability Workstation">
+ <div class="qp-hero">
+   <div><div class="qp-overline">QUANTISTES / HISTORICAL PROBABILITY INTELLIGENCE / SPXW 0DTE</div>
+   <h2>PHYSICAL <em>P</em> · PROBABILITY DESK</h2><p>Terminali realizzati · percorsi SPX · primo tocco · reversal · breakout · pinning · opzioni a premio reale</p></div>
+   <div class="qp-hero-meta"><b>09:45 NEW YORK</b><span id="qpAsOf">CARICAMENTO...</span><small>PREVISIONE EX-ANTE · storico 2026</small></div>
+ </div>
+ <div class="qp-quality-strip" id="qpQualityStrip">Verifica degli snapshot e dello storico intraday…</div>
+ <div class="qp-toolbar">
+   <label>Data snapshot · 09:45 ET<select id="qpDate" class="qp-select"></select></label>
+   <label>Strike SPX<input type="number" id="qpStrike" step="5" value="7140" min="1"></label>
+   <label>Ponderazione storica<select id="qpModel"><option value="conditional">P · Condizionale (vol/skew)</option><option value="pool" selected>P · Empirica pooled</option></select></label>
+   <label>Pin band · punti SPX<input id="qpPinWidth" type="number" min="1" max="150" step="1" value="10"></label>
+   <label>Conferma reversal / breakout<select id="qpReactionBand"><option value="0.15">0,15 × σ implicita</option><option value="0.25" selected>0,25 × σ implicita</option><option value="0.40">0,40 × σ implicita</option></select></label>
+   <label>Orizzonte ritorno<select id="qpReactMinutes"><option value="15">15 minuti</option><option value="30" selected>30 minuti</option><option value="60">60 minuti</option></select></label>
+   <button class="qp-primary" id="qpApply">AGGIORNA PROBABILITÀ</button>
+ </div>
+ <div class="qp-kpis" id="qpKpis"></div>
+ <div class="qp-grid qp-chart-top">
+   <article class="qp-card qp-wide"><header><b>01 / PHYSICAL PATH FAN · DISTRIBUZIONE NEL TEMPO</b><span>P empirica · fan 50/90% · Q ATM proxy · crosshair SPX</span></header>
+     <div class="qp-chartbox"><canvas id="qpFan" height="420"></canvas><canvas id="qpFanHover" height="420" class="qp-overlay"></canvas></div>
+     <div class="qp-readout" id="qpFanRead">Muovi il mouse sul fan per interrogare prezzo, quantili, probabilità P e Q all'orizzonte selezionato.</div>
+     <div class="qp-chartfoot"><label>Orizzonte evidenziato <input id="qpHorizon" type="range" min="1" max="375" value="375" step="1"></label><strong id="qpHorizonLabel">375 / 375 min</strong></div>
+   </article>
+   <article class="qp-card"><header><b>02 / TERMINAL PROBABILITY · P vs Q ATM</b><span>Densità e quantili al cutoff di scadenza</span></header>
+     <div class="qp-chartbox"><canvas id="qpDensity" height="352"></canvas><canvas id="qpDensityHover" height="352" class="qp-overlay"></canvas></div>
+     <div class="qp-readout" id="qpDensityRead">Seleziona un prezzo per interrogare la probabilità di chiusura oltre la soglia.</div>
+   </article>
+   <article class="qp-card"><header><b>03 / FIRST-PASSAGE SURFACE</b><span>Strike × orizzonte · probabilità fisiche cumulative</span></header>
+     <div class="qp-chartbox"><canvas id="qpTouchMap" height="352"></canvas><canvas id="qpTouchMapHover" height="352" class="qp-overlay"></canvas></div>
+     <div class="qp-readout" id="qpTouchRead">Probability surface su 61 strike distribuiti attorno al riferimento; registro completo sotto.</div>
+   </article>
+ </div>
+ <div class="qp-grid">
+   <article class="qp-card"><header><b>04 / STRIKE EVENT INTELLIGENCE</b><span>Reversal / breakout sono eventi condizionati al primo tocco</span></header>
+     <div class="qp-eventcards" id="qpEvents"></div><div class="qp-readout" id="qpEventRead"></div>
+   </article>
+   <article class="qp-card"><header><b>05 / FIRST TOUCH TIMELINE</b><span>CDF del tocco P e riferimento Browniano ATM</span></header>
+     <div class="qp-chartbox"><canvas id="qpTouchCurve" height="315"></canvas><canvas id="qpTouchCurveHover" height="315" class="qp-overlay"></canvas></div>
+     <div class="qp-readout" id="qpCurveRead">Probabilità cumulata del primo tocco al livello selezionato.</div>
+   </article>
+ </div>
+ <article class="qp-card qp-full"><header><b>Origine 09:45 ET · P e Q ATM</b><span id="qpTableCount">—</span></header>
+  <div class="qp-tabletools"><input id="qpSearch" placeholder="Filtra strike…"><select id="qpRange"><option value="ALL" selected>Tutti gli strike · completo</option><option value="1">±1 σ</option><option value="2">±2 σ</option><option value="3">±3 σ</option><option value="4">±4 σ</option></select><button id="qpCsv">ESPORTA CSV</button><button id="qpJson" data-desk-internal="" hidden inert aria-hidden="true"></button></div>
+  <div class="qp-tablewrap"><table class="qp-table" id="qpTable"><thead><tr><th data-sort="K">STRIKE</th><th data-sort="distance">DIST.</th><th data-sort="pAbove">P CLOSE &gt; K</th><th data-sort="pBeyond">P CLOSE SIDE</th><th data-sort="qAbove">Q ATM &gt; K</th><th data-sort="pTouch">P TOUCH</th><th data-sort="pReversal">P REV | HIT</th><th data-sort="pBreakout">P BRK | HIT</th><th data-sort="pPin">P PIN ±B</th><th data-sort="deltaQ">Δ P−Q</th><th data-sort="hitESS">HIT ESS</th></tr></thead><tbody></tbody></table></div>
+  <div class="qp-footnote" id="qpTableNote">I prezzi sono neutri; shading solo su probabilità, differenze e indicatori di affidabilità. Le code a supporto insufficiente non producono segnali operativi.</div>
+ </article>
+ <div class="qp-grid">
+  <article class="qp-card"><header><b>07 / TARGET ↔ STOP · FIRST EVENT</b><span>Sequenza su percorsi storici scalati · pareggi intraminuto esclusi</span></header>
+   <div class="qp-toolrow"><label>Target SPX<input id="qpTarget" type="number" step="5" value="7250"></label><label>Stop SPX<input id="qpStop" type="number" step="5" value="7080"></label><button id="qpPairRun">CALCOLA</button></div>
+   <div class="qp-eventcards" id="qpPairMetrics"></div><div class="qp-readout" id="qpPairRead"></div>
+  </article>
+  <article class="qp-card"><header><b>08 / SPXW VERTICAL SPREAD · PHYSICAL PAYOFF</b><span>Premi 09:45 · ask per acquisto / bid per vendita · Q ATM proxy</span></header>
+   <div class="qp-toolrow"><label>Tipo<select id="qpSpreadType"><option value="CALL">CALL VERTICAL</option><option value="PUT">PUT VERTICAL</option></select></label><label>Strike LONG<input id="qpLongK" type="number" step="5"></label><label>Strike SHORT<input id="qpShortK" type="number" step="5"></label><button id="qpSpreadRun">VALUTA</button></div>
+   <div class="qp-eventcards" id="qpSpreadMetrics"></div><div class="qp-chartbox"><canvas id="qpSpreadChart" height="235"></canvas></div><div class="qp-readout" id="qpSpreadRead">Le quotazioni sono quelle storiche delle 09:45; il payoff P non equivale a un trade fill verificato.</div>
+  </article>
+ </div>
+ <article class="qp-card qp-full"><header><b>09 / LEVEL CONFLUENCE · PHYSICAL QUANTILES</b><span>P historical vs Q ATM proxy · IPPO / Wall Street nativi solo su cutoff sincronizzato</span></header>
+  <div class="qp-tablewrap" id="qpQuantTable"></div><div class="qp-footnote" id="qpNativeJoin">Per sovrapporre livelli IPPO / Wall Street nativi è richiesta la chain CVI della stessa data, stessa scadenza 0DTE e ore 09:45 ET.</div>
+ </article>
+ <article class="qp-card qp-full" data-desk-internal="" hidden inert aria-hidden="true"><header><b>10 / WALK-FORWARD VALIDATION &amp; QUALITY GATES</b><span>Test cronologico a espansione progressiva · solo osservazioni precedenti</span></header>
+   <div class="qp-audit-grid"><div id="qpAuditSummary"></div><div class="qp-tablewrap" id="qpWalkTable"></div></div>
+   <div class="qp-footnote">I valori Q di questa sezione sono un benchmark gaussiano stimato dallo straddle ATM, non sostituiscono il fitting CVI della piattaforma. Nessun risultato utilizza flussi dealer storici non sincronizzati. Le probabilità P non costituiscono prova di edge positivo su ES.</div>
+ </article>
+ <div class="qp-footer">QUANTISTES · SPXW 0DTE / SPX CASH · Research &amp; Validation · 09:45 ET anchor · Nessun ES basis implicito</div>
+</div>
+
+<div class="flow-inner active" id="flow-panel-ops">
+ <div class="op-tophead"><div><div class="op-overline">QUANTISTES / DESK INTELLIGENCE / OPTIONS-TO-FUTURES</div><h3>Dealer Response &amp; Probability Command Center</h3><p>SPXW optionality · gamma/charm state · strike ladder · conditional path risk · option structures</p></div><div class="op-asof"><strong>RESEARCH SCENARIO</strong><span id="opDataStatus">CARICA LE CHAIN</span><small>Demo 2025 → 2026 · sessioni non sincronizzate</small></div></div>
+ <div class="op-controls">
+  <label>Strike SPX selezionato<input id="opStrike" type="number" min="1" step="5" value="7325"></label>
+  <label>Vista strike<select id="opRange"><option value="2">ATM ±2%</option><option selected value="5">ATM ±5%</option><option value="10">ATM ±10%</option><option value="100">Tutti gli strike</option></select></label>
+  <label>Barriera breakout (punti)<input id="opBreak" type="number" min="1" max="250" step="1" value="15"></label>
+  <label>Banda pin (punti)<input id="opPin" type="number" min="1" max="250" step="1" value="10"></label>
+  <label>Shock spot <output id="opShockOut">−1,0%</output><input id="opShock" type="range" min="-4" max="4" step="0.25" value="-1"></label>
+  <label>Tempo hedge (ore)<input id="opHours" type="number" min="0" max="48" step="0.5" value="1"></label>
+  <label>IV shock (vol pt)<input id="opVolShock" type="number" min="-10" max="10" step="0.5" value="0"></label>
+  <label>Convenzione charm<select id="opCharmScale"><option value="0">Disattivo · non identificato</option><option selected value="1">Per anno · ipotesi</option><option value="252">Per seduta · ipotesi</option></select></label>
+  <label>Modello primo tocco<select id="opTouchKernel"><option selected value="bridge">Bridge condizionale · probabilità</option><option value="grid">Reticolo rapido · limite inferiore</option></select></label>
+ </div>
+ <div class="op-simbar"><label>Gamma tilt <output id="opBetaGammaOut">0,8</output><input id="opBetaGamma" type="range" min="-2" max="2" step="0.1" value="0.8"></label><label>Charm tilt <output id="opBetaCharmOut">0,6</output><input id="opBetaCharm" type="range" min="-2" max="2" step="0.1" value="0.6"></label><label>Paths<select id="opPathCount"><option value="2000">2.000</option><option selected value="4000">4.000</option><option value="8000">8.000</option><option value="12000">12.000</option></select></label><button id="opSimulate" type="button">RICALCOLA PATHS</button><button id="opZero" type="button" class="secondary">PESI = 0</button><span id="opSimStatus">Q · R_flow scenario · input non calibrati su P</span></div>
+ <div class="op-kpis" id="opKPIs"><span>Calibra la skew e carica i dati Sample per attivare le analisi.</span></div>
+ <div class="op-grid">
+  <article class="op-card op-card-primary"><header><div><b>STRIKE PRESSURE MAP</b><small>Probabilità su tutti gli strike · Q / R_flow · livelli CVI e gamma</small></div><select id="opLineMetric"><option value="touch">First touch</option><option value="close">Close beyond</option><option value="reverse">Reversal | touch</option><option value="breakout">Breakout | touch</option><option value="pin">Pinning window</option><option value="gamma">Gamma field</option><option value="hedge">Hedge gamma exposure</option></select></header><div class="st-op-legend"><span><i style="background:#87b5ff"></i>Q</span><span><i style="background:#f5efde"></i>R_flow</span></div><div class="op-canvas-wrap"><canvas id="opStrikeCanvas" height="388"></canvas><canvas id="opStrikeOverlay" class="op-overlay" height="388"></canvas></div><div class="op-chart-read" id="opStrikeRead">Seleziona una quotazione, passa il mouse sul grafico o clicca uno strike.</div></article>
+  <article class="op-card"><header><div><b>OPERATIVE PROBABILITY CARD</b><small>Il livello selezionato · scenari condizionati, non probabilità P validate</small></div><span class="op-mini-tag" id="opClass">SCENARIO</span></header><div class="op-prob-grid" id="opProbCard"></div><div class="op-note" id="opProbNote">Reversal e breakout sono eventi di scenario definiti dalla chiusura dopo il tocco. Pinning è una finestra terminale, non una previsione di comportamento del dealer.</div></article>
+  <article class="op-card"><header><div><b>HEDGE DEMAND RESPONSE</b><small>Esposizioni MM mappate · Δ, Γ, Charm, Vanna · ES equivalenti solo indicativi</small></div><span class="op-mini-tag" id="opHedgeCoverage">MATCHING</span></header><div class="st-op-legend"><span><i style="background:#87b5ff"></i>Copertura gamma</span><span><i style="background:#f5efde"></i>Gamma, charm e vanna</span></div><div class="op-canvas-wrap"><canvas id="opHedgeCanvas" height="324"></canvas><canvas id="opHedgeOverlay" class="op-overlay" height="324"></canvas></div><div class="op-chart-read" id="opHedgeRead">Spostamento spot e tempo nell'intervallo dichiarato; nessun ordine ES osservato.</div></article>
+  <article class="op-card"><header><div><b>PATH FAN · FIRST-PASSAGE</b><small>Q bridge vs R_flow · bande 50/80/90% · crosshair con prezzo/tempo</small></div><span class="op-mini-tag">INTERACTIVE</span></header><div class="st-op-legend"><span><i style="background:#87b5ff"></i>Q · mediana, bande 50% e 90%</span><span><i style="background:#f5efde"></i>R_flow</span></div><div class="op-canvas-wrap"><canvas id="opFanCanvas" height="324"></canvas><canvas id="opFanOverlay" class="op-overlay" height="324"></canvas></div><div class="op-chart-read" id="opFanRead">Muovi il mouse su tempo e prezzo per aggiornare la distribuzione marginale e il tocco cumulato.</div></article>
+  <article class="op-card op-card-primary"><header><div><b>FIRST-PASSAGE SURFACE</b><small>Strike × tempo · probabilità cumulata e lift gamma/charm</small></div><select id="opHeatMetric"><option value="touch">R_flow touch</option><option value="qlift">Lift R_flow − Q</option><option value="q">Q touch</option></select></header><div class="op-canvas-wrap"><canvas id="opHeatCanvas" height="342"></canvas><canvas id="opHeatOverlay" class="op-overlay" height="342"></canvas></div><div class="op-chart-read" id="opHeatRead">Heatmap a intervalli temporali; primo tocco definito sul reticolo simulato.</div></article>
+  <article class="op-card"><header><div><b>LEVEL CONFLUENCE &amp; ORDER MAP</b><small>Topologia dei flussi + livelli IPPO / Wall Street + MM inventory</small></div><span class="op-mini-tag">PROXIMITY</span></header><div class="op-levelmap" id="opConfluence"></div><div class="op-note">Confluenza = prossimità geometrica e sensitività campionaria; non è una probabilità empirica di reversal.</div></article>
+ </div>
+ <article class="op-card op-tablecard"><header><div><b>Scenario R_flow · rischio e confluenze per strike</b><small>Tutte le quotazioni all7, non soltanto livelli selezionati · click per selezione · shading su intensità e probabilità</small></div><div class="op-tabletools"><input id="opSearch" placeholder="Trova strike / livello"><select id="opTableFilter"><option value="all">Tutti gli strike</option><option value="near">Solo ATM ±5%</option><option value="mm">Solo MM mappati</option><option value="levels">Confluenze IPPO/WS</option></select><button id="opCsv">ESPORTA CSV</button></div></header><div class="op-table-scroll"><table id="opTable"><thead><tr><th data-k="K">STRIKE SPX</th><th data-k="family">LIVELLO</th><th data-k="gamma">GAMMA SCEN.</th><th data-k="charm">CHARM SCEN.</th><th data-k="mm">MM NET</th><th data-k="deltaE">MM×DELTA</th><th data-k="gammaE">MM×GAMMA</th><th data-k="charmE">MM×CHARM</th><th data-k="hedge">ΔH ±1% (ES EQ.)</th><th data-k="qClose">Q CLOSE</th><th data-k="rClose">R CLOSE</th><th data-k="qHit">Q TOUCH</th><th data-k="rHit">R TOUCH</th><th data-k="qReversal">Q REV|HIT</th><th data-k="rReversal">R REV|HIT</th><th data-k="qBreak">Q BRK|HIT</th><th data-k="rBreak">R BRK|HIT</th><th data-k="rPin">R PIN</th><th data-k="cover">COVERAGE</th></tr></thead><tbody></tbody></table></div><div class="op-chart-read" id="opTableFooter">Quantitative register in attesa.</div></article>
+ <div class="op-grid">
+  <article class="op-card"><header><div><b>VERTICAL SPREAD WORKSTATION</b><small>Call / put vertical · prezzo eseguibile da bid/ask · payoff Q/R_flow scenario</small></div><span class="op-mini-tag">SPXW OPTIONS</span></header><div class="op-structure-settings"><label>Tipologia<select id="opStructType"><option value="CALL">Call</option><option value="PUT">Put</option></select></label><label>Direzione<select id="opStructDir"><option value="LONG">Long vertical</option><option value="SHORT">Short vertical</option></select></label><label>Strike long<select id="opLegLong"></select></label><label>Strike short<select id="opLegShort"></select></label></div><div class="op-canvas-wrap"><canvas id="opPayoffCanvas" height="296"></canvas><canvas id="opPayoffOverlay" class="op-overlay" height="296"></canvas></div><div class="op-chart-read" id="opStructureRead">Seleziona i due contratti; i premi applicano ask sull'acquisto e bid sulla vendita.</div><div class="op-prob-grid" id="opStructureStats"></div></article>
+  <article class="op-card"><header><div><b>SENSIBILITÀ E SCENARIO SULLO STRIKE</b><small>Touch · reversal · breakout · pinning · qualità dato · astensione</small></div><span class="op-mini-tag">SCENARIO ONLY</span></header><div id="opScoreboard" class="op-scoreboard"></div><div class="op-note" id="opScoreNote">Probabilità condizionate del modello di scenario allo strike selezionato.</div></article>
+ </div>
+ </div>
+
+<div class="flow-inner" id="flow-panel-overview">
+    <div class="flow-time-control"><div><strong>REPLAY DELLA PROIEZIONE</strong><span>Gamma, charm, speed e color · spot SPX e orario della fonte</span></div><input id="flowTime" type="range" min="0" max="167" value="167" step="1" data-qcode="FLOWS-TIME" data-qname="Replay temporale 168 snapshot" data-qtype="Cursore" data-qview="flows"><output id="flowTimeLabel">15:55 demo</output><button id="flowPlay" data-qcode="FLOWS-PLAY" data-qname="Replay automatico" data-qtype="Azione" data-qview="flows">PLAY</button></div>
+    <div class="flow-kpis" id="flowKpis">
+      <div class="flow-kpi"><small>GAMMA · SCENARIO SPOT</small><strong id="flowKpiGamma">—</strong><span id="flowKpiGammaText">Dato provider · unità ignota</span></div>
+      <div class="flow-kpi"><small>CHARM · SCENARIO SPOT</small><strong id="flowKpiCharm">—</strong><span id="flowKpiCharmText">Dato provider · unità ignota</span></div>
+      <div class="flow-kpi"><small>DOMINIO SCENARI</small><strong id="flowKpiDomain">—</strong><span>Mapping dimostrativo in SPX</span></div>
+      <div class="flow-kpi"><small>DEALER NET POSITION</small><strong id="flowKpiPosition">—</strong><span>Contratti MM · tutte le scadenze</span></div>
+    </div>
+    <section><div class="studio-sectionhead"><h2>Campi di risposta</h2><small>Per attribuire le greche alle operazioni servono quantità e lato dealer per contratto.</small></div><div data-studio-controls="overview"></div><div class="st-field-grid"><article class="flow-card"><div class="flow-card-head"><b>DELTA RESPONSE FIELD</b></div><div id="stOverviewdelta" class="st-plot" aria-label="Campo di risposta"></div><output id="stOverviewdeltaMeta" class="st-meta"></output></article><article class="flow-card"><div class="flow-card-head"><b>GAMMA RESPONSE FIELD</b></div><div id="stOverviewgamma" class="st-plot" aria-label="Campo di risposta"></div><output id="stOverviewgammaMeta" class="st-meta"></output></article><article class="flow-card"><div class="flow-card-head"><b>VANNA RESPONSE FIELD</b></div><div id="stOverviewvanna" class="st-plot" aria-label="Campo di risposta"></div><output id="stOverviewvannaMeta" class="st-meta"></output></article><article class="flow-card"><div class="flow-card-head"><b>CHARM RESPONSE FIELD</b></div><div id="stOverviewcharm" class="st-plot" aria-label="Campo di risposta"></div><output id="stOverviewcharmMeta" class="st-meta"></output></article><article class="flow-card"><div class="flow-card-head"><b>SPEED RESPONSE FIELD</b></div><div id="stOverviewspeed" class="st-plot" aria-label="Campo di risposta"></div><output id="stOverviewspeedMeta" class="st-meta"></output></article><article class="flow-card"><div class="flow-card-head"><b>COLOR RESPONSE FIELD</b></div><div id="stOverviewcolor" class="st-plot" aria-label="Campo di risposta"></div><output id="stOverviewcolorMeta" class="st-meta"></output></article></div></section><div class="flow-two"><article class="flow-card flow-heat-card"><div class="flow-card-head"><b>GAMMA SURFACE · 168 SNAPSHOT × 133 PREZZI</b><span>heatmap · tempo vs scenario spot</span></div><canvas id="flowHeatmap" height="310"></canvas><div class="flow-read" id="flowHeatRead">I dati rappresentano gamma per scenario, non GEX per strike.</div></article>
+    <article class="flow-card"><div class="flow-card-head"><b>GEOMETRIA · ZERI, WALLS, CLIFFS</b><span>nessun flip forzato</span></div><div id="flowTopology" class="flow-table-wrap"></div><div class="flow-method-note">Un “gamma flip” viene mostrato soltanto dove esiste un cambio di segno nel campo di scenario osservato. Un picco non è automaticamente una soglia predittiva.</div></article></div>
+    <article class="flow-card"><div class="flow-card-head"><b>FLOW × IPPO / WALL STREET · LIVE JOIN</b><span id="flowLevelsMeta">in attesa di all7</span></div><div id="flowLevels" class="flow-table-wrap"></div><div class="flow-method-note">I livelli CVI sono realmente calcolati da all7; i valori gamma/charm sono quelli del sample 2025 ribasati. Confronta i livelli considerando la data e la scala di ciascuna fonte.</div></article>
+  </div>
+  <div class="flow-inner" id="flow-panel-position">
+    <div class="flow-kpis">
+      <div class="flow-kpi"><small>CONTRATTI MM NETTI</small><strong id="flowPosNet">—</strong><span>somma signed mm_posn</span></div>
+      <div class="flow-kpi"><small>CONTRATTI MM GROSS</small><strong id="flowPosGross">—</strong><span>somma |mm_posn|</span></div>
+      <div class="flow-kpi"><small>CONCENTRAZIONE HHI</small><strong id="flowPosHHI">—</strong><span>per strike · massa assoluta</span></div>
+      <div class="flow-kpi"><small>ANCORA MM · STRIKE</small><strong id="flowPosTop">—</strong><span>strike con esposizione assoluta massima</span></div>
+    </div>
+    <article class="flow-card"><div class="flow-card-head"><b>POSITIONAL INVENTORY BY STRIKE</b><span>MM signed (ambra) · customer signed (ciano)</span></div><canvas id="flowPosPlot" height="350"></canvas><div class="flow-read" id="flowPosRead">Posizioni reali del sample 2025, ribasate solo sull’asse dei prezzi.</div></article>
+    <div class="flow-two"><article class="flow-card"><div class="flow-card-head"><b>SCADENZE E CATEGORIE DI PARTECIPANTI</b><span>source expiry e remap</span></div><div class="flow-table-wrap" id="flowExpiries"></div></article>
+    <article class="flow-card"><div class="flow-card-head"><b>GREEK TENSOR · THETADATA all7</b><span>greche originali, unità API</span></div><div id="flowGreeks" class="flow-table-wrap"></div><div class="flow-method-note">Le greche derivano da all7. Non si attribuiscono automaticamente a tutte le posizioni del 2025, che hanno scadenze e strike differenti.</div></article></div>
+    <article class="flow-card"><div class="flow-card-head"><b>TOP POSITIONS · DEALER &amp; CUSTOMER</b><span>contratti firmati / source ledger</span></div><div id="flowPositionsTable" class="flow-table-wrap"></div></article>
+    <article class="flow-card"><div class="flow-card-head"><b>M17 · DEMO INVENTORY × THETADATA GREEKS</b><span>joins DTE 1, side e strike ribasato · solo ipotesi</span></div><div class="flow-kpis" id="flowGreekExposureKpis"></div><div id="flowGreekExposureTable" class="flow-table-wrap"></div><div class="flow-method-note">Gamma di scenario su posizioni del 2025 e greche SPXW della chain selezionata. La conversione in contratti ES equivalenti usa i moltiplicatori 100 USD/punto per le opzioni SPX e 50 USD/punto per ES.</div></article>
+  </div>
+  <div class="flow-inner" id="flow-panel-hedge">
+    <div class="flow-two">
+      <article class="flow-card"><div class="flow-card-head"><b>SCENARIO DI HEDGE · NORMALIZED RESPONSE</b><span>NON è un ordine ES reale</span></div>
+        <div class="flow-scenario-controls"><label>Shock SPX <input id="flowShock" type="range" min="-4" max="4" step="0.25" value="-1" data-qcode="FLOWS-SHOCK" data-qname="Shock direzionale spot" data-qtype="Cursore" data-qview="flows"><output id="flowShockLabel">−1,00%</output></label><label>Avanzamento tempo <input id="flowElapsed" type="range" min="0" max="6.5" step="0.25" value="1" data-qcode="FLOWS-ELAPSED" data-qname="Tempo di scenario charm" data-qtype="Cursore" data-qview="flows"><output id="flowElapsedLabel">1,00 h</output></label></div>
+        <canvas id="flowHedgePlot" height="310"></canvas><div class="flow-read" id="flowHedgeRead">Indice normalizzato di sensibilità, non dollari di hedge.</div>
+      </article>
+      <article class="flow-card"><div class="flow-card-head"><b>DEALER HEDGE LEDGER · UNITÀ E GAP</b><span>forma matematica M21–M22</span></div><div id="flowHedgeLedger" class="flow-table-wrap"></div><div class="flow-method-note">La conversione dei campi gamma/charm in USD hedge è disabilitata perché il CSV non dichiara il significato e le unità del campo value; per i livelli ES serve un basis osservato.</div></article>
+    </div>
+    <div class="flow-two"></div>
+  </div>
+
+  <div class="flow-inner" id="flow-panel-paths">
+   <header class="fp-header">
+    <div><div class="flow-kicker">Q · FLOW · FIRST PASSAGE</div>
+     <h2>Flow-Weighted Distributions <span>Q → R<sub>flow</sub></span></h2>
+     <p>Un'unica legge di sentieri condizionata alle curve gamma/charm Sample, utilizzata da distribuzioni, barriere e scoreboard. <strong>R<sub>flow</sub> non è una P fisica calibrata.</strong></p></div>
+    <div class="fp-state" id="fpMeasureStatus">IN ATTESA DI ALL7</div>
+   </header>
+   <div class="flow-warning fp-warning">DEMO AS-IF · 2025 → 2026 · la distribuzione Q deriva dal CVI su all7; i campi gamma/charm sono ribasati da Sample 2025 e le loro unità non sono dichiarate. Le ponderazioni e la legge dei paths sono parametri di scenario. Nessun segnale di trading è autorizzato.</div>
+   <article class="flow-card fp-controls">
+    <div class="flow-card-head"><b>01 · DYNAMIC FLOW TILT &amp; BRIDGE ENGINE</b><span>Q marginale CVI · pesatura parametrica · seed riproducibile</span></div>
+    <div class="fp-settings">
+     <label>Intensità gamma βΓ <output id="fpGammaValue">0,80</output><input id="fpGamma" type="range" min="-2" max="2" value="0.8" step="0.1" data-qcode="FLOWS-FPGAMMA" data-qname="Intensità gamma nel path reweighting" data-qtype="Cursore" data-qview="flows"></label>
+     <label>Intensità charm βχ <output id="fpCharmValue">0,60</output><input id="fpCharm" type="range" min="-2" max="2" value="0.6" step="0.1" data-qcode="FLOWS-FPCHARM" data-qname="Intensità charm nel path reweighting" data-qtype="Cursore" data-qview="flows"></label>
+     <label>Convenzione gamma<select id="fpGammaSide"><option value="1">Positive = stabilizzante (ipotesi)</option><option value="-1">Segno invertito (sensibilità)</option></select></label>
+     <label>Convenzione charm<select id="fpCharmSide"><option value="1">Positive = drift UP (ipotesi)</option><option value="-1">Segno invertito (sensibilità)</option></select></label>
+     <label>Ampiezza bridge <output id="fpBridgeValue">1,00</output><input id="fpBridge" type="range" min="0.5" max="2" step="0.1" value="1"></label>
+     <label>Paths Monte Carlo<select id="fpN"><option value="2000">2.000 · veloce</option><option value="4000" selected>4.000 · standard</option><option value="8000">8.000 · controllo</option><option value="12000">12.000 · precisione</option></select></label>
+     <label>Passi temporali<select id="fpSteps"><option value="36">36 · rapido</option><option value="72" selected>72 · standard</option><option value="120">120 · dettagliato</option></select></label>
+     <label>Seed riproducibile<input id="fpSeed" type="number" value="20261120" step="1"></label>
+     <label>Target SPX<input id="fpTarget" type="number" min="1" step="0.01" placeholder="da IPPO"></label>
+     <label>Stop SPX<input id="fpStop" type="number" min="1" step="0.01" placeholder="da IPPO"></label>
+    </div>
+    <div class="fp-actions"><button id="fpRun" class="flow-primary" data-qcode="FLOWS-FPRUN" data-qname="Simula distribuzioni flow weighted e paths" data-qtype="Azione" data-qview="flows">SIMULA PATHS &amp; PROBABILITÀ</button><button id="fpZero">CONFRONTO β=0</button><button id="fpDownload">ESPORTA SCENARIO JSON</button></div>
+    <div class="flow-read" id="fpStatus">Per cominciare importa all7 e il Sample dalla Demo completa.</div>
+   </article>
+   <div class="flow-kpis fp-kpis">
+    <div class="flow-kpi"><small>Q CLOSE &gt; RIFERIMENTO</small><strong id="fpQup">—</strong><span>CDF esatta CVI al fixing</span></div>
+    <div class="flow-kpi"><small>R_FLOW CLOSE &gt; RIF.</small><strong id="fpRup">—</strong><span>Scenario ponderato; non P</span></div>
+    <div class="flow-kpi"><small>TARGET PRIMA DI STOP</small><strong id="fpTouch">—</strong><span>R_flow · primo passaggio</span></div>
+    <div class="flow-kpi"><small>EFFECTIVE SAMPLE SIZE</small><strong id="fpESS">—</strong><span>Robustezza dei pesi MC</span></div>
+   </div>
+   <div class="flow-two fp-pair">
+    <article class="flow-card"><div class="flow-card-head"><b>02 · DENSITÀ TERMINALE Q vs R_FLOW</b><span>Q inferita / scenario flow-weighted</span></div><div id="fpDensity" class="st-plot"></div><div class="flow-read" id="fpDensityRead">Muovi il cursore: densità marginali in funzione del prezzo.</div></article>
+    <article class="flow-card"><div class="flow-card-head"><b>03 · CDF E PREZZI DI SUPERAMENTO</b><span>stessa legge delle simulazioni</span></div><div id="fpCDF" class="st-plot"></div><div class="flow-read" id="fpCDFRead">Q e scenario R_flow non sono intercambiabili con P storica.</div></article>
+   </div>
+   <article class="flow-card"><div class="flow-card-head"><b>04 · PATH ENSEMBLE · FIRST-PASSAGE ENGINE</b><span>Brownian bridge condizionato alla Q terminale</span></div><div id="fpPaths" class="st-plot"></div><output id="fpPathsRead">Posiziona il cursore su una traiettoria.</output><div class="fp-result-grid">
+    <div><small>TARGET PRIMA DELLO STOP · Q BRIDGE</small><strong id="fpQTarget">—</strong></div><div><small>FLOW WEIGHTED · TARGET FIRST</small><strong id="fpRTarget">—</strong></div>
+    <div><small>STOP PRIMA DEL TARGET · Q BRIDGE</small><strong id="fpQStop">—</strong></div><div><small>FLOW WEIGHTED · STOP FIRST</small><strong id="fpRStop">—</strong></div>
+    <div><small>PERMANENZA NEL RANGE · Q BRIDGE</small><strong id="fpQNoTouch">—</strong></div><div><small>PERMANENZA NEL RANGE · R_FLOW</small><strong id="fpRNoTouch">—</strong></div>
+   </div><div class="flow-read" id="fpAudit" data-desk-internal="" hidden inert aria-hidden="true"></div></article>
+   <article class="flow-card"><div class="flow-card-head"><b>05 · LIVELLI IPPO / WALL STREET · PROBABILITÀ CONDIZIONATE</b><span>terminal close, touch, differenziale e Monte Carlo CI · clicca livello per target/stop</span></div>
+    <div class="flow-table-wrap" id="fpLevels"><p class="flow-method-note">Importa all7 e avvia la simulazione per ottenere Q e R_flow per ciascun livello.</p></div>
+   </article>
+   <section class="fa-stage fa-studio" id="faStudio" aria-label="Scenario Flow Analytics v3">
+ <header class="fa-stage-head">
+  <div><div class="flow-kicker">QUANTISTES / M18 · M31 · M34 · M36 · M37 · M39 · M45</div><h3>FLOW CONDITIONED · SCENARIO INTELLIGENCE</h3><p>Unico ensemble Q-bridge e pesi R<sub>flow</sub>. Mappe percentile-per-percentile per i livelli IPPO e Wall Street, risk fan e curve dei tempi di primo passaggio. Le linee CVI originali non vengono modificate.</p></div>
+  <div class="fa-scenario-badge">SCENARIO 2025 → 2026 · NON È P STIMATA</div>
+ </header>
+ <div class="fa-controls">
+  <label>Famiglia di livelli<select id="faFamily"><option value="ALL">IPPO + WALL STREET</option><option value="Ippo">Solo IPPO</option><option value="Wall Street">Solo WALL STREET</option></select></label>
+  <label>Grafico livelli<select id="faCoord"><option value="SPX">Prezzi SPX</option><option value="DIST">Scostamento dal livello CVI · punti</option><option value="ES">ES* · basis inserito manualmente</option></select></label>
+  <label>Probabilità di primo tocco<select id="faHeatMode"><option value="LIFT">Δ R_flow − Q · punti percentuali</option><option value="Q">Q bridge · probabilità cumulata</option><option value="FLOW">R_flow · probabilità cumulata</option></select></label>
+  <button id="faExport" data-qcode="FLOWS-FAEXPORT" data-qname="Esporta analisi livelli ponderati" data-qtype="Azione" data-qview="flows">ESPORTA REGISTRO SCENARIO</button>
+ </div>
+ <div class="fa-stats" id="faKpis"><div class="fa-stat"><small>In attesa</small><strong>—</strong><em>Avvia i paths dall'alto</em></div></div>
+ <div class="fa-stage-grid">
+  <article class="fa-panel wide"><div class="fa-title"><b>07 · LEVEL SHIFT MAP · IPPO/WALL STREET vs R_FLOW</b><small>prezzo di scenario allo stesso percentile della Q nativa</small></div><div class="fa-chartwrap"><canvas id="faLevelCanvas" height="520"></canvas></div><div class="fa-read" id="faLevelRead">Grafico interattivo: linea CVI (ambra) → livello di scenario R_flow (ciano). Nessun livello CVI viene riscritto.</div><div class="fa-tablewrap" id="faLevelTable"></div><div class="fa-audit-note">Definizione: q=Q(Sₜ≤L). Il livello di scenario è L<sub>flow</sub> = L + [Q<sub>MC,flow</sub>(q) − Q<sub>MC,base</sub>(q)], usando <b>gli stessi paths</b>. La correzione a campioni comuni elimina il rumore Monte Carlo di base: con βΓ=βχ=0, lo spostamento è esattamente zero. È un <b>prezzo di isoprobabilità nello scenario</b>, non un livello IPPO nuovamente calibrato né una previsione P. Per percentili fuori dal supporto MC utile viene mostrato «—».</div></article>
+  <article class="fa-panel"><div class="fa-title"><b>08 · TERMINAL QUANTILE SHIFT / TAIL STRUCTURE</b><small>Q CVI e spostamento di quantile a campioni comuni</small></div><div class="fa-chartwrap"><div id="faQuantCanvas" class="st-plot"></div></div><div class="fa-read" id="faQuantRead">Q CVI di riferimento e shock di quantile R_flow con correzione MC a campioni comuni.</div></article>
+  <article class="fa-panel"><div class="fa-title"><b>09 · TERMINAL DENSITY LIFT</b><small>densità R_flow / Q nel campione MC · smoothing a bin</small></div><div class="fa-chartwrap"><div id="faLiftCanvas" class="st-plot"></div></div><div class="fa-read" id="faLiftRead">Il rapporto misura soltanto la riponderazione dei terminali campionati; non è il pricing kernel P/Q.</div></article>
+  <article class="fa-panel wide"><div class="fa-title"><b>10 · PATH FAN · R_FLOW vs Q BRIDGE</b><small>fasce centrali 50% e 90%, mediana e traiettorie d'esempio</small></div><div class="fa-chartwrap"><div id="faFanCanvas" class="st-plot"></div></div><div class="fa-read" id="faFanRead">Scorri il tempo sul fan chart per confrontare mediane, fasce e livelli di scenario.</div><div class="fa-audit-note">La curva terminale Q è quella della skew CVI. Il percorso intraday deriva da un <b>Brownian bridge ipotizzato</b>; i pesi gamma/charm non stimano un'azione eseguita né una probabilità fisica. Le fasce rappresentano quantili puntuali dei percorsi, non bande simultanee di copertura.</div></article>
+  <article class="fa-panel wide"><div class="fa-title"><b>11 · FIRST-PASSAGE TIME HEATMAP</b><small>livelli originali · tempo cumulato · stesso ensemble</small></div><div class="fa-chartwrap"><canvas id="faHeatCanvas" height="445"></canvas></div><div class="fa-read" id="faHeatRead">Seleziona una cella: probabilità cumulata di aver toccato un livello entro la frazione di orizzonte scelta.</div><div class="fa-tile-key"><span>Δ touch (R_flow − Q)</span><div class="fa-gradient"></div><span>negativo → neutro → positivo</span></div></article>
+  <article class="fa-panel"><div class="fa-title"><b>12 · VAR / EXPECTED SHORTFALL · TERMINAL Q vs R_FLOW</b><small>quantili e rischio sui rendimenti finali</small></div><div id="faRiskTable" class="fa-tablewrap"></div><div class="fa-read" id="faRiskRead">Risk statistics del campione, non VaR validato ex-post. Queste non sono probabilità P.</div></article>
+  <article class="fa-panel"><div class="fa-title"><b>13 · MODEL WEIGHT DIAGNOSTICS / DATA PROVENANCE</b><small>ESS, KL discreta, supporto gamma/charm e caveat</small></div><div class="fa-tablewrap" id="faWeightTable"></div><div class="fa-read" id="faWeightRead">ESS basso o copertura bassa limitano la credibilità dello scenario.</div></article>
+  </div>
+</section>
+
+</div>
+  <div class="flow-inner" id="flow-panel-method">
+    <article class="flow-card flow-help"><div class="flow-card-head"><b>GUIDA OPERATIVA · DAL SAMPLE ALLA SCOREBOARD</b><span>aderente al manuale M17–M45</span></div>
+      <div class="flow-help-body" id="flowHelpContent"></div>
+    </article>
+  </div>
+</div>
+</section>
+</main></div><div aria-live="polite" class="toast" id="toast" role="status"></div>

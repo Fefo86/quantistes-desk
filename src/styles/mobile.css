@@ -1,0 +1,46 @@
+@media(min-width:2000px){
+  html.quantistes{--qx-rail:clamp(235px,7.9vw,340px);--qx-top:72px;font-size:clamp(16px,.64vw,23px)}
+  .qx-hero{min-height:clamp(170px,6.6vw,270px)}.qx-brand{height:var(--qx-top)}
+  html.quantistes #q13App #deskBoard .desk-main-grid{grid-template-columns:minmax(0,2.1fr) minmax(380px,1fr)}
+}
+@media(min-width:901px) and (max-width:1320px){html.quantistes{--qx-rail:186px;--qx-pad:18px}.qx-brand{padding-inline:13px}.qx-navgroup{padding-inline:8px}.qx-rail nav button{font-size:.93rem}}
+@media(max-width:1420px){
+  html.quantistes body.q13-on #q13App #deskBoard .desk-parameters{grid-template-columns:1.12fr 1.3fr 1.1fr .92fr .84fr .85fr .85fr .92fr auto;gap:6px!important;padding:10px!important}
+  html.quantistes #q13App #deskBoard .desk-readout strong{font-size:clamp(1.2rem,1.75vw,1.8rem)!important}
+}
+@media(min-width:901px) and (max-width:1150px){
+  html.quantistes body.q13-on #q13App #deskBoard .desk-parameters{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+@media(max-width:900px){
+  html.quantistes,html.quantistes[data-qt10-rail=compact]{--qx-rail:0px;--qx-pad:16px;--qx-top:54px}
+  .qx .mobile-only{display:inline-flex;align-items:center;justify-content:center}
+  .qx-rail{width:238px;transform:translateX(-110%);visibility:hidden;z-index:40000;box-shadow:10px 0 50px #0004}
+  .qx-rail.is-open{transform:none;visibility:visible}.qx-brand{height:64px}.qx-brand .qx-icon{margin-left:auto}
+  .qx .qx-scrim{display:block;position:fixed;inset:0;z-index:39999;background:#080c07a8}
+  .qx .qx-collapse{display:none}.qx-top{justify-content:flex-start;gap:10px}.qx-top-actions{margin-left:auto}.qx-hero{min-height:134px}
+  html.quantistes body.q13-on #q13App #deskBoard .desk-parameters{grid-template-columns:repeat(5,minmax(0,1fr))}
+  html.quantistes body.q13-on:not(.q13-native) #q13App #deskBoard .desk-lead{grid-template-columns:1fr 1.15fr}
+}
+@media(max-width:639px){
+  html.quantistes{--qx-pad:12px}.qx-top{gap:9px}.qx-crumb{gap:5px;font-size:.91rem}.qx-crumb>svg,.qx-crumb>i,.qx-crumb>span,.qx .qx-search kbd,.qx .qx-search span{display:none}
+  .qx-top-actions{gap:6px}.qx button.qx-search,.qx button.qx-replay,.qx .qx-icon{padding:6px 8px;min-height:34px}.qx-replay span{font-size:.78rem}
+  .qx-hero{min-height:123px;padding-top:16px;padding-bottom:18px}.qx-hero h1{font-size:clamp(2.1rem,8vw,3rem)}
+  .qx-hero .qx-sub{font-size:.94rem;max-width:27ch}.qx-visual{width:49%;right:-2.5%;opacity:.84}.qx-hero-copy{max-width:72%}
+  .qx-tape{gap:4px 9px}.qx-tape>span{flex-wrap:wrap;font-size:.74rem}.qx-tape time{font-size:.69rem}
+  html.quantistes body.q13-on:not(.q13-native) #q13App #q24Context{font-size:.7rem!important;flex-wrap:wrap}
+  html.quantistes body.q13-on #q13App #deskBoard .desk-parameters{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px!important}
+  html.quantistes body.q13-on:not(.q13-native) #q13App #deskBoard .desk-lead{grid-template-columns:1fr!important}
+  html.quantistes #q13App #deskBoard .desk-readout{border-left:0!important;border-top:1px solid var(--qx-line)!important;padding:8px 0!important}
+  html.quantistes #q13App #deskBoard .desk-readout strong{font-size:1.26rem!important}
+  html.quantistes #q13App #deskBoard .desk-readout>div{padding:4px 9px!important}
+  html.quantistes #q13App #deskBoard .desk-readout small{font-size:.62rem!important}
+  html.quantistes body.q13-on #q13App #deskBoard .desk-main-grid{grid-template-columns:minmax(0,1fr)!important}
+  html.quantistes #q13App #deskBoard .da-pair{display:grid!important;grid-template-columns:1fr!important}
+  html.quantistes #q13App #deskBoard .da-pair>section+section{border-left:0!important;border-top:1px solid var(--qx-line)!important}
+  html.quantistes #q13App #deskBoard .da-chain{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media print{
+  .qx-rail,.qx-top,.qx-visual,.qx-load,.qx-scrim{display:none!important}.qx-mainhead{margin:0}.qx-hero{min-height:0;padding:8px 0}
+  html.quantistes body.q13-on:not(.q13-native) #q13App :is(.q13-layout,#q24Context){margin-left:0!important;width:100%!important}
+}
+@media(max-width:470px){.qx-hero-meta{display:grid;gap:4px}.qx button.qx-session{padding:0;border:0}}

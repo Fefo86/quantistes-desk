@@ -1,0 +1,299 @@
+
+/* QUANTISTES / DESK SYSTEM 24 — presentation layer only.
+   Native numerical engines, data sources, formulas and controls remain untouched. */
+:root{
+ --q24-bg:#071727;--q24-bg2:#08192a;--q24-panel:#0b1d31;--q24-panel2:#0b1e31;
+ --q24-stroke:#1b364d;--q24-stroke2:#254869;--q24-text:#c8defc;--q24-muted:#aec3d7;
+ --q24-gold:#86b1ea;--q24-cream:#e7e1cc;--q24-cyan:#8dd0e9;--q24-mint:#99deff;
+ --q24-rose:#e1ddcb;--q24-violet:#a0c3f4;
+ --q24-display:Consolas;
+ --q24-mono:Consolas;
+ --q24-round:14px;
+}
+html{scroll-behavior:smooth}body.q13-on:not(.q13-native){background:var(--q24-bg)!important;color:var(--q24-text)!important}
+body.q13-on:not(.q13-native) .q13{background:radial-gradient(ellipse 60% 45% at 72% 2%,rgba(29,60,89,.13),transparent 80%),var(--q24-bg)!important;color:var(--q24-text)!important}
+body.q13-on:not(.q13-native) .q13-header{background:rgba(8,24,40,.97)!important;border-color:var(--q24-stroke)!important;padding:12px clamp(18px,1.9vw,34px)!important;min-height:69px;align-items:center;gap:20px;box-shadow:0 8px 34px rgba(7,21,37,.23)}
+body.q13-on:not(.q13-native) .q13-header .q13-mark{border:1px solid #87b5ff;background:linear-gradient(145deg,#0b1f32,#0a1c2f)!important;border-radius:10px!important;color:#90b9f0;box-shadow:inset 0 0 18px #b7c1c112;font-family:Consolas;font-size:29px}
+body.q13-on:not(.q13-native) .q13-header .q13-brand>span{font:600 10px/1.2 var(--q24-mono);color:#7baae4;letter-spacing:.16em}
+body.q13-on:not(.q13-native) .q13-header .q13-brand strong{font:690 clamp(19px,1.38vw,28px)/1.04 var(--q24-display);letter-spacing:-.045em;color:var(--q24-text)}
+body.q13-on:not(.q13-native) .q13-header .q13-brand em{color:var(--q24-gold)}
+body.q13-on:not(.q13-native) .q13-header .q13-clock{font:11px var(--q24-mono);color:#77a7e2;gap:12px}
+body.q13-on:not(.q13-native) #q13RunMode{border:1px solid #87b5ff;border-radius:5px;padding:5px 8px;color:#8db6ee;background:#0c2034}
+body.q13-on:not(.q13-native) .q13-actions #q13Demo{border:1px solid #2b5279!important;border-radius:8px!important;background:#0b2033!important;color:#92baf0!important;padding:9px 14px!important;font-family:Consolas!important}
+body.q13-on:not(.q13-native) .q13-layout>.q13-main{background:transparent!important;padding:28px clamp(19px,2.75vw,56px) 100px!important;max-width:2920px!important;margin:auto!important}
+body.q13-on:not(.q13-native) .q13-layout{background:transparent!important}
+/* One clear navigation system, with six distinct domains and utility actions. */
+#qlNav{position:sticky;top:0;z-index:44;display:flex;align-items:stretch;gap:4px;min-height:64px;padding:0 clamp(16px,2.2vw,46px);background:rgba(8,25,42,.975)!important;border-bottom:1px solid #1d3851!important;box-shadow:0 8px 28px #06152455;scrollbar-width:thin;scrollbar-color:#284d71 transparent;backdrop-filter:blur(16px)}
+#qlNav button{padding:11px clamp(11px,.95vw,20px);font:690 clamp(10px,.73vw,13px)/1.2 var(--q24-display);letter-spacing:.025em;border-radius:0;gap:10px;color:#95bcf2;min-width:0;border-bottom:2px solid transparent;white-space:nowrap;transition:background-color .16s,color .16s}
+#qlNav button small{font:500 clamp(9px,.57vw,11px)/1.3 var(--q24-mono);color:#5a8fcc;letter-spacing:0;margin-top:4px}
+#qlNav button i{border:1px solid #1c3b58;background:#0c2034;border-radius:5px;color:#75a5e1;width:25px;height:25px;font:700 10px var(--q24-mono)}
+#qlNav button:hover{background:rgba(67,118,170,.14);color:#f5f3e9}
+#qlNav button.on{background:linear-gradient(180deg,#132b41c2,#0b2033bb)!important;color:var(--q24-cream);border-bottom:2px solid var(--q24-gold)}
+#qlNav button.on i{background:#29445e;border-color:#87b5ff;color:#94bbf2}
+#qlNav button.on small{color:#c7cbc5}
+#qlNav .ql-nav-aux{min-width:max-content;padding-inline:clamp(11px,.85vw,19px);margin-left:0;border-left:1px solid #1c374f}
+#qlNav #qlOpenData{margin-left:auto;background:#0b1e31;color:#95bcf2}
+#qlNav #qlOpenEvidence{color:#92d4ec}
+#qlNav .ql-nav-aux b{color:inherit;font:700 10px/1.3 var(--q24-mono)}
+#qlStatusLine{display:none!important}
+body.q13-on:not(.q13-native) .q13-ribbon{display:none!important}
+#q24Context{padding:9px clamp(19px,2.75vw,56px);display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:7px 20px;background:#091a2b;border-bottom:1px solid #29445e;min-height:39px;font:10px/1.5 var(--q24-mono);letter-spacing:.016em;color:#7fade6}
+#q24Context .q24-context-left,#q24Context .q24-context-right{display:flex;align-items:center;flex-wrap:wrap;gap:9px 18px}
+#q24Context strong{color:#86b1ea;font-weight:700}#q24Context .q24-dot{width:6px;height:6px;border-radius:50%;background:#87b5ff;display:inline-block;margin-right:4px;box-shadow:0 0 10px #b6c0c155}
+#q24Context #qlDataStatus{font-size:10px;color:#7eace6}#q24Context #qlDataStatus .ql-check{color:var(--q24-mint)}
+#q24Context #q13StampBar{color:#77a7e2;letter-spacing:.013em}
+#q24Context #qlModeStatus{display:none}
+#q24Context #q24WorkClock{color:#6095d4}
+/* Stage headers — every view follows the same hierarchy. */
+body.q13-on:not(.q13-native) .q13-screen-title{display:flex;align-items:center;gap:17px;margin:0 0 17px;padding:12px 0 12px;border-bottom:0}
+body.q13-on:not(.q13-native) .q13-screen-title .q13-eyebrow{font:700 10px/1.35 var(--q24-mono);letter-spacing:.15em;color:var(--q24-mint)}
+body.q13-on:not(.q13-native) .q13-screen-title h1{font:710 clamp(31px,2.55vw,52px)/1.04 var(--q24-display);letter-spacing:-.055em;color:#cee2fd;max-width:34ch}
+body.q13-on:not(.q13-native) .q13-screen-title h1 span{color:var(--q24-gold)}
+body.q13-on:not(.q13-native) .q13-screen-title p{font:500 clamp(12px,.85vw,14px)/1.65 var(--q24-display);color:#7face6;max-width:100ch;margin-top:9px}
+body.q13-on:not(.q13-native) .q13-screen-title>.q13-btn,
+body.q13-on:not(.q13-native) .q13-screen-title>button{background:#0b2033!important;border:1px solid #214160!important;color:#bce9f9!important;border-radius:9px!important;font:720 11px/1.35 var(--q24-mono)!important;padding:11px 16px!important;white-space:nowrap}
+body.q13-on:not(.q13-native) .q13-panel,body.q13-on:not(.q13-native) .q16-primary{border:1px solid #1a3753!important;background:linear-gradient(145deg,#0a1c2e,#091c2e 72%)!important;border-radius:var(--q24-round)!important;box-shadow:0 16px 44px #07152527!important;margin-bottom:17px!important;overflow:hidden}
+body.q13-on:not(.q13-native) .q13-panel-head{border-color:#1a344c!important;padding:15px 20px 14px!important;gap:10px;display:flex;align-items:center;justify-content:space-between}
+body.q13-on:not(.q13-native) .q13-panel-head h2{font:690 12px/1.2 var(--q24-mono);letter-spacing:.08em;color:#86b1ea!important;text-transform:uppercase}
+body.q13-on:not(.q13-native) .q13-panel-head .q13-small{color:#5a8fcc;font:10px var(--q24-mono);letter-spacing:.04em}
+body.q13-on:not(.q13-native) .q13-panel p{color:#81aee7;line-height:1.6}
+body.q13-on:not(.q13-native) :is(.q13-strip,.q13-watch-grid,.q13-grid){gap:14px!important}
+body.q13-on:not(.q13-native) .q13-strip{margin:14px 0 21px!important}
+body.q13-on:not(.q13-native) .q13-strip-card{background:#0b1e31!important;border:1px solid #193651!important;border-radius:11px!important;padding:16px 17px!important;min-width:0;box-shadow:inset 0 1px #f5f3e905}
+body.q13-on:not(.q13-native) .q13-strip-card small{color:#6b9fdc;font:700 10px/1.3 var(--q24-mono);letter-spacing:.08em}
+body.q13-on:not(.q13-native) .q13-strip-card strong{color:#99bff3;font:650 clamp(17px,1.35vw,26px)/1.3 var(--q24-mono);letter-spacing:-.025em;overflow-wrap:anywhere}
+body.q13-on:not(.q13-native) .q13-strip-card em{color:#5e94d2;font:500 10px/1.45 var(--q24-mono)}
+body.q13-on:not(.q13-native) .q13-scorehero{gap:23px;padding:20px 9px 26px}
+body.q13-on:not(.q13-native) .q13-hero-metric{min-height:220px;background:radial-gradient(ellipse 68% 95% at 6% 94%,#0f253a33,transparent 65%),linear-gradient(120deg,#0a1e30,#091b2d)!important}
+body.q13-on:not(.q13-native) .q13-hero-metric .q13-section-tag{font:700 10px/1.4 var(--q24-mono);color:#81aee7;letter-spacing:.1em}
+body.q13-on:not(.q13-native) .q13-arc{transform:scale(1.04)}
+body.q13-on:not(.q13-native) .q13-scorehero strong#q13PrimaryScore{font-family:Consolas;color:#9abff3}
+body.q13-on:not(.q13-native) #q13Verdict{color:#9bc0f3;font-family:Consolas;font-weight:710;letter-spacing:-.035em;font-size:clamp(19px,1.55vw,28px)}
+body.q13-on:not(.q13-native) #q13VerdictReason{font:500 12px/1.55 var(--q24-display);color:#7fade6;max-width:70ch}
+body.q13-on:not(.q13-native) .q13-watch-grid>div{background:#0a1d30!important;border:1px solid #29445e!important;border-radius:10px;padding:12px 14px!important;font:640 10px/1.5 var(--q24-mono);letter-spacing:.05em;color:#a3bad1}
+body.q13-on:not(.q13-native) .q13-watch-grid strong{font:700 clamp(19px,1.4vw,26px)/1.25 var(--q24-mono);color:#e5dfcc;letter-spacing:-.02em;margin-top:6px}
+body.q13-on:not(.q13-native) .q13-inputgrid{gap:11px!important}body.q13-on:not(.q13-native) .q13-inputgrid label{font:690 10px var(--q24-mono);color:#70a2de}
+body.q13-on:not(.q13-native) .q13-inputgrid input{background:#08192a!important;border:1px solid #1d3b59!important;border-radius:8px!important;min-height:36px;color:#bed7fa!important}
+body.q13-on:not(.q13-native) .q13-scenario-row{gap:12px}body.q13-on:not(.q13-native) .q13-scenario-row strong{color:#bbd5fa;font:680 11px var(--q24-mono)}
+body.q13-on:not(.q13-native) .q13-barmeter{height:9px;border-radius:7px!important;background:#10273c!important;overflow:hidden}
+body.q13-on:not(.q13-native) .q13-barmeter i{border-radius:7px!important}
+body.q13-on:not(.q13-native) .q13-tablewrap{overflow:auto;scrollbar-width:thin;scrollbar-color:#315c86 transparent}
+body.q13-on:not(.q13-native) .q13-table th{background:#0b1f32;color:#82afe8;font:720 10px var(--q24-mono);letter-spacing:.05em}
+body.q13-on:not(.q13-native) .q13-table td{background:transparent;color:#b0cef7;border-color:#1c374f;font:500 11px/1.55 var(--q24-mono)}
+body.q13-on:not(.q13-native) .q13-table tbody tr:hover{background:#12293e!important}
+body.q13-on:not(.q13-native) .q13-table button{background:#11273d;border:1px solid #234464;border-radius:7px!important;color:#a8e1f5;padding:6px 10px}
+body.q13-on:not(.q13-native) .q13-state{border-radius:6px!important;padding:5px 8px!important}
+/* Stage study selector: one tool at a time, no second nested navigation. */
+.ql-studio{background:#0b1e31!important;border:1px solid #1d3b59!important;border-radius:12px!important;padding:11px 14px!important;gap:10px;margin-bottom:19px;box-shadow:0 10px 30px #07152522;align-items:center}
+.ql-studio-start{padding-right:16px;border-right:1px solid #1d3b59;gap:13px;align-items:center}
+.ql-studio .ql-studio-kicker{font:620 10px/1.35 var(--q24-mono);color:#82afe8;letter-spacing:.02em;max-width:210px}
+.ql-studio button{background:#10273c!important;border:1px solid #1e3d5b!important;border-radius:8px!important;color:#a7c8f6!important;min-height:34px;font:640 10px var(--q24-mono);transition:background .15s,border-color .15s}
+.ql-studio button:hover{background:#1d3951!important;border-color:#62aacc!important;color:#f5f3e9!important}
+.ql-studio button.on{background:#11283d!important;border-color:#87b5ff!important;color:#96bdf2!important}
+.ql-studio-tools{gap:7px;flex-wrap:wrap}
+/* Content is preserved; secondary introductions are lower-contrast than metrics. */
+.q15-instrument .q15-native-host,body.q13-on:not(.q13-native) .q15-instrument .q15-native-host{background:#091a2b!important;border-color:#29445e!important;border-radius:0 0 13px 13px!important;padding:15px!important}
+body.q13-on:not(.q13-native) .q13-view.q15-native-only > .q15-instrument{border-radius:14px!important;background:#091b2c!important;border-color:#1d3b59!important}
+body.q13-on:not(.q13-native) .q15-instrument .q15-labhead,body.q13-on:not(.q13-native) .q15-instrument .q15-portal-head{background:#0c2135!important;border-color:#1c3b58!important;padding:13px 17px!important}
+body.q13-on:not(.q13-native) .q15-instrument .q15-labhead h3{font:710 16px var(--q24-display);color:#93baf1}
+body.q13-on:not(.q13-native) .q15-instrument .q15-labhead>div>p{font:500 11px/1.6 var(--q24-display);color:#78a8e3}
+body.q13-on:not(.q13-native) #q16AtlasDock{border:1px solid #1d3b59!important;border-radius:14px!important;overflow:hidden;margin:0 0 16px!important;box-shadow:0 15px 50px #07152566}
+body.q13-on:not(.q13-native) #q16AtlasDock .q16-atlas-viewport{min-height:clamp(480px,53vh,850px)!important}
+body.q13-on:not(.q13-native) #q16AtlasDock .q16-primary{border:0!important;margin:0!important}
+body.q13-on:not(.q13-native) #q16AtlasDock canvas{image-rendering:auto}
+/* Consolidated Scoreboard / Decision Atlas */
+#q24SignalDeck{margin:17px 0 19px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}
+.q24-signal{border:1px solid #193651;border-radius:13px;background:#0a1e30;overflow:hidden;position:relative;min-width:0;min-height:150px;padding:17px 17px 16px;display:flex;flex-direction:column;gap:11px;text-align:left;color:inherit;transition:border-color .2s,transform .2s,background .2s;cursor:pointer}
+.q24-signal:before{content:"";height:3px;background:var(--q24-accent,var(--q24-gold));position:absolute;left:0;right:0;top:0;opacity:.85}
+.q24-signal:hover{border-color:#3a6c9e;transform:translateY(-2px);background:#0d2236}
+.q24-signal:focus-visible{outline:2px solid #8dd0e9;outline-offset:2px}
+.q24-signal .q24-signal-head{display:flex;gap:8px;align-items:center;justify-content:space-between;font:710 10px/1.35 var(--q24-mono);letter-spacing:.07em;color:#8eb7ef}
+.q24-signal .q24-signal-state{font:680 9px var(--q24-mono);color:var(--q24-accent);border:1px solid color-mix(in srgb,var(--q24-accent) 43%,transparent);background:#0c2034;padding:5px 6px;border-radius:5px;white-space:nowrap}
+.q24-signal .q24-signal-value{font:700 clamp(17px,1.4vw,27px)/1.18 var(--q24-mono);color:#eaedea;letter-spacing:-.055em;overflow-wrap:anywhere}
+.q24-signal .q24-signal-foot{margin-top:auto;color:#74a5e1;font:520 10px/1.55 var(--q24-mono);min-height:31px;overflow-wrap:anywhere}
+#q24ScoreHead{margin:8px 0 1px;display:flex;align-items:end;justify-content:space-between;gap:10px;flex-wrap:wrap}
+#q24ScoreHead h2{font:710 clamp(16px,1.12vw,21px) var(--q24-display);letter-spacing:-.04em;color:#c8defc}
+#q24ScoreHead p{color:#6ea0dd;font:500 11px/1.5 var(--q24-mono)}
+#q24EvidencePanel{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(250px,.6fr);gap:16px;margin:0 0 18px;align-items:stretch}
+.q24-evidence-box{border:1px solid #24425c;background:#0a1d2f;border-radius:14px;padding:19px 21px;min-width:0}
+.q24-evidence-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
+.q24-evidence-title h3{font:680 12px var(--q24-mono);letter-spacing:.075em;color:#90b9f0}
+.q24-evidence-title em{font:500 9px var(--q24-mono);color:#679cda;font-style:normal}
+#q24GatesHost #q13GateStack{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+#q24GatesHost .q13-gate{min-width:0;background:#0b1f32;border:1px solid #1a3753;border-radius:10px;padding:11px 12px;gap:8px;display:flex;flex-direction:column;justify-content:space-between}
+#q24GatesHost .q13-gate>div{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap}
+#q24GatesHost .q13-gate b{font:700 10px/1.5 var(--q24-mono);color:#b0cef7}
+#q24GatesHost .q13-gate small{font:500 10px/1.52 var(--q24-mono);color:#5d92cf}
+#q24GatesHost .q13-gate .q13-state{font-size:9px}
+#q24HorizonMatrix{display:grid;grid-template-columns:1fr;gap:9px}
+.q24-horizon-line{background:#0c2034;border-left:3px solid var(--q24-gold);padding:11px 13px;border-radius:7px}
+.q24-horizon-line:nth-child(2){border-color:var(--q24-cyan)}.q24-horizon-line:nth-child(3){border-color:var(--q24-violet)}
+.q24-horizon-line small{display:block;color:#6b9edc;font:700 9px var(--q24-mono);letter-spacing:.08em}
+.q24-horizon-line strong{display:block;margin:6px 0 3px;color:#eae3cd;font:660 12px var(--q24-mono)}
+.q24-horizon-line span{display:block;color:#73a4e0;font:500 10px/1.55 var(--q24-mono)}
+#q24OriginalWorkflow{margin:2px 0 18px;background:#0a1e30;border:1px solid #1d3850;border-radius:10px;padding:0 15px}
+#q24OriginalWorkflow summary{cursor:pointer;padding:12px 0;font:650 10px var(--q24-mono);color:#7dabe5;letter-spacing:.06em;list-style:none}
+#q24OriginalWorkflow summary:before{content:'＋ ';color:var(--q24-gold)}#q24OriginalWorkflow[open] summary:before{content:'− '}
+#q24OriginalWorkflow #q13StepCards{margin:8px 0 16px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+#q24OriginalWorkflow .q13-step{background:#0c2034;border-radius:9px;border:1px solid #1c3a57;padding:14px!important}
+/* Flow spectrum: 2 WebGL bands using the existing sample scenario/observed arrays, not synthetic dealer inventory. */
+#q24FlowSpectrum{border:1px solid #1b3854;background:#091a2b;border-radius:14px;margin:14px 0 18px;overflow:hidden;box-shadow:0 12px 42px #07152533}
+#q24FlowSpectrum .q24-spectrum-head{display:flex;align-items:center;justify-content:space-between;gap:13px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid #1d3850;background:#0a1c2f}
+#q24FlowSpectrum h3{font:710 13px var(--q24-mono);color:#b5d1f8;letter-spacing:.04em}
+#q24FlowSpectrum .q24-spectrum-sub{color:#7bc2df;font:500 10px/1.5 var(--q24-mono)}
+#q24FlowSpectrum .q24-spectral-legend{display:flex;gap:14px;align-items:center;font:700 10px var(--q24-mono);color:#84c9e4}
+#q24FlowSpectrum .q24-spectral-legend i{display:inline-block;width:9px;height:9px;border-radius:2px;background:#73bbda;margin-right:5px}
+#q24FlowSpectrum .q24-spectral-legend i.neg{background:#e1ddcb}
+#q24FlowSpectrum .q24-spectral-canvaswrap{position:relative;height:280px;min-height:230px;overflow:hidden;background:#091b2d}
+#q24FlowSpectrum canvas{display:block;width:100%;height:100%;cursor:crosshair;outline-offset:-3px;touch-action:pan-y}
+#q24FlowSpectrum .q24-sp-rowname{pointer-events:none;position:absolute;left:18px;color:#a9e1f5;z-index:2;top:24px;font:730 12px var(--q24-mono);letter-spacing:.09em;text-shadow:0 1px 7px #071525}
+#q24FlowSpectrum .q24-sp-rowname.down{top:auto;bottom:24px}
+#q24FlowSpectrum .q24-sp-hoverline{pointer-events:none;position:absolute;top:0;bottom:0;width:1px;background:#a1c4f4;opacity:0;box-shadow:0 0 12px #e5dfcc55}
+#q24FlowSpectrum .q24-sp-tip{position:absolute;top:38%;left:0;pointer-events:none;z-index:5;background:#0b1f33f4;color:#c8eefb;padding:9px 12px;border:1px solid #397da6;border-radius:8px;font:11px/1.6 var(--q24-mono);opacity:0;box-shadow:0 10px 24px #07152588;max-width:240px}
+#q24FlowSpectrum .q24-sp-axis{display:flex;justify-content:space-between;gap:8px;align-items:center;border-top:1px solid #1f3a53;padding:10px 20px;font:600 10px var(--q24-mono);color:#7eace6}
+#q24FlowSpectrum .q24-spectrum-note{padding:10px 20px;background:#091b2d;color:#7baae4;font:510 10px/1.55 var(--q24-mono);border-top:1px solid #1a3753}
+#q24FlowSpectrum.q24-awaiting .q24-spectral-canvaswrap{display:none}
+#q24FlowSpectrum.q24-awaiting .q24-spectrum-empty{display:block;padding:31px 21px;font:520 12px/1.6 var(--q24-mono);color:#71a3df}
+#q24FlowSpectrum .q24-spectrum-empty{display:none}
+#q24FlowSpectrum button{border:1px solid #44627d;border-radius:7px;padding:7px 10px;background:#0d2236;color:#a6e0f4;font:700 10px var(--q24-mono)}
+/* Native charts and cross-library consistency. */
+body.q13-on:not(.q13-native) #view-flows,
+body.q13-on:not(.q13-native) #view-flow-score,
+body.q13-on:not(.q13-native) #view-distributions,
+body.q13-on:not(.q13-native) #view-volcube{color:var(--q24-text);font-family:Consolas}
+body.q13-on:not(.q13-native) #qtWorkArea .card,
+body.q13-on:not(.q13-native) #view-flows .deskx-card,
+body.q13-on:not(.q13-native) #view-flows .deskx-wide,
+body.q13-on:not(.q13-native) #view-distributions .pd-card,
+body.q13-on:not(.q13-native) #view-volcube .vc9-panel,
+body.q13-on:not(.q13-native) #view-volcube .vc9-card{border:1px solid #1c3b58!important;border-radius:13px!important;background:#0a1d2f!important;box-shadow:0 12px 30px #07152533;overflow:hidden}
+body.q13-on:not(.q13-native) #view-distributions .pd-hero{background:linear-gradient(118deg,#0b1f33,#091c2d)!important;border:1px solid #375570!important;border-left:3px solid var(--q24-gold)!important;border-radius:13px!important;padding:23px 27px!important}
+body.q13-on:not(.q13-native) #view-distributions .pd-hero h2{font:700 clamp(21px,1.65vw,32px) var(--q24-display)!important;letter-spacing:-.035em;color:#eae2cd!important}
+body.q13-on:not(.q13-native) #view-distributions .pd-card-head{background:#0c2034!important;border-color:#193652!important;padding:14px 18px!important;border-radius:0!important}
+body.q13-on:not(.q13-native) #view-flows .heat-cell,
+body.q13-on:not(.q13-native) #view-flow-score .heat-cell{border-radius:2px;outline:1px solid rgba(207,227,254,.05);box-shadow:inset 0 0 7px #07152544;filter:saturate(1.08)}
+body.q13-on:not(.q13-native) #view-flows canvas,
+body.q13-on:not(.q13-native) #view-flow-score canvas,
+body.q13-on:not(.q13-native) #view-volcube svg{image-rendering:auto;max-width:100%;font-smooth:always}
+body.q13-on:not(.q13-native) #view-flows .deskx-heatmap,
+body.q13-on:not(.q13-native) #view-flows .fa-studio{border-radius:11px!important;overflow:hidden}
+body.q13-on:not(.q13-native) #view-volcube #vc9Chart{height:clamp(450px,55vh,820px)!important;border-radius:10px;background:#091a2c}
+body.q13-on:not(.q13-native) .js-plotly-plot .modebar{right:10px!important;top:10px!important;background:rgba(10,29,48,.87)!important;border-radius:9px;border:1px solid #1a3753;padding:5px!important;backdrop-filter:blur(12px)}
+body.q13-on:not(.q13-native) .js-plotly-plot .modebar-btn path{fill:#a2c5f5!important}
+body.q13-on:not(.q13-native) .js-plotly-plot .hoverlayer .hovertext{filter:drop-shadow(0 6px 12px #071525aa)}
+body.q13-on:not(.q13-native) .js-plotly-plot .main-svg{border-radius:7px}
+body.q13-on:not(.q13-native) .q15-native-host .cardhead h2{font:700 14px var(--q24-mono);letter-spacing:.04em;color:#92baf0}
+body.q13-on:not(.q13-native) #qtWorkArea .cardhead{padding:13px 17px;background:#0d2236!important;border-color:#1c3b58!important}
+body.q13-on:not(.q13-native) #qtWorkArea .cardbody{padding:15px 18px!important}
+body.q13-on:not(.q13-native) #qtWorkArea .notice{border-radius:8px!important;padding:11px 15px}
+body.q13-on:not(.q13-native) #qtWorkArea :is(input,button,select,textarea){border-radius:8px}
+body.q13-on:not(.q13-native) #qtWorkArea details{border-radius:8px}
+body.q13-on:not(.q13-native) #qtWorkArea summary{cursor:pointer}
+body.q13-on:not(.q13-native) #qtWorkArea .chartwrap{background:#091c2e}
+/* Contextual chart actions are dormant until interaction, so no toolbars blanket the charts. */
+.q24-chart-root{position:relative}
+.q24-chart-actions{display:flex;align-items:center;gap:6px;position:absolute;right:17px;top:11px;z-index:7;opacity:0;transition:opacity .15s;pointer-events:none}
+.q24-chart-root:hover>.q24-chart-actions,.q24-chart-root:focus-within>.q24-chart-actions{opacity:1;pointer-events:auto}
+.q24-chart-actions button{background:#132a40ed!important;color:#c0ebfa!important;border:1px solid #306f94!important;border-radius:7px!important;min-width:33px;min-height:30px;padding:5px 9px;font:700 10px var(--q24-mono);box-shadow:0 5px 15px #07152555}
+.q24-chart-actions button:hover{background:#20405f!important}
+.q24-chart-root:fullscreen{height:100vh!important;width:100vw!important;overflow:auto!important;background:#091c2e!important;padding:30px!important;box-sizing:border-box}
+/* If local-file browsers block Fullscreen API, focus remains functional as a CSS overlay. */
+.q24-chart-root.q24-floating-focus{position:fixed!important;inset:0!important;z-index:17000!important;background:#091c2e!important;height:100dvh!important;width:100vw!important;overflow:auto!important;padding:30px!important;box-sizing:border-box!important;box-shadow:0 0 0 9999px #071525ee!important}
+.q24-chart-root.q24-floating-focus .q24-chart-actions{opacity:1!important;pointer-events:auto!important;position:fixed;right:30px;top:20px}
+.q24-chart-root.q24-floating-focus .js-plotly-plot,.q24-chart-root.q24-floating-focus svg,.q24-chart-root.q24-floating-focus canvas{max-height:calc(100vh - 120px)!important}
+
+.q24-chart-root:fullscreen .q24-chart-actions{opacity:1!important;pointer-events:auto!important;position:fixed;right:30px;top:20px}
+.q24-chart-root:fullscreen .js-plotly-plot,.q24-chart-root:fullscreen svg,.q24-chart-root:fullscreen canvas{max-height:calc(100vh - 120px)!important}
+/* Functional Data Hub: native importer in a guided drawer, full access to advanced settings. */
+body.q13-on:not(.q13-native) .q15-settings-drawer{background:#091a2b!important;border-left:1px solid #234566!important;border-radius:20px 0 0 20px!important;box-shadow:-25px 0 110px #071525bb!important;width:min(1140px,100vw)!important;max-width:min(1140px,100vw)!important}
+body.q13-on:not(.q13-native) .q15-settings-head{background:#0c2135!important;padding:18px 23px!important;border-bottom:1px solid #1e3d5c!important}
+body.q13-on:not(.q13-native) .q15-settings-head b{color:#94bbf2!important;font:740 19px var(--q24-display)!important;letter-spacing:-.03em}
+body.q13-on:not(.q13-native) .q15-settings-main{background:#091c2e!important;padding:18px 24px 110px!important}
+#qlDataGuide{background:#0b1f32;border:1px solid #345570;border-left:3px solid var(--q24-gold);border-radius:12px;padding:18px 20px;margin:0 0 16px;color:#a6c7f5;font:550 12px/1.65 var(--q24-display)}
+#qlDataGuide h3{font:730 16px/1.4 var(--q24-display);letter-spacing:-.02em;color:#97bdf2;margin:0 0 7px}
+#qlImportStatus{font:650 11px/1.6 var(--q24-mono);color:#8cb5ed}
+#qlFeeds{background:#0a1d2f;border:1px solid #193652;border-radius:12px;padding:14px 17px;margin-bottom:18px}
+#qlFeeds .ql-feeds-title{color:#84b0e9;font:700 10px var(--q24-mono);letter-spacing:.09em}
+#qlFeeds :is(.ql-feed-btn,button){border-radius:7px!important;background:#11283d!important;border-color:#25486a!important;font:660 10px var(--q24-mono)!important;padding:9px 11px!important;color:#c2ecfa}
+body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar{gap:15px!important}
+body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar>.sidegroup{background:#0b1f32!important;border-color:#214160!important;border-radius:12px!important;padding:17px 18px!important}
+body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar .steptitle{color:#8db6ee!important;font:690 13px var(--q24-mono)!important}
+body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar input,
+body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar select{border-radius:7px!important;background:#091b2d!important;border:1px solid #3a5973!important;color:#bdd6fa!important}
+#qlCalcDock{background:linear-gradient(120deg,#0c2236,#0a1c2e);border-top:1px solid #87b5ff!important;border-radius:8px 8px 0 0!important;padding:16px 22px;gap:18px;margin-inline:-24px}
+#qlCalcDock #calculate{background:#87b2ea!important;border-color:#97bdf2!important;color:#0a1e30!important;border-radius:9px!important;min-height:45px;font:730 12px var(--q24-mono)!important}
+#qlCalcDock #qlCalcLabel{font:520 12px/1.55 var(--q24-display);color:#9abff3}
+.q24-import-steps{display:flex;align-items:stretch;gap:7px;margin:0 0 14px;flex-wrap:wrap}
+.q24-import-steps button{flex:1;min-width:125px;background:#0e2439;border:1px solid #214261;color:#a0c3f4;padding:10px 12px;border-radius:8px;font:680 10px var(--q24-mono);text-align:left}
+.q24-import-steps button:hover{background:#1d3850;border-color:#7dc3e0}
+.q24-import-steps button b{color:#92baf1;margin-right:8px;font:730 12px var(--q24-mono)}
+/* Global typography and form contrast. Keep provenance/warning colors semantic. */
+body.q13-on:not(.q13-native) button:focus-visible,
+body.q13-on:not(.q13-native) input:focus-visible,
+body.q13-on:not(.q13-native) select:focus-visible{outline:2px solid #92d4ec!important;outline-offset:2px}
+body.q13-on:not(.q13-native) .q13-btn:not(.accent){border-radius:8px}
+body.q13-on:not(.q13-native) .q13-placeholder{background:#0a1d30;border:1px dashed #375570;border-radius:10px;padding:35px;color:#6fa1de}
+body.q13-on:not(.q13-native) ::-webkit-scrollbar{width:8px;height:8px}body.q13-on:not(.q13-native) ::-webkit-scrollbar-thumb{background:#1f3e5d;border-radius:10px}body.q13-on:not(.q13-native) ::-webkit-scrollbar-track{background:#091c2e}
+/* Proper retina and ultrawide density, not zoom-based pixel stretching. */
+@media(min-width:2400px){
+ body.q13-on:not(.q13-native) .q13-layout>.q13-main{max-width:3100px!important;padding:36px 60px 125px!important}
+ #qlNav{min-height:76px}#qlNav button{padding:15px 23px;font-size:15px}#qlNav button small{font-size:12px}
+ body.q13-on:not(.q13-native) .q13-screen-title h1{font-size:59px}
+ .ql-studio{padding:16px 19px!important}.ql-studio button{font-size:12px;min-height:42px}
+ .q24-signal{min-height:170px;padding:21px}.q24-signal .q24-signal-value{font-size:30px}
+ body.q13-on:not(.q13-native) #q16AtlasDock .q16-atlas-viewport{min-height:770px!important}
+}
+@media(max-width:1540px){
+ #qlNav button small{display:none}#qlNav button{font-size:11px;padding:13px 12px}#qlNav button i{width:23px;height:23px}
+ #q24SignalDeck{grid-template-columns:repeat(3,minmax(0,1fr))}
+ #q24GatesHost #q13GateStack{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:1100px){
+ #qlNav{position:relative;top:auto;gap:0;min-height:52px;padding:0 12px;overflow-x:auto;flex-wrap:nowrap}
+ #qlNav button{min-width:max-content;padding:12px 13px}#qlNav #qlOpenData{margin-left:4px}
+ #q24EvidencePanel{grid-template-columns:1fr}
+ #q24SignalDeck{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #q24GatesHost #q13GateStack{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .q24-chart-actions{opacity:1;pointer-events:auto}
+}
+@media(max-width:720px){
+ body.q13-on:not(.q13-native) .q13-header{padding:12px!important}
+ body.q13-on:not(.q13-native) .q13-header .q13-brand strong{font-size:17px}
+ body.q13-on:not(.q13-native) .q13-layout>.q13-main{padding:16px 11px 65px!important}
+ body.q13-on:not(.q13-native) .q13-screen-title{align-items:flex-start;gap:10px}
+ body.q13-on:not(.q13-native) .q13-screen-title h1{font-size:31px}
+ body.q13-on:not(.q13-native) .q13-screen-title p{font-size:11px}
+ body.q13-on:not(.q13-native) .q13-panel-head{padding:12px 13px!important}
+ #q24Context{padding:7px 12px}
+ #q24SignalDeck{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .q24-signal{min-height:132px;padding:12px}.q24-signal .q24-signal-value{font-size:18px}.q24-signal .q24-signal-foot{font-size:9px}
+ #q24GatesHost #q13GateStack{grid-template-columns:1fr 1fr}
+ #q24EvidencePanel{gap:9px}.q24-evidence-box{padding:13px}
+ #q24OriginalWorkflow #q13StepCards{grid-template-columns:1fr 1fr}
+ #q24FlowSpectrum .q24-spectral-canvaswrap{height:235px}
+ .ql-studio{padding:10px!important}.ql-studio-start{flex-wrap:wrap;border-right:0!important;padding-right:0}
+ .ql-studio .ql-studio-kicker{display:none}
+ body.q13-on:not(.q13-native) .q15-settings-drawer{border-radius:0!important}
+ body.q13-on:not(.q13-native) .q15-settings-main{padding-inline:11px!important}
+ #qlCalcDock{margin-inline:-11px;padding-inline:13px}
+}
+@media(max-width:470px){
+ #q24SignalDeck{grid-template-columns:1fr 1fr}#q24GatesHost #q13GateStack{grid-template-columns:1fr}
+ .q24-signal .q24-signal-head{flex-wrap:wrap}.q24-signal .q24-signal-value{font-size:17px}
+ #q24FlowSpectrum .q24-spectrum-head{padding:12px}.q24-spectral-legend{font-size:9px}
+ #q24OriginalWorkflow #q13StepCards{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{scroll-behavior:auto!important;transition-duration:0s!important;animation-duration:0s!important}
+}
+
+/* Appendices H057/H055/H061: scenario-only descriptive metrics; same provenance policy as the source surface. */
+#q24ScenarioMetrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#193652;border-top:1px solid #1d3c59;border-bottom:1px solid #1d3c59;}
+.q24-scenario-metric{background:#0a1d2f;display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding:13px 17px;min-width:0}
+.q24-scenario-metric small{font:760 10px/1.35 var(--q24-mono);letter-spacing:.045em;color:#78bfde}
+.q24-scenario-metric b{font:730 clamp(18px,1.3vw,25px)/1.2 var(--q24-mono);color:#90b9f0;letter-spacing:-.015em}
+.q24-scenario-metric span{font:550 10px/1.4 var(--q24-mono);color:#6ea0dd}
+@media(max-width:720px){#q24ScenarioMetrics{grid-template-columns:1fr}.q24-scenario-metric{padding:10px 13px}}
+
+@media print{#qlNav,#q24Context,.ql-studio,.q24-chart-actions,#q24OriginalWorkflow,#q24FlowSpectrum{display:none!important}body.q13-on:not(.q13-native) .q13-panel{box-shadow:none!important}}
+

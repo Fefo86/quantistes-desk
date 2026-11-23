@@ -1,0 +1,40 @@
+QUANTISTES · AGGIORNAMENTI AUTOMATICI
+
+1. GitHub
+
+Crea un repository privato con ramo principale main. Importa il contenuto della
+cartella del progetto, incluso .github/, oppure autorizza Codex a caricarlo.
+Prima del primo deploy allinea hosting/desk/private/config.php ai due URL in uso
+nel private/config.php del sottodominio. Nel pacchetto standard sono
+https://desk.quantistes.pro e https://quantistes.pro/wp-admin/admin-post.php.
+
+2. Prima build
+
+Il primo push su main avvia GitHub Actions → Quantistes su Hostinger. I due job
+compilano Next.js, eseguono i controlli di parità e creano il ramo hostinger
+dal pacchetto PHP protetto. Il ramo contiene index.php, .htaccess e private/.
+L'automazione utilizza il token temporaneo del repository e richiede accesso
+in scrittura ai contenuti per il job publish.
+
+3. Collega Hostinger una volta
+
+Fai una copia della cartella funzionante del desk. Da hPanel apri Siti web,
+gestisci il sito del sottodominio, vai in Avanzate → Git → Connect with GitHub.
+Autorizza il repository privato. Seleziona il ramo hostinger e la document root
+che contiene l'index.php del desk (di norma public_html del sottodominio).
+Clicca Deploy e verifica che Auto-deployment sia attivo. Il primo deploy scrive
+nella destinazione scelta. Verifica la pagina di accesso e il rientro da WordPress.
+Guida ufficiale:
+https://www.hostinger.com/support/1583302-how-to-deploy-a-git-repository-in-hostinger/
+
+4. Ogni modifica successiva
+
+Chiedila in Codex sullo stesso repository. Una bozza può restare su un ramo di
+lavoro. Quando la modifica entra in main, parte la compilazione e, dopo
+i controlli, Hostinger riceve la nuova versione. In GitHub vedi l'esito della
+build in Actions e in hPanel trovi l'esito di pubblicazione in Git → All deployments.
+Per ripristinare una modifica, esegui il revert del relativo commit in main:
+passerà dagli stessi controlli e dalla stessa pubblicazione.
+
+Il deploy riguarda solo il desk. Il plugin di accesso è gestito dall'installazione
+WordPress principale e serve nuovamente solo se cambia il plugin stesso.

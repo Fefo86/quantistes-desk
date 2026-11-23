@@ -1,0 +1,18 @@
+.sk-api{display:flex;gap:6px 9px;align-items:end;flex-wrap:wrap;min-width:0}
+.sk-api label{display:grid;gap:3px;color:#82afe8;font-size:11px;font-weight:500;letter-spacing:.025em;margin:0}
+.sk-api input[type=date]{box-sizing:border-box;min-width:132px;width:auto;min-height:32px;background:#091a2b;color:#c5dcfc;border:1px solid #244768;padding:4px 7px;font:inherit;font-size:12px;color-scheme:dark}
+.sk-api button,.qd-actions .sk-api button{min-height:32px;white-space:normal;border:1px solid #44627d;background:#0b1f32;color:#c2ecfa;padding:6px 10px;font-family:Consolas;font-size:12px;cursor:pointer}
+.sk-api button:focus-visible,.sk-api input:focus-visible{outline:2px solid #87cbe6;outline-offset:2px}
+.sk-api button.sk-get,.qd-actions .sk-api button.sk-get{border-color:#75a5e1;background:#76a6e1;color:#0a1c2e;font-weight:700}
+.sk-api button:disabled{opacity:.65;cursor:wait}
+.sk-api button[hidden]{display:none}
+.sk-api-status{flex:1 0 100%;font-size:11px;line-height:1.45;overflow-wrap:anywhere;color:#80ade7;letter-spacing:0}
+.sk-api-status:empty{display:none}
+.sk-api-status[data-kind=error]{color:#e9e2cd}.sk-api-status[data-kind=ok]{color:#8acee8}
+.sk-main-actions{display:flex;align-items:start;flex-direction:column;gap:10px;max-width:100%}
+.sk-line{display:flex;flex-wrap:wrap;gap:7px}
+.qd-actions #sessionFile{background:#0b1f32;border-color:#44627d;color:#c2ecfa;font-weight:500}
+.sk-api-card{padding:12px 14px;margin:0 0 10px;border:1px solid #1b3854;background:#091b2d}
+.sk-api-card .sk-api label,.sk-api-side label{margin:0}
+.sk-api-side{margin:8px 0 12px}
+@media(max-width:720px){.sk-api{gap:7px}.sk-main-actions{width:100%}.qd-empty #view-monitor>.qd-intake{padding:14px}.sk-api button{padding:6px 8px}}

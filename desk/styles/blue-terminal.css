@@ -1,0 +1,130 @@
+
+:root, body.q13-on {
+  color-scheme:dark;
+  --night:#071525; --floor:#0b1d31; --panel-blue:#102940; --line-blue:#31516e;
+  --cobalt:#174b9b; --azure:#87b5ff; --ice:#99deff; --ivory:#f5efde;
+  --copy:#d8e6f4; --caption:#aec3d7; --desk-bg:var(--night); --desk-surface:var(--floor);
+  --desk-ink:var(--copy); --desk-faint:var(--caption); --desk-rule:var(--line-blue);
+  --desk-amber:var(--azure); --desk-green:var(--ice); --desk-down:var(--ivory);
+  --primary:var(--azure); --coral:var(--ivory); --sheet:var(--ivory); --q25-gold:var(--azure);
+  --mono:Consolas; --sans:Consolas; --desk-mono:Consolas; --desk-display:Consolas;
+  --q24-mono:Consolas; --q25-mono:Consolas; --q24-display:Consolas; --editorial:Consolas;
+  accent-color:var(--azure); scrollbar-color:#486882 var(--night);
+}
+html, body, *, *::before, *::after, button, input, textarea, select, option, code, pre, kbd,
+svg text, svg tspan,.js-plotly-plot :is(text,tspan),body.q13-on #q13App * {font-family:Consolas!important}
+html {font-variant-numeric:tabular-nums slashed-zero}
+::selection {background:#9adfff;color:#0a203a}
+:where(button,a,input,select,textarea,[tabindex]):focus-visible {outline:2px solid #99deff!important;outline-offset:2px}
+body.q13-on:not(.q13-native) #q13App .q13-header {
+  min-height:69px!important; background:#0b2342!important; color:var(--ivory)!important;
+  border-top:3px solid #6b9eff!important; border-bottom:1px solid #36587a!important;
+  gap:clamp(10px,1.45vw,24px)!important;
+}
+body.q13-on:not(.q13-native) #q13App .q13-header .q13-brand {gap:3px}
+body.q13-on:not(.q13-native) #q13App .q13-header .q13-brand strong {
+  color:var(--ivory)!important;font:700 clamp(21px,2.2vw,35px)/1.04 Consolas!important;letter-spacing:-.045em!important;
+}
+body.q13-on:not(.q13-native) #q13App .q13-header .q13-brand>span {
+  color:#a5c8f2!important;font:400 clamp(9px,.8vw,12px)/1.23 Consolas!important;letter-spacing:.105em!important;
+}
+body.q13-on:not(.q13-native) #q13App .q13-header .q13-mark {
+  flex:0 0 41px!important;width:41px!important;height:41px!important;border:1px solid #648db8!important;
+  border-radius:0!important; transform:none!important;background:#123863!important;box-shadow:none!important;
+}
+body.q13-on:not(.q13-native) #q13App .q13-header .q13-mark::before {
+  inset:8px 9px 9px 8px!important;border:3px solid var(--ivory)!important;border-radius:50%!important;transform:none!important;
+}
+body.q13-on:not(.q13-native) #q13App .q13-header .q13-mark::after {
+  width:10px!important;height:3px!important;bottom:7px!important;right:4px!important;background:var(--ice)!important;transform:rotate(45deg)!important;
+}
+body.q13-on:not(.q13-native) #q13App #q13Clock {color:#bdd5f3!important;letter-spacing:.025em!important}
+body.q13-on:not(.q13-native) #q13App #q13Demo {color:var(--ivory)!important;background:#11365c!important;border:1px solid #6385ae!important}
+body.q13-on:not(.q13-native) #q13App #q13Demo:hover {background:#1e4a76!important}
+body.q13-on:not(.q13-native) #q13App #qlNav {background:#091b2e!important;border-bottom-color:#365473!important}
+body.q13-on:not(.q13-native) #q13App #qlNav button {color:#c0d1e5!important;font-weight:400!important}
+body.q13-on:not(.q13-native) #q13App #qlNav button i {color:#8eabc9!important}
+body.q13-on:not(.q13-native) #q13App #qlNav button:hover {background:#133351!important;color:var(--ivory)!important}
+body.q13-on:not(.q13-native) #q13App #qlNav button.on,body.q13-on:not(.q13-native) #q13App #qlNav button[aria-current=page] {
+  background:var(--cobalt)!important;box-shadow:inset 0 -2px 0 var(--ice)!important;color:var(--ivory)!important;font-weight:700!important;
+}
+body.q13-on:not(.q13-native) #q13App #qlNav button.on i {color:#bfdfff!important}
+body.q13-on:not(.q13-native) #q13App #qlNav #qlFindTools {color:var(--copy)!important}
+body.q13-on:not(.q13-native) #q13App #qlNav #qlOpenData {color:var(--ice)!important;border-left-color:#31516e!important}
+body.q13-on:not(.q13-native) #q13App #q24Context {background:#0c223a!important;color:var(--caption)!important;border-bottom-color:#263f59!important}
+#q24Context .q24-dot {background:var(--ice)!important} #q24StageTitle,#q24Context #qlDataStatus {color:#d6e7f7!important}
+#q24Context .q24-context-right {color:#abc2da!important}
+body.q13-on:not(.q13-native) #q13App .q13-screen-title {border-color:var(--line-blue)!important;margin-top:clamp(12px,1.3vw,22px)!important}
+body.q13-on:not(.q13-native) #q13App .q13-screen-title h1 {
+  font:700 clamp(29px,3.35vw,57px)/1.06 Consolas!important;letter-spacing:-.05em!important;color:var(--ivory)!important;overflow-wrap:anywhere;
+}
+body.q13-on:not(.q13-native) #q13App .q13-view>nav.q25-toolbar {gap:3px 6px!important}
+body.q13-on:not(.q13-native) #q13App .q25-toolbar button {
+  font:400 12px/1.3 Consolas!important;letter-spacing:0!important;color:var(--caption)!important;border-bottom-color:transparent!important;
+}
+body.q13-on:not(.q13-native) #q13App .q25-toolbar button:hover {color:var(--ivory)!important;background:#102b46!important}
+body.q13-on:not(.q13-native) #q13App .q25-toolbar button.on,body.q13-on:not(.q13-native) #q13App .q25-toolbar button[aria-selected=true],
+body.q13-on:not(.q13-native) #q13App .q25-toolbar button[aria-current=page] {background:#143659!important;border-bottom-color:var(--ice)!important;color:var(--ivory)!important}
+body.q13-on:not(.q13-native) #q13App .q13-view :is(.card,.flow-card,.q13-panel,.qt360-card,.pd-card,.q26-stat,.dx-card,.qp-card,.op-card,.q16-flowcard,.fa-panel) {
+  background:var(--floor)!important;border-color:var(--line-blue)!important;
+}
+body.q13-on:not(.q13-native) #q13App .q13-view :is(.cardhead,.q13-panel-head,.flow-card-head,.q26-graph-head,.op-header,.q16-flowcard .top,.fa-title,.dx-card-title){
+  background:var(--panel-blue)!important;border-color:var(--line-blue)!important;
+}
+body.q13-on:not(.q13-native) #q13App .q13-view :is(.cardhead h2,.q13-panel-head h2,.flow-card-head b,.q26-graph-head h3,.dx-card-title b,.q16-flowcard .top,.fa-title b) {
+  color:var(--ivory)!important;font:700 clamp(14px,1.1vw,19px)/1.3 Consolas!important;letter-spacing:-.018em!important;
+}
+body.q13-on:not(.q13-native) #q13App .q13-view :is(.cardhead small,.flow-card-head span,.q26-graph-head span,.fa-title span) {color:var(--caption)!important}
+body.q13-on:not(.q13-native) #q13App #deskBoard .desk-lead {background:var(--floor)!important;border-color:#40678d!important}
+#deskBoard .desk-decision {background:var(--cobalt)!important;color:var(--ivory)!important;border-left:3px solid #9bd9ff}
+#deskBoard .desk-decision .desk-kicker,#deskBoard .desk-decision #deskRun,#deskBoard .desk-decision .desk-split small {color:#d4e8ff!important}
+#deskBoard .desk-decision .desk-kicker i {background:#9bdfff!important}
+#deskBoard .desk-decision #deskRun {border-left-color:#8ab5e4!important}
+#deskBoard .desk-decision #deskVerdict {color:var(--ivory)!important;letter-spacing:-.055em!important;font:700 clamp(34px,3.9vw,64px)/1.04 Consolas!important}
+#deskBoard .desk-decision #deskReason,#deskBoard .desk-decision .desk-split b {color:var(--ivory)!important}
+#deskBoard .desk-readout strong {font:700 clamp(19px,1.95vw,34px)/1.15 Consolas;letter-spacing:-.035em;color:var(--ivory)}
+#deskBoard .desk-readout small,#deskBoard .desk-readout span {color:var(--caption)}
+#deskBoard .desk-chart-head h2,#deskBoard #playbookDesk h2,.studio-sectionhead h2 {font:700 clamp(21px,1.75vw,32px)/1.17 Consolas!important;letter-spacing:-.04em!important;color:var(--ivory)!important}
+#deskBoard .desk-figure,#deskBoard .desk-figure .desk-chart {background:#091c2e!important}
+#deskBoard .desk-kicker,.studio-sectionhead small,#pbDetail>small,.field-empty span {color:#9ac5ee}
+#deskBoard .desk-switch button[aria-pressed=true],#deskBoard .desk-apply {background:#a9d9ff!important;border-color:#a9d9ff!important;color:#09223b!important}
+#deskBoard .desk-switch button[aria-pressed=false]:hover {color:var(--ivory)!important;background:#163554!important}
+#deskBoard .desk-meter {background:#253f59}#deskBoard .positive .desk-meter i {background:var(--ice)}
+#deskBoard .negative .desk-meter i {background:repeating-linear-gradient(120deg,#f5efde 0 4px,#a49e8f 4px 5px)}
+#deskBoard .quiet .desk-meter i {background:#9eb2c7}
+#playbookDesk .pb-grid,.studio-sectionhead,.field-tools {border-color:var(--line-blue)}
+#deskBoard #playbookDesk thead th {background:#163451!important;color:#d9e9fa!important}
+#deskBoard #playbookDesk tbody th {color:var(--copy)!important;font-weight:700}
+#deskBoard #playbookDesk tr[aria-selected=true]>:is(td,th) {background:#173b62!important}
+#deskBoard #playbookDesk tr[aria-selected=true] td:first-child {box-shadow:inset 3px 0 var(--ice)}
+#deskBoard #playbookDesk button {color:#a9d2ff!important;text-underline-offset:3px}
+#deskBoard #playbookDesk button:hover {text-decoration:underline}
+#pbDetail,#q26Passage,#stAtlasFacts {background:#102c49;color:var(--copy);border-color:#668eb5}
+#deskBoard #pbDetail h3 {font:700 clamp(19px,1.6vw,26px)/1.19 Consolas;letter-spacing:-.03em;color:var(--ivory)}
+#deskBoard #pbDetail p,#pbDetail li,.st-meta,#deskCellData,#fpPathsRead,.st-flow-read {color:var(--caption)}
+#pbDetail li span,#deskBoard .pb-on {color:var(--ice)}#deskBoard .pb-off {color:#adc0d3}
+.pb-tablewrap {scrollbar-color:#507291 var(--floor)}.pb-proxy {border-top-color:#668eb5}
+.st-field-card {background:var(--floor);border-color:var(--line-blue)}
+.field-empty {background:#0b2035;border-left-color:#4777a4}
+.field-empty strong {color:var(--ivory);font:700 clamp(18px,1.6vw,24px)/1.3 Consolas}
+.field-empty p,.st-op-legend,.field-tools label,.st-input-grid label,.pb-tools label,.studio-sectionhead label {color:var(--caption)}
+.st-cross i {border-color:#9fdcff}.st-cross b {border-color:var(--ivory)}
+.heatkey {background:linear-gradient(90deg,#173854,#1a4a70,#1c608e,#2579a7,#409ac4,#66b9d9,#9adaed,#eceddc)!important}
+#deskChartModal {background:#0b2036;color:var(--ivory);border-color:#527597}
+#deskChartModal::backdrop {background:rgba(3,13,25,.83)}
+.js-plotly-plot .modebar-btn:focus-visible {outline:2px solid var(--ice)!important}
+@media (max-width:760px){
+  body.q13-on:not(.q13-native) #q13App .q13-header {min-height:57px!important}
+  body.q13-on:not(.q13-native) #q13App .q13-header .q13-brand strong {font-size:clamp(17px,3.5vw,24px)!important}
+  body.q13-on:not(.q13-native) #q13App .q13-screen-title h1 {font-size:clamp(26px,5.7vw,38px)!important}
+  #deskBoard .desk-decision #deskVerdict {font-size:clamp(29px,6.6vw,44px)!important}
+  #deskBoard .desk-decision #deskReason {grid-column:1!important}
+}
+body.q13-on:not(.q13-native) #q13App .q13-header .q13-brand em {font-style:normal;color:#99c8ff!important}
+#deskBoard .desk-legend .legMed {height:3px;background:#fff6e0}
+#deskBoard .desk-legend .legTarget {height:3px;background:#99deff}
+#deskBoard .desk-legend .legStop {height:3px;background:repeating-linear-gradient(90deg,#f5efde 0 7px,transparent 7px 10px)}
+#deskBoard .desk-legend .legOpen {height:3px;background:repeating-linear-gradient(90deg,#87b5ff 0 2px,transparent 2px 4px)}
+#deskBoard .desk-chart text {fill:#bdcfe1}
+
+#q16FlowLab .q16-fstats .q16-partials{display:flex;flex-wrap:wrap;align-content:start;gap:7px 16px}#q16FlowLab .q16-partials>span{display:block;min-width:0}#q16FlowLab .q16-partials b{font-variant-numeric:tabular-nums}

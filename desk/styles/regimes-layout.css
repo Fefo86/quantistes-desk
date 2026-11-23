@@ -1,0 +1,18 @@
+
+body.q13-on:not(.q13-native) .q13-view.q25-tool-regime #qt360-panel-val{display:block!important}
+body.q13-on:not(.q13-native) .q13-view.q25-tool-regime .q15-archive-native>.qt360-panel:not(#qt360-panel-val),
+body.q13-on:not(.q13-native) .q13-view.q25-tool-matrix .q15-archive-native>.qt360-panel:not(#qt360-panel-atlas),
+body.q13-on:not(.q13-native) .q13-view.q25-tool-realized .q15-archive-native>.qt360-panel:not(#qt360-panel-path){display:none!important}
+.desk-regime-head h2{font:700 17px/1.3 Consolas;color:var(--desk-ink,#e9e2cd);margin:0 0 5px}
+.desk-regime-head p{margin:0 0 14px;color:var(--desk-muted,#72a3df);font-size:13px}
+#deskRegimeTable td:not(:first-child){font-variant-numeric:tabular-nums}
+
+.desk-snapshot-hint{margin:8px 0 0;font:12px/1.45 Consolas;color:var(--desk-muted,#6197d5)}
+
+
+body.q13-on:not(.q13-native) #q13App .q25-tool-regime .q15-archive-native>:not(#qt360-panel-val),
+body.q13-on:not(.q13-native) #q13App .q25-tool-matrix .q15-archive-native>:not(#qt360-panel-atlas),
+body.q13-on:not(.q13-native) #q13App .q25-tool-realized .q15-archive-native>:not(#qt360-panel-path){display:none!important}
+body.q13-on:not(.q13-native) #q13App .q25-tool-realized .q15-archive-native:has(>#qt360-panel-path.q26-show-legacy)>.qt360-card{display:block!important}
+body.q13-on:not(.q13-native) #q13App .q25-tool-realized .q15-archive-native:has(>#qt360-panel-path.q26-show-legacy)>.qt360-kpis{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))}
+.desk-snapshot-receipt{display:block;margin-top:6px;font:11px/1.45 Consolas;color:var(--desk-green,#81c6e3)}

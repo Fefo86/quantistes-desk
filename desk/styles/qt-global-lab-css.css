@@ -1,0 +1,33 @@
+/* Unified global multi-tenor research lab */
+#qtUnifiedGlobalPanel{margin:12px 0;background:#091c2e;border:1px solid #1b3956;font-family:Consolas;font-variant-numeric:tabular-nums}
+#qtUnifiedGlobalPanel .vc9-heading{border-bottom:1px solid #193752;padding:11px 14px;background:#0a1d2f}
+#qtUnifiedGlobalPanel .vc9-heading h2{font-size:13px;letter-spacing:.03em;color:#87b2ea}
+#qtUnifiedGlobalPanel .vc9-heading span{font-size:10px;color:#82c7e3}
+#qtUnifiedGlobalPanel .qt-global-body{padding:14px;min-width:0}
+#qtUnifiedGlobalPanel p{font-size:11px;line-height:1.65;overflow-wrap:normal;word-break:normal;color:#9bc0f3;max-width:120ch}
+#qtUnifiedGlobalPanel .qt-global-intro{margin:2px 0 15px}
+#qtUnifiedGlobalPanel .qt-global-controls{display:flex;flex-wrap:wrap;gap:11px;align-items:end;border:1px solid #1b354d;padding:11px;background:#08192a}
+#qtUnifiedGlobalPanel .qt-global-controls label{display:grid;gap:6px;min-width:165px;flex:1;color:#86cae5;font-size:10px}
+#qtUnifiedGlobalPanel .qt-global-controls select{min-width:160px;max-width:100%;padding:9px;border:1px solid #234465;background:#091c2e;color:#8fb8ef;font:inherit;font-size:11px;border-radius:0}
+#qtUnifiedGlobalPanel .qt-global-controls button{min-height:34px;padding:8px 12px;background:#11273d;color:#93baf1;border:1px solid #87b5ff;border-radius:0;font:inherit;font-size:10px;font-weight:700;letter-spacing:.02em}
+#qtUnifiedGlobalPanel .qt-global-controls button:hover:not(:disabled){background:#1f3a53}
+#qtUnifiedGlobalPanel .qt-global-controls button:disabled{opacity:.37;cursor:not-allowed}
+#qtUnifiedGlobalPanel .qt-global-result{margin:12px 0;padding:11px 13px;border-left:3px solid #7ba9e4;background:#0b1f32;color:#a0c3f4;font-size:11px;line-height:1.6;overflow-wrap:break-word;white-space:normal}
+#qtUnifiedGlobalPanel .qt-global-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(260px,1fr);gap:12px}
+#qtUnifiedGlobalPanel .qt-global-plot{min-width:0;border:1px solid #29445e;background:#081929}
+#qtUnifiedGlobalPanel .qt-global-plothead{padding:10px 12px;color:#c3ecfa;font-size:11px;display:flex;justify-content:space-between;gap:10px}
+#qtUnifiedGlobalPanel .qt-global-plothead span{color:#7ac1df;font-size:10px}
+#qtUnifiedGlobalPanel svg{display:block;width:100%;height:300px;background:#081929}
+#qtUnifiedGlobalPanel .qt-global-metrics{min-width:0;border:1px solid #193652;background:#08192a;padding:10px 12px}
+#qtUnifiedGlobalPanel .qt-global-metrics h3{font-size:11px;color:#8eb7ee;margin:12px 0 6px;letter-spacing:.035em;border-bottom:1px solid #24425c;padding-bottom:5px}
+#qtUnifiedGlobalPanel .qt-global-metrics h3:first-child{margin-top:0}
+#qtUnifiedGlobalPanel .qt-global-metrics dl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px 14px;margin:0;font-size:10px}
+#qtUnifiedGlobalPanel .qt-global-metrics dt{color:#71a3df}
+#qtUnifiedGlobalPanel .qt-global-metrics dd{margin:0;color:#88b3eb;text-align:right;max-width:200px;overflow-wrap:anywhere}
+#qtUnifiedGlobalPanel .qt-global-explain{border:1px solid #1a3753;padding:12px 14px;margin-top:12px;color:#8dd0ea}
+#qtUnifiedGlobalPanel .qt-global-explain summary{color:#90b8ef;font-size:11px;font-weight:700;cursor:pointer}
+#qtUnifiedGlobalPanel .qt-global-explain p{margin:13px 0 4px;max-width:110ch;font-size:11px;line-height:1.75}
+@media(max-width:1050px){#qtUnifiedGlobalPanel .qt-global-grid{grid-template-columns:1fr}#qtUnifiedGlobalPanel .qt-global-controls label{min-width:150px}#qtUnifiedGlobalPanel svg{height:270px}}
+@media(max-width:520px){#qtUnifiedGlobalPanel .qt-global-body{padding:9px}#qtUnifiedGlobalPanel .qt-global-plothead{flex-direction:column}#qtUnifiedGlobalPanel .qt-global-controls{gap:7px}#qtUnifiedGlobalPanel .qt-global-controls label{flex:1 1 100%}}
+/* Retain the SSVI benchmark; the production selector lives in the global lab. */
+#qtGlobalModelPanel label:has(> #qtSSVIModelSelect){display:none!important}

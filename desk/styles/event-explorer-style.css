@@ -1,0 +1,30 @@
+
+#dxDesk{--dx-pad:clamp(14px,2.3vw,26px);overflow:hidden}
+#dxDesk [hidden]{display:none!important}
+#dxDesk label{margin:0 0 5px;font-size:11px}
+#dxDesk h4{font-size:14px;color:#b9d4f9;margin:0 0 12px}
+#dxDesk .dx-toolbar,#dxDesk .dx-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:16px var(--dx-pad) 7px}
+#dxDesk .dx-toolbar input,#dxDesk .dx-toolbar select,#dxDesk .dx-placement input,#dxDesk .dx-placement select,#dxDesk .dx-viewbar select{font-size:12px}
+#dxDesk .dx-preset,#dxDesk .dx-viewbar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:6px var(--dx-pad) 15px}
+#dxDesk .dx-preset>span,#dxDesk .dx-probe,#dxDesk .dx-footer,#dxDesk .dx-instruction,#dxDesk .dx-invalid{font:11px/1.6 var(--mono);color:#78a7e2}
+#dxDesk .dx-preset>span{margin-right:5px}#dxDesk .dx-preset button{padding:3px 8px}
+#dxDesk .dx-metrics{padding-top:15px;padding-bottom:15px;background:#0a1d30;border-block:1px solid #1d3850}
+#dxDesk .dx-metrics>div{padding-right:8px}#dxDesk .dx-metrics small,#dxDesk .dx-metrics span{display:block;color:#7eace6;font:10px/1.5 var(--mono)}
+#dxDesk .dx-metrics small{font-size:9px;letter-spacing:.65px}#dxDesk .dx-metrics strong{font:500 clamp(17px,2vw,26px)/1.6 var(--mono);font-variant-numeric:tabular-nums}
+#dxDesk .dx-viewbar{padding-top:14px;padding-bottom:8px;justify-content:space-between}
+#dxDesk .dx-viewbar label{display:flex;align-items:center;gap:7px;margin:0}#dxDesk .dx-viewbar select{width:auto;padding:5px}
+#dxDesk .dx-segments{display:flex;gap:4px;flex-wrap:wrap}#dxDesk .dx-segments button{font-size:11px;padding:5px 9px}
+#dxDesk .dx-segments [aria-pressed=true]{color:#96bdf2;background:#11283d;border-color:#6c7e8d}
+#dxCanvas{width:100%;background:#091b2d;line-height:0;outline-offset:-3px}
+#dxCanvas:focus-visible{outline:2px solid #86cae5}#dxCanvas svg{width:100%;height:auto;max-height:none;display:block;touch-action:pan-y;cursor:crosshair;font-family:Consolas;user-select:none}
+#dxDesk .dx-probe{padding:7px var(--dx-pad);background:#0b1e31;color:#afe4f6;font-variant-numeric:tabular-nums}
+#dxDesk .dx-instruction{padding:5px var(--dx-pad) 10px;font-family:Consolas}
+#dxDesk .dx-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:14px var(--dx-pad);border-top:1px solid #1c374f}
+#dxDesk .dx-grid>div{min-width:0}#dxDesk .dx-placement{display:grid;grid-template-columns:90px minmax(60px,1fr) 48px 48px;align-items:center;gap:5px;margin-bottom:7px}
+#dxDesk .dx-placement label{margin:0}#dxDesk .dx-placement select,#dxDesk .dx-placement input{padding:5px 7px}
+#dxDesk .dx-placement button{white-space:nowrap;padding:5px 2px}#dxDesk .dx-invalid{padding:12px var(--dx-pad);background:#10263b;color:#f2e8cf}
+#dxDesk .dx-prow{display:flex;gap:7px;justify-content:space-between;flex-wrap:wrap;font:11px/1.6 var(--mono);padding:5px 0;border-bottom:1px solid #1a344c}
+#dxDesk .dx-bounds{padding:9px var(--dx-pad);border-top:1px solid #1c374f}#dxDesk summary{cursor:pointer;font-size:12px;color:#89b4ec}
+#dxDesk .dx-footer{padding:9px var(--dx-pad) 15px}
+@media(max-width:800px){#dxDesk .dx-toolbar,#dxDesk .dx-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}#dxDesk .dx-grid{grid-template-columns:1fr;gap:16px}}
+@media(max-width:480px){#dxDesk .pd-card-head{align-items:flex-start;flex-wrap:wrap}#dxDesk .dx-placement{grid-template-columns:77px minmax(55px,1fr) 40px 40px}#dxDesk .dx-toolbar{gap:8px}}

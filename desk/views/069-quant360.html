@@ -1,0 +1,57 @@
+<section class="view qt360-view" id="view-quant360" aria-label="Quantistes Market Structure 360">
+  <div class="qt360-hero">
+    <div class="qt360-toprow"><span class="qt360-eyebrow">QUANTISTES / ES + SPXW</span><span class="qt360-sys" id="qt360Ready">STORICO · 2026</span></div>
+    <div class="qt360-title">Archivio intraday ES</div>
+    <p class="qt360-sub">Serie storiche ES, regimi VIX/VVIX, percorsi osservati e intervalli di probabilità.</p>
+    <div class="qt360-actions">
+      <button type="button" data-qtjump="monitor">↗ CARICA CHAIN SPX</button>
+      <button type="button" data-qtjump="smile">↗ SKEW / CVI</button>
+      <button type="button" data-qtjump="distributions">↗ Q / P NATIVE</button>
+      <button type="button" data-qtjump="flows">↗ OPTIONS FLOW</button>
+      <button type="button" data-qtjump="flow-score">↗ SCOREBOARD</button>
+    </div>
+    <div class="qt360-status"><span class="qt360-chip ok">HISTORICAL RESEARCH : ON</span><span class="qt360-chip note" id="qt360ChainStatus">Q: WAITING FOR SPXW SNAPSHOT</span><span class="qt360-chip" id="qt360PStatus">P ES: 5 MIN / VALIDATED OOS</span></div>
+  </div>
+  <div class="qt360-kpis">
+    <div class="qt360-tile"><span class="qt360-smallcap">P REAL-WORLD · 90% · 5 MIN</span><strong id="qt360KpiRange">—</strong><span id="qt360KpiRangeSub">Regime VIX · intervallo terminale</span></div>
+    <div class="qt360-tile"><span class="qt360-smallcap">P · FIRST TOUCH / TARGET</span><strong id="qt360KpiTouch">—</strong><span id="qt360KpiTouchSub">Non equivale alla probabilità terminale</span></div>
+    </div>
+  <div class="qt360-card">
+    <div class="qt360-topline" style="justify-content:space-between"><div><h3>SCENARIO INPUT / ES FUTURES</h3><p class="qt360-desc">L'ancora ES è modificabile. I prezzi dello storico sono riferimenti di ricerca; non sono quotazioni correnti. Le probabilità qui mostrate appartengono al solo orizzonte di cinque minuti.</p></div><span class="qt360-chip" id="qt360SourceTag">SCID ES · VIX · OFFLINE</span></div>
+    <div class="qt360-form" id="qt360Controls">
+      <label>ES / PREZZO DI RIFERIMENTO<input id="qt360Spot" type="number" step="0.25" value="7000"></label>
+      <label>VIX / REGIME<input id="qt360Vix" type="number" min="6" max="100" step="0.1" value="20"></label>
+      <label>SOGLIA / ES<input id="qt360Target" type="number" step="0.25" value="7004"></label>
+      <label>FASCIA ORARIA (ET)<select id="qt360Hour"><option value="all">Intera RTH</option><option value="open">09:30–11:30</option><option value="mid">11:30–14:00</option><option value="late">14:00–16:00</option></select></label>
+      <label>VIX MATCH / ± PUNTI<select id="qt360VixBand"><option value="1.5">±1,5</option><option value="2.5" selected>±2,5</option><option value="4">±4,0</option><option value="99">Tutto il campione</option></select></label>
+      <label>PERCORSI VISIBILI<select id="qt360PathsCount"><option value="40">40</option><option value="100">100</option><option value="160" selected>160</option><option value="240">240</option></select></label>
+      <button type="button" id="qt360Calc" class="primary">CALCOLA ↵</button>
+      <button type="button" id="qt360UseRef">Usa settlement SPX + basis</button>
+    </div>
+    <div class="qt360-caption" id="qt360SampleText">* Il valore SPX viene trasferito su ES solo se è fornita esplicitamente una base ES−SPX; in assenza di base, i due sottostanti non vengono identificati.</div>
+  </div>
+  <div class="qt360-tabs" role="tablist" aria-label="Moduli Market Structure 360">
+    <button type="button" class="on" data-qt360-tab="path" aria-selected="true">01 / P · PATHS &amp; LEVELS</button>
+    <button type="button" data-qt360-tab="val">REGIMI VIX / VVIX</button>
+    <button type="button" data-qt360-tab="atlas">04 / SPECIFICATION ATLAS</button>
+  </div>
+  <div class="qt360-panel on" id="qt360-panel-path" role="tabpanel">
+    <div class="qt360-card">
+      <div class="qt360-topline" style="justify-content:space-between"><div><h3>PHYSICAL PATH ENSEMBLE / ACTUAL 5-MINUTE WINDOWS</h3><p class="qt360-desc">Fan quantilico storico su percorsi ES realmente osservati; interagisci con ogni sentiero per vedere data, VIX, escursioni e peso campionario. La probabilità degli scenari è una frequenza condizionata, non una probabilità di ogni singolo prezzo.</p></div><button class="qt360-btn" type="button" id="qt360ResetPath">RESET SELEZIONE</button></div>
+      <div class="qt360-legend"><span><i class="qt360-dot" style="background:#87cce6"></i> Sentieri rialzisti</span><span><i class="qt360-dot" style="background:#dedbcb"></i> Sentieri ribassisti</span><span><i class="qt360-dot" style="background:#dddaca"></i> Quantili 5 / 25 / 50 / 75 / 95%</span><span><i class="qt360-dot" style="background:#8ed1ea"></i> Livello target</span></div>
+      <div class="qt360-plot tall" id="qt360PathPlot"></div>
+      <div class="qt360-path-detail" id="qt360PathInspect">Muovi il cursore su un percorso o selezionalo con un clic per isolarlo.</div>
+      <div class="qt360-statrow"><span id="qt360PUp">P TERMINALE &gt; 0 : —</span><span id="qt360PDown">P TERMINALE &lt; 0 : —</span><span id="qt360PFlat">P TERMINALE = 0 : —</span><span id="qt360Pt">P FIRST TOUCH : —</span></div>
+    </div>
+    <div class="qt360-grid">
+      <div class="qt360-card"><h3>PROBABILITÀ TERMINALE ≠ FIRST PASSAGE</h3><p class="qt360-desc">Confronto diretto della probabilità di terminare oltre la soglia con quella di attraversarla almeno una volta prima dei cinque minuti.</p><div class="qt360-plot medium" id="qt360TouchPlot"></div><div class="qt360-caption">La probabilità di touch deriva dagli estremi storici high/low successivi, non da 2× la probabilità terminale.</div></div>
+      <div class="qt360-card"><h3>SCENARIO CONDIZIONATO / QUANTILES</h3><p class="qt360-desc">Distribuzione terminale empirica in tick ES; i quantili non sono segnali direzionali autonomi.</p><div class="qt360-plot medium" id="qt360TerminalPlot"></div><div class="qt360-caption" id="qt360CalNote">Le bande descrivono la distribuzione storica; per la calibrazione OOS consultare VALIDATION.</div></div>
+    </div>
+  </div>
+  <div class="qt360-panel" id="qt360-panel-val" role="tabpanel">
+    <div class="qt360-card"><header class="desk-regime-head"><h2>Regime di volatilità</h2><p>Chiusure giornaliere dell’intero archivio. VIX a sinistra, VVIX a destra. La scoreboard usa i valori di chiusura disponibili prima della seduta selezionata.</p></header><div id="qt360RegimePlot" class="qt360-plot"></div></div><div class="qt360-card"><header class="desk-regime-head"><h2>Copertura fuori campione · ES 5 minuti</h2><p id="deskRegimeN"></p></header><div class="desk-table-scroll"><table class="qt360-table"><thead><tr><th>Intervallo nominale</th><th>Base · copertura</th><th>Regime VIX · copertura</th><th>Ampiezza base · tick</th><th>Ampiezza VIX · tick</th></tr></thead><tbody id="deskRegimeTable"></tbody></table></div></div></div>
+  <div class="qt360-panel" id="qt360-panel-atlas" role="tabpanel">
+    <div class="qt360-card"><h3>COPERTURA ANALITICA</h3><p class="qt360-desc">Copertura analitica per area, fonte di mercato e disponibilità. Puoi filtrare i moduli, aprire la vista corrispondente o consultare il manuale integrale incluso nel pacchetto.</p><div class="qt360-topline" style="justify-content:space-between"><label style="flex:1;min-width:200px;font:11px Consolas;color:#84c9e4">FILTRA CAPITOLO / STATUS<input id="qt360AtlasSearch" type="search" placeholder="es. Greeks, risk, physical, flow, book, OMS…" style="margin-top:7px"></label><div class="qt360-actions"><button type="button" class="qt360-btn" id="qt360AtlasAll">TUTTI</button><button type="button" class="qt360-btn" id="qt360AtlasGap">SOLO GAP</button><button type="button" class="qt360-btn" id="qt360AtlasReady">OPERATIVI</button></div></div><div id="qt360AtlasSummary" class="qt360-statrow"></div><div id="qt360AtlasTable" class="qt360-atlas"></div><p class="qt360-caption">Fonte: Quantistes · ES Quantitative &amp; Infrastructure Specification Manual, v16. Gli stati descrivono questa build, non attestano il completamento di tutte le funzioni del manuale.</p></div>
+  </div>
+  </section>
+

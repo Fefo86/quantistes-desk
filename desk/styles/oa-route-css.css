@@ -1,0 +1,7 @@
+
+[data-q13-panel="scalp"] #oaDashboard{display:none!important}
+[data-q13-panel="scalp"].q25-tool-scalp-indicator #oaDashboard{display:block!important}
+
+#oaDashboard .oa-inference{margin:7px 0;border-top:1px solid #394552;padding:6px 0;font-size:12px}
+#oaDashboard .oa-inference li{margin:.4em 0;color:#c5cbd1}
+#oaDashboard .oa-inference summary{cursor:pointer;color:#a9d4e8}

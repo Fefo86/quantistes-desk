@@ -1,0 +1,49 @@
+
+/* Quantistes Daily Terminal · aligned Q/P workflow */
+#qdBar,#qdBar *,.qd-joined-panel,.qd-joined-panel *{box-sizing:border-box}
+#qdBar{padding:16px 18px;margin:12px 0 17px;background:linear-gradient(130deg,#0b1e31,#091c2e 78%);border:1px solid #214261;border-top:2px solid #7aa9e4;border-radius:10px;box-shadow:0 12px 36px rgba(7,21,37,.26);font:12px/1.5 Consolas;color:#b5e6f7}
+#qdBar .qd-bar-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-bottom:1px solid #29445e;padding-bottom:9px}
+#qdBar .qd-eyebrow{color:#7cc3e0;font:10px Consolas;letter-spacing:.2em}
+#qdBar h3{font:bold 21px Consolas;letter-spacing:.035em;margin:3px 0 0;color:#85b1ea}
+#qdBar h3 em{font-style:normal;color:#7ec4e1}
+#qdBar #qdMeta{background:#0c2034;border:1px solid #274c6f;border-radius:5px;padding:6px 9px;color:#8acee8;font:11px Consolas}
+#qdBar .qd-bar-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:end;margin-top:12px}
+#qdBar .qd-bar-tools label{display:flex;flex-direction:column;gap:5px;color:#8dd0e9;font:10px Consolas;min-width:160px}
+#qdBar .qd-bar-tools input{font:10px Consolas;color:#beeaf9;background:#0b2033;border:1px solid #274c6f;border-radius:4px;padding:7px;max-width:260px;min-height:35px}
+#qdBar .qd-bar-tools button{background:#10273c;border:1px solid #2a5075;border-radius:5px;color:#aae2f5;font:bold 10px Consolas;padding:10px 12px;min-height:35px;cursor:pointer}
+#qdBar .qd-bar-tools button:hover{background:#1d3750;border-color:#80c6e2}
+#qdBar .qd-bar-tools button.qd-action{background:#81aee8;color:#0d2337;border-color:#9abff3}
+#qdBar .qd-bar-tools button.qd-action:disabled{opacity:.55;cursor:wait}
+#qdBar .qd-bar-message{margin-top:12px;padding:10px 12px;background:#0c2236;border-left:3px solid #59a0c4;color:#abe2f5;border-radius:3px}
+#qdBar .qd-bar-message[data-tone='bad']{border-color:#e3decc;color:#efe6ce;background:#0e2338}
+#qdBar .qd-bar-message[data-tone='ok']{border-color:#76bedc;color:#a0def3;background:#0b2033}
+#qdBar .qd-bar-audit{font:10px/1.5 Consolas;color:#6bb4d5;padding-top:8px}
+.qd-joined-panel{margin:12px 0 17px;background:linear-gradient(120deg,#0a1d30,#091a2c);color:#b7e7f8;border:1px solid #1f3e5d;border-radius:9px;overflow:hidden;font:11px/1.45 Consolas}
+.qd-joined-panel .qd-join-head{padding:11px 13px;border-bottom:1px solid #1c3a57;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;background:linear-gradient(90deg,#142c42,#0b1e31)}
+.qd-joined-panel .qd-join-head b{font:bold 12px Consolas;color:#87b2ea}
+.qd-joined-panel .qd-join-head .qd-join-state{font:10px Consolas;color:#87cbe6}
+.qd-joined-panel .qd-join-content{padding:12px}
+.qd-joined-panel .qd-kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;margin-bottom:13px}
+.qd-joined-panel .qd-kpis>div{background:#0c2236;border:1px solid #1c3b58;border-radius:6px;padding:9px 10px;min-width:0}
+.qd-joined-panel .qd-kpis small{display:block;color:#75bddc;font-size:9px;letter-spacing:.04em}
+.qd-joined-panel .qd-kpis b{display:block;color:#89b4ec;font-size:18px;font-variant-numeric:tabular-nums}
+.qd-joined-panel .qd-kpis b.qd-warn{color:#ece4cd;font-size:13px}
+.qd-joined-panel .qd-joined-tablewrap{max-height:420px;overflow:auto;border:1px solid #1b3955;border-radius:6px}
+.qd-joined-panel table.qd-joined-table{border-collapse:collapse;width:100%;min-width:950px;white-space:nowrap;font:10px Consolas;font-variant-numeric:tabular-nums}
+.qd-joined-panel .qd-joined-table th{padding:9px 8px;position:sticky;top:0;background:#0f253a;color:#87b5ff;border-bottom:1px solid #305b85;text-align:right;z-index:1}
+.qd-joined-panel .qd-joined-table td{padding:8px 8px;text-align:right;border-bottom:1px solid rgba(53,119,158,.22);background:transparent;color:#bae8f8}
+.qd-joined-panel .qd-joined-table th:nth-child(-n+2),.qd-joined-panel .qd-joined-table td:nth-child(-n+2){text-align:left}
+.qd-joined-panel .qd-joined-table td:nth-child(3){color:#e3decc}
+.qd-joined-panel .qd-joined-table td.qd-prob{background:rgba(108,181,214,calc(.045 + var(--power)*.43))}
+.qd-joined-panel .qd-joined-table td.qd-diff.pos{background:rgba(107,180,213,calc(.05 + var(--power)*.55))}
+.qd-joined-panel .qd-joined-table td.qd-diff.neg{background:rgba(222,219,203,calc(.05 + var(--power)*.55))}
+.qd-joined-panel .qd-small{margin-top:10px;color:#75bddc;font:10px/1.5 Consolas}
+.qd-joined-panel .qd-joint-plot{position:relative;border:1px solid #1b3855;border-radius:6px;background:#0a1c2e;margin-bottom:14px;min-height:292px;padding-bottom:31px;overflow:hidden}
+.qd-joined-panel .qd-joint-plot canvas{display:block;background:#091b2d}
+.qd-joined-panel .qd-joint-plot canvas.qd-cross{position:absolute;left:0;top:0;pointer-events:auto;background:transparent;cursor:crosshair}
+.qd-joined-panel .qd-joint-plot .qd-plot-read{position:absolute;bottom:0;left:0;right:0;background:#0e2438;border-top:1px solid #214261;color:#b8e8f8;font:11px Consolas;padding:8px 12px;min-height:31px}
+#flow-panel-physical .qp-chartbox canvas.qp-overlay{background:transparent!important;mix-blend-mode:normal;will-change:auto}
+#flow-panel-physical .qp-chartbox{contain:paint}
+@media (max-width:1200px){.qd-joined-panel .qd-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:650px){#qdBar{padding:11px;margin:9px 0}#qdBar .qd-bar-tools label{width:100%;min-width:0}#qdBar .qd-bar-tools input{max-width:100%}.qd-joined-panel .qd-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+

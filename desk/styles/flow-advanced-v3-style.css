@@ -1,0 +1,60 @@
+
+/* Quantistes Flow Scenario Studio · v3 — isolated from CVI/IPPO core */
+#view-flows .fa-studio, #view-flow-score .fa-score{--fa-bg:#091a2b;--fa-line:#193651;--fa-amber:#87b5ff;--fa-cyan:#76bedc;--fa-violet:#9dc1f4;--fa-green:#87cbe6;--fa-muted:#80c5e2;color:#b9e8f8}
+#view-flows .fa-stage{margin:15px 0 22px;border:1px solid #345570;background:#091b2d;box-shadow:inset 0 2px #87b5ff}
+#view-flows .fa-stage-head{padding:17px 19px 12px;background:linear-gradient(100deg,#0c2135,#091c2d 70%);border-bottom:1px solid #1c3a56;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#view-flows .fa-stage h3{font-family:Consolas;color:#89b4ec;margin:0;font-size:18px;letter-spacing:.05em}
+#view-flows .fa-stage-head p{font-size:12px;line-height:1.6;color:#8ed1ea;margin:8px 0 2px;max-width:980px}
+#view-flows .fa-scenario-badge{font-size:10px;letter-spacing:.11em;font-weight:700;color:#95bcf2;border:1px solid #87b5ff;background:#0a1d2f;padding:7px 10px;height:max-content}
+#view-flows .fa-controls{padding:11px 17px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid #183148;background:#0b1d31}
+#view-flows .fa-controls label{font-size:11px;letter-spacing:.025em;color:#8fd2eb;display:flex;flex-direction:column;gap:4px;min-width:170px;flex:1 1 170px;max-width:260px}
+#view-flows .fa-controls select{background:#091a2b;color:#83afe8;padding:9px 10px;border:1px solid #224262;font:inherit;font-size:12px;min-height:36px}
+#view-flows .fa-controls button,.fa-score button{color:#0a1c2e;background:#79a8e3;border:0;padding:10px 13px;font:700 11px Consolas;cursor:pointer;min-height:36px}
+#view-flows .fa-controls button.secondary{background:#0d2337;color:#b0e4f6;border:1px solid #284d72}
+#view-flows .fa-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#193652;border-bottom:1px solid #193651}
+#view-flows .fa-stat{padding:15px;background:#091c2d;min-width:0}
+#view-flows .fa-stat small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#7ec4e1;margin-bottom:10px}
+#view-flows .fa-stat strong{color:#87b2ea;font-size:21px;display:block;line-height:1.2;font-variant-numeric:tabular-nums}
+#view-flows .fa-stat em{font-style:normal;color:#82c7e3;font-size:10px;display:block;margin-top:6px;line-height:1.4}
+#view-flows .fa-stage-grid{padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:13px}
+#view-flows .fa-panel,#view-flow-score .fa-panel{border:1px solid #1b3956;background:#091c2e;min-width:0;overflow:hidden}
+#view-flows .fa-panel.wide{grid-column:1/-1}
+#view-flows .fa-title{padding:10px 13px;border-bottom:1px solid #193752;background:#0b1e31;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+#view-flows .fa-title b{color:#b7e7f8;font-size:11px;letter-spacing:.06em}
+#view-flows .fa-title small{font-size:10px;color:#84c9e4}
+#view-flows .fa-chartwrap{position:relative;padding:5px 8px 3px;min-height:200px}
+#view-flows .fa-chartwrap canvas{width:100%;display:block;touch-action:pan-y}
+#view-flows .fa-read{min-height:31px;border-top:1px solid #1a344c;background:#091b2d;font-size:11px;color:#8ed1ea;padding:8px 12px;line-height:1.55}
+#view-flows .fa-tablewrap{max-height:440px;overflow:auto}
+#view-flows .fa-table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:11px;font-variant-numeric:tabular-nums}
+#view-flows .fa-table th{position:sticky;top:0;z-index:1;background:#0d2337;color:#93d5ed;text-align:left;font-weight:700;padding:9px 9px;border-bottom:1px solid #214261}
+#view-flows .fa-table td{padding:8px 9px;border-bottom:1px solid #162f46;color:#afe4f6}
+#view-flows .fa-table tr:nth-child(even){background:#091c2d}
+#view-flows .fa-table tr:hover,#view-flows .fa-table tr:focus{background:#162e45;outline:none}
+#view-flows .fa-up{color:#99deff!important}#view-flows .fa-down{color:#88b3eb!important}
+#view-flows .fa-audit-note{padding:11px 14px;color:#87cbe6;font-size:11px;line-height:1.6;border-top:1px solid #1b354c;background:#0b1d31}
+#view-flows .fa-coverage{padding:12px 14px}
+#view-flows .fa-coverage details{border:1px solid #1a3753;margin:6px 0;background:#0a1e30}
+#view-flows .fa-coverage summary{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;color:#8eb7ef;cursor:pointer;list-style:none;font-size:12px;font-weight:700}
+#view-flows .fa-coverage summary::-webkit-details-marker{display:none}
+#view-flows .fa-coverage summary:after{content:'+';color:#b0e4f6;font-size:16px}
+#view-flows .fa-coverage details[open] summary:after{content:'−'}
+#view-flows .fa-coverage article{padding:0px 13px 12px;font-size:11px;color:#95d6ee;line-height:1.7;max-width:1100px}
+#view-flows .fa-coverage article p{margin:8px 0}
+#view-flows .fa-pill{border:1px solid #3a5973;border-radius:2px;padding:2px 6px;color:#9ddcf2;font-size:9px;letter-spacing:.04em;white-space:nowrap}
+#view-flows .fa-pill.ok{color:#82c7e3;border-color:#2f6d92}
+#view-flows .fa-pill.partial{color:#8db6ee;border-color:#87b5ff}
+#view-flows .fa-pill.blocked{color:#ebe3cd;border-color:#93a3ac}
+#view-flow-score .fa-score{padding:13px 15px;margin:15px 0 3px;border:1px solid #20405f;background:#091c2e}
+#view-flow-score .fa-score h3{margin:0 0 9px;color:#88b3eb;font-size:13px}
+#view-flow-score .fa-score p{font-size:11px;color:#92d4ec;line-height:1.55}
+#view-flow-score .fa-score .fa-score-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+#view-flow-score .fa-score .fa-score-grid div{padding:10px;background:#0b1e31;border:1px solid #1c3a57}
+#view-flow-score .fa-score .fa-score-grid small{display:block;color:#81c7e3;font-size:10px}
+#view-flow-score .fa-score .fa-score-grid strong{display:block;font-size:17px;color:#96bdf2;margin-top:7px}
+#view-flows .fa-tile-key{display:flex;align-items:center;gap:6px;padding:7px 10px 12px;font-size:10px;color:#82c7e3}
+#view-flows .fa-gradient{width:100px;height:8px;background:linear-gradient(90deg,#b8c1c2,#12293f,#68b0d1)}
+@media(max-width:1200px){#view-flows .fa-stage-grid{grid-template-columns:1fr}#view-flows .fa-panel.wide{grid-column:auto}}
+@media(max-width:900px){#view-flows .fa-stats{grid-template-columns:repeat(2,minmax(0,1fr))}#view-flow-score .fa-score .fa-score-grid{grid-template-columns:1fr}}
+@media(max-width:550px){#view-flows .fa-stats{grid-template-columns:1fr}#view-flows .fa-stage-grid{padding:7px}#view-flows .fa-controls{padding:9px}#view-flows .fa-stage h3{font-size:15px}}
+

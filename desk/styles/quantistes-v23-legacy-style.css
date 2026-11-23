@@ -1,0 +1,120 @@
+/* QUANTISTES V23 / PURE UI REFRACTOR. Numeric code is not modified. */
+:root{--ql-black:#061524;--ql-deep:#081828;--ql-panel:#0a1c2e;--ql-edge:#274661;--ql-violet:#a9c9f6;--ql-amber:#89b4ec;--ql-ice:#9adaf1;--ql-text:#c2dafb;--ql-sub:#80ade7}
+body.q13-on:not(.q13-native){background:var(--ql-black)!important;color:var(--ql-text)!important}
+body.q13-on:not(.q13-native) .q13{background:#071525!important;color:var(--ql-text)!important;min-height:100vh}
+body.q13-on:not(.q13-native) .q13-header{position:relative;z-index:13;min-height:64px;padding:9px clamp(13px,1.7vw,28px);background:#081828!important;border-bottom:1px solid #2c537a!important;box-shadow:none;gap:14px;flex-wrap:wrap}
+body.q13-on:not(.q13-native) .q13-header .q13-brand strong{font-weight:800;color:#f5f3e9;font-size:clamp(19px,1.4vw,24px)}
+body.q13-on:not(.q13-native) .q13-header .q13-brand em{color:var(--ql-amber)}
+body.q13-on:not(.q13-native) .q13-header .q13-brand>span{font:700 10px Consolas;letter-spacing:.12em;color:#7face6}
+body.q13-on:not(.q13-native) .q13-header .q13-mark{background:#0a1c2f;border:1px solid #87b5ff;color:#8db7ee;box-shadow:none}
+body.q13-on:not(.q13-native) .q13-actions{gap:7px;flex-wrap:wrap}
+body.q13-on:not(.q13-native) .q13-actions :is(button,label){background:#0b1f32!important;border:1px solid #26496b!important;border-radius:2px!important;color:#c2dafb!important;font:700 10px/1.2 Consolas!important;padding:8px 11px!important;min-height:31px!important;box-shadow:none!important}
+body.q13-on:not(.q13-native) .q13-actions #q13Demo{background:#0f2539!important;color:#e3decc!important;border-color:#87b5ff!important}
+body.q13-on:not(.q13-native) .q13-actions #q15DataButton{background:#29445e!important;color:#e6e0cc!important;border-color:#87b5ff!important}
+body.q13-on:not(.q13-native) .q13-actions #q13ImportChain,
+body.q13-on:not(.q13-native) .q13-actions #q13Advanced,
+body.q13-on:not(.q13-native) .q13-actions #q15ToolsButton{display:none!important}/* Duplicate routes only; controls remain in original DOM */
+body.q13-on:not(.q13-native) .q13-ribbon{background:#081728!important;border-bottom:1px solid #1c3a57!important;min-height:25px;padding:4px 22px;color:#8bb5ed;font:10px/1.3 Consolas}
+body.q13-on:not(.q13-native) #q15Spine{display:none!important}
+body.q13-on:not(.q13-native) .q13-layout{display:block!important;max-width:none!important;min-height:calc(100vh - 130px)!important}
+body.q13-on:not(.q13-native) .q13-layout>.q13-sidebar{display:none!important}/* Original stage buttons remain attached and functional */
+body.q13-on:not(.q13-native) .q13-layout>.q13-main{display:block!important;max-width:none!important;width:100%!important;padding:14px clamp(16px,2vw,38px) 50px!important;background:#071525!important}
+body.q13-on:not(.q13-native) .q13-layout>.q13-rail{display:none!important}
+body.q13-on:not(.q13-native).ql-evidence-open .q13-layout>.q13-rail{display:block!important;position:fixed!important;right:0;top:0;bottom:0;z-index:101;width:min(390px,94vw);max-height:100vh;overflow:auto;min-height:0;background:#0b1d31!important;border-left:1px solid #4477ac;box-shadow:-18px 0 55px #071525bb;padding:28px 18px 20px}
+#qlBackdrop{position:fixed;inset:0;background:#061423c7;z-index:100;display:none}
+body.ql-evidence-open #qlBackdrop{display:block}
+#qlNav{background:#08192a;border-bottom:1px solid #214262;display:flex;gap:2px;align-items:stretch;padding:0 clamp(12px,2vw,35px);font-family:Consolas;overflow-x:auto;scrollbar-width:thin;position:sticky;top:0;z-index:10;min-height:54px}
+#qlNav button{display:flex;gap:9px;align-items:center;padding:11px clamp(9px,1.35vw,23px);border:0;border-bottom:2px solid transparent;background:transparent;min-width:max-content;color:#86b1ea;font:800 clamp(10px,.83vw,12px)/1.2 Consolas;letter-spacing:.045em;cursor:pointer;border-radius:0}
+#qlNav button small{display:block;font:400 9px/1.25 Consolas;margin-top:3px;color:#669bd9;letter-spacing:0}
+#qlNav button i{display:grid;place-items:center;width:23px;height:23px;background:#0c2034;color:#7fade6;border:1px solid #1f3f5d;font:800 10px Consolas;font-style:normal}
+#qlNav button:hover{color:#f5f3e9;background:#10273c}
+#qlNav button.on{border-color:#86b1ea;background:linear-gradient(0deg,#11283e,#0b1f32);color:#e8e1cd}
+#qlNav button.on small{color:#8db7ee}
+#qlNav button.on i{border-color:#7e919e;background:#12293e;color:#99bef3}
+#qlNav .ql-nav-aux{margin-left:auto;border-left:1px solid #244768;gap:7px}
+#qlNav .ql-nav-aux b{color:#8bb5ed}
+#qlNav #qlOpenData{color:#9abff3}
+#qlNav #qlOpenEvidence{color:#a6e0f4}
+#qlStatusLine{font:10px/1.5 Consolas;background:#08192a;border-bottom:1px solid #1c374f;color:#99bff3;display:flex;gap:16px;align-items:center;justify-content:space-between;padding:5px clamp(16px,2vw,35px);flex-wrap:wrap}
+#qlStatusLine b{color:#90b8ef;font-weight:700}
+#qlStatusLine .ql-check{color:#83c8e4}
+body.q13-on:not(.q13-native) .q13-screen-title{margin-bottom:0;padding:0 0 12px;border-bottom:0;gap:16px}
+body.q13-on:not(.q13-native) .q13-screen-title h1{font-size:clamp(23px,2.3vw,35px);color:#f2e8cf;letter-spacing:-.028em}
+body.q13-on:not(.q13-native) .q13-screen-title h1 span{color:#90b8ef}
+body.q13-on:not(.q13-native) .q13-screen-title p{color:#8ab4ec;font-size:11px;max-width:97ch;line-height:1.55}
+body.q13-on:not(.q13-native) .q13-screen-title .q15-mode-switch{display:none!important}/* same original controls called by studio */
+.ql-studio{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:linear-gradient(95deg,#0b1e31,#091b2c 75%);border:1px solid #35536e;padding:9px 12px;margin-bottom:12px;min-height:53px}
+.ql-studio-start{display:flex;gap:9px;align-items:center;flex-shrink:0;border-right:1px solid #42607a;padding-right:12px}
+.ql-studio .ql-studio-kicker{color:#9bc0f3;font:700 9px/1.4 Consolas;letter-spacing:.06em}
+.ql-studio button{padding:7px 11px;color:#a7c8f6;border:1px solid #35536e;background:#0a1e30;min-height:32px;font:700 10px Consolas;cursor:pointer;border-radius:2px;white-space:nowrap}
+.ql-studio button:hover{border-color:#9bdbf1;color:white;background:#11273d}
+.ql-studio button.on{background:#1d3750;border-color:#7aa9e4;color:#e8e1cd}
+.ql-studio-tools{display:flex;gap:5px;flex:1;flex-wrap:wrap;align-items:center}
+.ql-studio-tools button{padding:7px 9px}
+.ql-studio-tail{font:9px Consolas;color:#84b0e9;margin-left:auto;white-space:nowrap}
+body.q13-on:not(.q13-native) .q13-strip{margin:10px 0 13px!important;gap:5px!important}
+body.q13-on:not(.q13-native) .q13-strip-card{background:#0b1d31!important;border:1px solid #1d3b59!important;padding:10px 12px!important;border-radius:2px!important}
+body.q13-on:not(.q13-native) .q13-panel,body.q13-on:not(.q13-native) .q16-primary{border-color:#1e3d5b!important;background:#08192a!important;border-radius:2px!important;box-shadow:none!important;margin-bottom:12px!important}
+body.q13-on:not(.q13-native) .q13-panel-head{border-bottom-color:#1c3b58!important}
+body.q13-on:not(.q13-native) .q13-panel-head h2{color:#93bbf1!important}
+body.q13-on:not(.q13-native) .q13-next,body.q13-on:not(.q13-native) .q15-hero-forward{display:none!important}/* duplicate navigation labels; original detail is in workflow */
+body.q13-on:not(.q13-native) .q13-view:not(.q15-native-only) > .q15-instrument{display:none!important}/* native research remains under one-click studio */
+body.q13-on:not(.q13-native) .q13-view.q15-native-only > .q15-instrument{display:block!important;margin:0!important;border:1px solid #26496c!important;border-radius:2px!important;background:#081929!important;box-shadow:none!important}
+body.q13-on:not(.q13-native) .q15-instrument .q15-labhead{padding:10px 14px!important;background:#0c2034!important;border-bottom:1px solid #35536e!important}
+body.q13-on:not(.q13-native) .q15-instrument .q15-labhead>div>p{font-size:11px;color:#99bff3}
+body.q13-on:not(.q13-native) .q15-instrument .q15-labhead h3{color:#97bdf2}
+body.q13-on:not(.q13-native) .q15-instrument .q15-toolnav{display:none!important}/* all native tool buttons remain, custom studio is sole navigation */
+body.q13-on:not(.q13-native) .q15-instrument .q15-portal-head{background:#0b1f32!important;border-color:#224363!important}
+body.q13-on:not(.q13-native) .q15-instrument .q15-native-host{background:#081929;border-color:#1b3955;padding:8px}
+/* Market's actual chart and IPPO ladder are moved up in their original page. */
+#q16AtlasDock{margin-top:0!important}
+#q16AtlasDock .q16-atlas-viewport{min-height:460px!important}
+body.q13-on:not(.q13-native) .q13-level-ladder{max-height:340px;overflow:auto}
+/* Native Data/Fit overlay: actual CSV + input fields + original calculation button */
+body.q13-on:not(.q13-native) #q15Settings.open{z-index:120!important}
+body.q13-on:not(.q13-native) .q15-settings-drawer{width:min(1040px,calc(100vw - 8px))!important;max-width:min(1040px,calc(100vw - 8px))!important;background:#081829!important;border-left:1px solid #55728c!important;box-shadow:-25px 0 80px #071525dd!important}
+body.q13-on:not(.q13-native) .q15-settings-head{background:#0b1f32!important;border-color:#395772!important;padding:13px 18px!important}
+body.q13-on:not(.q13-native) .q15-settings-head b{color:#9dc1f4!important;font-size:18px}
+body.q13-on:not(.q13-native) .q15-settings-main{padding:14px 20px 95px!important;background:#081728}
+#qlDataGuide{background:#0b1e31;border:1px solid #36546f;border-left:3px solid #78a7e3;padding:13px 16px;margin:4px 0 15px;color:#b4d1f8;font:11px/1.6 Consolas}
+#qlDataGuide h3{font:800 13px/1.5 Consolas;color:#a1c4f4;margin:0 0 6px}
+#qlDataGuide strong{color:#9eddf2}
+#qlImportStatus{border-top:1px solid #2b4a65;padding-top:8px;margin-top:8px;color:#95bcf2}
+#qlImportStatus.ql-import-ok{color:#9eddf2}
+#qlImportStatus.ql-import-error{color:#eae3cd}
+body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;align-items:start;padding:0!important}
+body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar>.qt-param-head{display:none!important}
+body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar>.sidegroup{padding:14px;background:#0a1c2e;border:1px solid #224363;margin:0;min-width:0}
+body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar>.sidegroup.advanced{grid-column:1/-1;padding-bottom:14px}
+body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar .steptitle{color:#98bef3;font-size:13px;margin:0 0 11px}
+body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar :is(input,select,button,textarea){font-size:12px}
+body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar #csvFile{display:block!important;width:100%;padding:11px!important;background:#0b1f32!important;border:1px solid #87b5ff!important;color:#e7e0cc!important;font-size:12px!important}
+body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar label{font-size:11px;color:#9ec2f4}
+#qlCalcDock{position:sticky;bottom:-1px;z-index:3;background:#0b1e31;border-top:1px solid #456582;display:flex;gap:12px;align-items:center;justify-content:space-between;padding:11px 16px;margin:10px -20px -95px;font:11px Consolas;color:#91b9f0}
+#qlCalcDock #calculate{width:auto!important;min-width:225px;min-height:40px;padding:8px 17px;background:#82aee8!important;color:#091b2c!important;border:1px solid #90b8ef!important;font:800 12px Consolas!important;margin:0!important}
+#qlCalcDock #calculate:disabled{opacity:.45;cursor:not-allowed}
+#qlCalcDock span{min-width:0;line-height:1.5}
+/* Contrast improvements that do not change any chart data or scripts */
+body.q13-on:not(.q13-native) .q13-rail .q13-rail-verdict strong{color:#92baf1}
+body.q13-on:not(.q13-native) :is(button,input,select):focus-visible{outline:2px solid #91d3ec!important;outline-offset:2px}
+@media(max-width:1100px){#qlNav{position:relative;top:auto}#qlNav button{padding:9px 10px}#qlNav button small{display:none}.ql-studio-tail{display:none}}
+@media(max-width:740px){body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar{grid-template-columns:1fr!important}body.q13-on:not(.q13-native) #q15ParamsMount #terminalSidebar>.sidegroup.advanced{grid-column:1}.ql-studio{align-items:flex-start}.ql-studio-start{border-right:0;width:100%;border-bottom:1px solid #1f3f5e;padding:0 0 7px}#qlStatusLine{gap:4px}.q13-clock{display:none}#qlNav .ql-nav-aux{margin-left:0}#qlCalcDock{flex-wrap:wrap}#qlCalcDock #calculate{width:100%!important}.q13-screen-title{flex-wrap:wrap}}
+@media(max-width:470px){body.q13-on:not(.q13-native) .q13-layout>.q13-main{padding:10px 7px 30px!important}#qlDataGuide{padding:11px}#qlNav button{font-size:10px}#qlNav button i{display:none}body.q13-on:not(.q13-native) .q13-actions :is(button,label){padding:6px 7px!important}}
+@media print{#qlNav,#qlStatusLine,.ql-studio,#qlBackdrop,#qlCalcDock{display:none!important}}
+/* Original FULL ANALYTICS hides all siblings. Keep the sole new study selector visible. */
+body.q13-on:not(.q13-native) .q13-view.q15-native-only>.ql-studio{display:flex!important}
+
+/* The native Data Hub had a second redundant CSV/FIT action footer. Originals stay in DOM. */
+body.q13-on:not(.q13-native) .q15-settings-drawer>.q15-settings-footer{display:none!important}
+
+/* The new Data Hub is the unique visible home for inputs; original controls remain in DOM. */
+body.q13-on:not(.q13-native) .q13-actions #q15DataButton,
+body.q13-on:not(.q13-native) .q13-actions #q13Bridge,
+body.q13-on:not(.q13-native) .q13-actions label.q13-upload{display:none!important}
+#qlFeeds{padding:10px 12px;margin:0 0 15px;background:#091c2e;border:1px solid #204160;font:10px Consolas}
+#qlFeeds .ql-feeds-title{color:#89b3eb;font-weight:800;letter-spacing:.05em;margin-bottom:9px}
+#qlFeeds .ql-feeds-row{display:flex;flex-wrap:wrap;gap:7px}
+#qlFeeds .ql-feed-btn,#qlFeeds button{display:inline-block;min-width:0;width:auto;background:#10263b;border:1px solid #42607b;border-radius:2px;padding:8px 10px;margin:0;color:#bdd6fa;font:700 10px Consolas;cursor:pointer;line-height:1.3}
+#qlFeeds .ql-feed-btn:hover,#qlFeeds button:hover{background:#1f3b54;border-color:#89cde7}
+/* Collapse repeated introductory copy, not the actual input controls. */
+body.q13-on:not(.q13-native) .q15-settings-main>.q15-notice{display:none!important}

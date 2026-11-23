@@ -1,0 +1,18 @@
+
+/* institutional joint fit and manual reference */
+.qt-joint-controls{display:flex;flex-wrap:wrap;align-items:center;gap:9px 16px;background:#091b2d;border:1px solid #25435d;padding:12px;margin:12px 0}
+.qt-joint-controls label{min-width:220px;display:flex;flex-direction:column;gap:4px;color:#87b5ff;font:600 11px Consolas;letter-spacing:.05em}
+.qt-joint-controls label span{font-size:10px;color:#bed0e1;font-weight:400;letter-spacing:0}
+.qt-joint-controls select{flex:1;min-width:270px;max-width:560px;background:#071727;color:#85b1e9;border:1px solid #3a5873;padding:10px}
+.qt-joint-caption{font-size:11px;color:#8fb8ef;flex-basis:100%;line-height:1.6;margin:0}
+.qt-joint-register{background:#091b2c;border:1px solid #2b4964;margin:12px 0;padding:9px 12px}
+.qt-joint-register summary{cursor:pointer;color:#79a9e3;font-size:12px;font-weight:700}
+.qt-joint-register table{width:100%;border-collapse:collapse;margin:10px 0;font-size:11px}
+.qt-joint-register td,.qt-joint-register th{padding:7px;border-bottom:1px solid #29445e;vertical-align:top;text-align:left}
+.qt-joint-register th{color:#87b2ea;background:#0b1f32}
+.qt-joint-result{font-weight:700;padding:8px;margin:12px 0 6px;letter-spacing:.04em;color:#7ba9e4;border-left:3px solid #7ba9e4}
+.qt-joint-result.is-ready{border-color:#67afd1;color:#67afd1}
+.qt-joint-caution{font-size:11px;color:#aac0d5;line-height:1.5}
+#view-volcube svg{max-width:100%;display:block;overflow:visible}
+#vc9Chart{min-height:290px;max-width:100%;touch-action:none;aspect-ratio:auto}
+#vc9SliceChart{max-width:100%}

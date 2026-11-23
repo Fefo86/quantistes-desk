@@ -1,0 +1,58 @@
+/* The computed desk owns its controls, events and charts. These rules only style the view. */
+html.quantistes body.q13-on{--desk-mono:var(--qx-mono);--desk-display:var(--qx-sans);--qt10-bg:var(--qx-bg);--qt10-surface:var(--qx-panel);--qt10-raised:var(--qx-raised);--qt10-rule:var(--qx-line);--qt10-ink:var(--qx-ink);--qt10-muted:var(--qx-muted);--qt10-amber:var(--qx-amber);--qt10-up:var(--qx-up);--qt10-down:var(--qx-red);--qt10-cyan:#accec2;--accent:var(--qx-lime);--mono:var(--qx-mono);--sans:var(--qx-sans);scrollbar-color:#55634e var(--qx-bg)}
+html.quantistes body.q13-on:not(.q13-native) #q13App :is(.q13-header,#qlNav){display:none!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App :is(.q13-layout,#q24Context){margin-left:var(--qx-rail)!important;width:calc(100% - var(--qx-rail))!important;max-width:none!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q13-layout>.q13-main{background:var(--qx-bg)!important;padding:12px var(--qx-pad) 60px!important;margin:0!important;max-width:none!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App #q24Context{background:#131710!important;border:0!important;border-bottom:1px solid var(--qx-faint)!important;padding:7px var(--qx-pad)!important;min-height:26px;gap:10px;font:400 .74rem/1.4 var(--qx-mono)!important}
+html.quantistes #q13App #q24Context :is(span,strong){font-family:var(--qx-mono)!important}
+html.quantistes #q13App #q24Context #q24StageTitle{color:#c0ceae!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q13-screen-title h1{display:none!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q13-screen-title{padding:0!important;margin:0!important;min-height:0!important}
+html.quantistes #q13App .q13-screen-title .desk-title-action{display:none!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q13-screen-title:has(.desk-title-action){display:none!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q13-screen-title>div:has(h1){display:none!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App #q25-toolbar-score{display:none!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q13-view>nav.q25-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:3px;padding:6px 0 9px!important;border-color:var(--qx-line)!important;background:transparent!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q25-toolbar .q25-tool{color:var(--qx-muted)!important;background:var(--qx-panel)!important;border:1px solid var(--qx-line)!important;border-radius:3px!important;font:500 .78rem/1.25 var(--qx-mono)!important;min-height:32px;padding:6px 10px!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q25-toolbar .q25-tool[aria-current=page]{background:#2d3922!important;color:var(--qx-lime)!important;box-shadow:inset 0 -2px var(--qx-lime)!important;border-color:#51623f!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App .q13-view :is(button,input,select,summary,textarea,svg text),
+html.quantistes :is(#q15Settings,#q15Lookup) *{font-family:var(--qx-mono)!important}
+html.quantistes body.q13-on #q13App #deskBoard{--desk-mono:var(--qx-mono);--desk-display:var(--qx-sans);font:400 .9rem/1.5 var(--qx-sans)}
+html.quantistes #deskBoard[data-signal=NEUTRALE]{--state:var(--qx-amber)}
+html.quantistes body.q13-on #q13App #deskBoard .desk-parameters{background:var(--qx-panel)!important;border:1px solid var(--qx-line)!important;border-radius:6px!important;grid-template-columns:1.25fr 1.45fr 1.05fr .95fr .85fr .85fr .85fr .95fr auto;align-items:end;padding:13px 14px!important;gap:10px!important}
+html.quantistes body.q13-on #q13App #deskBoard .desk-parameters label{margin:0!important;display:grid;gap:6px;font:500 .745rem/1.3 var(--qx-sans)!important;letter-spacing:.025em!important;text-transform:none!important;color:#c1cbb9!important}
+html.quantistes body.q13-on #q13App #deskBoard .desk-parameters :is(input,select){font:400 .79rem/1.2 var(--qx-mono)!important;height:33px!important;min-height:33px!important;color:#e7eddd!important;background-color:#10150f!important;border:1px solid #3c4636!important;border-radius:3px!important;padding:4px 6px!important}
+html.quantistes body.q13-on #q13App #deskBoard .desk-parameters select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7'%3E%3Cpath d='m1 1 4 4 4-4' fill='none' stroke='%23b9c6ae'/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right 7px center!important;padding-right:20px!important}
+html.quantistes body.q13-on #q13App #deskBoard .desk-apply{height:33px!important;min-height:33px!important;padding:4px 13px!important;background:var(--qx-lime)!important;color:#192110!important;border:1px solid var(--qx-lime)!important;border-radius:3px!important;font:600 .76rem var(--qx-mono)!important}
+html.quantistes body.q13-on:not(.q13-native) #q13App #deskBoard .desk-lead{display:grid!important;grid-template-columns:minmax(0,.95fr) minmax(0,1.35fr);gap:0!important;margin:14px 0!important;border:1px solid var(--qx-line)!important;border-radius:6px!important;overflow:hidden}
+html.quantistes #q13App #deskBoard .desk-decision{display:grid!important;grid-template-columns:1fr!important;align-content:center;gap:5px!important;color:var(--qx-ink)!important;padding:16px 19px!important;border:0!important;border-left:3px solid var(--state)!important;background:linear-gradient(105deg,#272b1c,#1b2118 85%)!important}
+html.quantistes #q13App #deskBoard .desk-decision>.desk-kicker{grid-column:1!important;grid-row:auto!important}
+html.quantistes #q13App #deskBoard .desk-decision #deskVerdict{font:600 clamp(1.9rem,3.2vw,3.4rem)/.98 var(--qx-sans)!important;letter-spacing:-.04em!important;color:var(--state)!important;grid-column:1!important;grid-row:auto!important}
+html.quantistes #q13App #deskBoard .desk-decision #deskReason{grid-column:1!important;grid-row:auto!important;font:400 .91rem/1.38 var(--qx-sans)!important;color:#d6dfcd!important;max-width:66ch!important;margin:1px 0!important}
+html.quantistes #q13App #deskBoard .desk-decision .desk-split{grid-column:1!important;grid-row:auto!important;display:flex!important;gap:13px!important;margin:3px 0 0!important}
+html.quantistes #q13App #deskBoard .desk-split>div{display:flex;align-items:baseline;gap:5px}
+html.quantistes #q13App #deskBoard :is(.desk-split small,.desk-split b){font:400 .71rem/1.45 var(--qx-mono)!important}
+html.quantistes #q13App #deskBoard .desk-kicker{font:500 .73rem/1.4 var(--qx-mono)!important;letter-spacing:.075em!important}
+html.quantistes #q13App #deskBoard .desk-kicker i{background:var(--state)!important}
+html.quantistes #q13App #deskBoard #deskRun{color:var(--qx-amber)!important;background:#312c20!important;border:1px solid #52462f!important;border-radius:3px;padding:1px 5px;font:500 .67rem/1.3 var(--qx-mono)!important}
+html.quantistes #q13App #deskBoard .desk-readout{display:grid!important;grid-template-columns:1.1fr 1fr 1fr;align-items:center;background:var(--qx-panel)!important;border-color:var(--qx-line)!important}
+html.quantistes #q13App #deskBoard .desk-readout>div{min-width:0;padding:8px clamp(10px,1.15vw,28px)!important;border-color:var(--qx-line)!important}
+html.quantistes #q13App #deskBoard .desk-readout strong{font:500 clamp(1.35rem,1.9vw,2.75rem)/1.2 var(--qx-sans)!important;letter-spacing:-.03em!important;color:#edf1e6!important;white-space:normal!important;overflow-wrap:anywhere}
+html.quantistes #q13App #deskBoard .desk-readout small{font:500 .68rem/1.5 var(--qx-mono)!important;letter-spacing:.045em!important}
+html.quantistes #q13App #deskBoard .desk-readout span{font:400 .75rem/1.44 var(--qx-sans)!important}
+html.quantistes #q13App #deskBoard :is(.desk-chart-head,.desk-ledger-head,.studio-sectionhead,.da-head,.da-chain>div:last-child,#rdSummary){background:#20271c!important;border-color:var(--qx-line)!important}
+html.quantistes #q13App #deskBoard :is(.da-panel,.desk-figure,.desk-payoff,.desk-ledger,.desk-notes,#pbDetail){border:1px solid var(--qx-line)!important;border-radius:5px!important;background:var(--qx-panel)!important}
+html.quantistes #q13App #deskBoard :is(.desk-chart-head,.desk-ledger-head,.da-head){padding:10px 13px!important}
+html.quantistes #q13App #deskBoard :is(.desk-chart-head h2,.desk-ledger-head h2,.da-head b,.da-pair h3){font:600 1.13rem/1.25 var(--qx-sans)!important;color:var(--qx-ink)!important;letter-spacing:-.015em!important}
+html.quantistes #q13App #deskBoard :is(.desk-figure,.desk-figure .desk-chart){background:#121811!important}
+html.quantistes #q13App #deskBoard .desk-switch button[aria-pressed=true]{background:var(--qx-lime)!important;color:#182311!important;border-color:var(--qx-lime)!important}
+html.quantistes #q13App #deskBoard .desk-chart text{font-family:var(--qx-mono)!important}
+html.quantistes #q13App #deskBoard .desk-chart-head,.quantistes #q13App #deskBoard .desk-ledger-head{border-radius:4px 4px 0 0}
+html.quantistes #q13App #deskBoard .da-panel :is(p,small,span){line-height:1.45}
+html.quantistes #q13App #deskBoard .da-head span{font:400 .8rem/1.35 var(--qx-sans)!important}
+html.quantistes #q13App #deskBoard :is(.da-chain,.da-clock,.da-pair,.da-more){border-color:var(--qx-line)!important}
+html.quantistes #q13App #deskBoard :is(button,input,summary,select):focus-visible,html.quantistes #q15Lookup :focus-visible{outline:2px solid var(--qx-lime)!important;outline-offset:2px}
+html.quantistes :is(#q15Lookup .q15-lookup-card,#q15Settings .q15-settings-drawer){border:1px solid #5a694d!important;background:#171d15!important;border-radius:7px!important}
+html.quantistes :is(#q15Settings .q15-settings-head,#q15Lookup .q15-lookup-header){background:#242d20!important;border-color:#45513c!important}
+html.quantistes :is(#q15Settings .q15-settings-head b,#q15Lookup .q15-lookup-header b){font:600 1.05rem var(--qx-sans)!important;color:var(--qx-lime)!important}
+html.quantistes body.q13-native .qx{display:none}

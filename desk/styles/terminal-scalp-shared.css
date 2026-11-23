@@ -1,0 +1,6 @@
+
+body.q13-on:not(.q13-native) #q13App [data-q13-panel="scalp"].on>#scalpWorkspace{display:block!important;width:100%;min-width:0}
+body.q13-on:not(.q13-native) #q13App [data-q13-panel="scalp"]:not(.on){display:none!important}
+#deskScalpTape[hidden]{display:none!important}#deskScalpTape{background:#11151b;border-block:1px solid #394048;color:#dce3e6;font:12px/1.4 Consolas,monospace}
+#deskScalpTape summary{padding:8px 12px;cursor:pointer}#deskScalpTape summary>b{margin-right:20px}#deskScalpTape summary>span{color:#efb779}#deskScalpTape small{color:#aebcc6;margin-left:12px}#deskScalpTape .ds-tape{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:8px;padding:8px 12px}#deskScalpTape section{padding:7px 0;border-top:1px solid #343d45}#deskScalpTape button{font:11px Consolas;color:#a7d4e3;border:1px solid #495966;background:#17212c;margin:3px;padding:3px 6px;cursor:pointer}#deskScalpTape p{margin:3px 0}
+

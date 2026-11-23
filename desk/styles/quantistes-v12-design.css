@@ -1,0 +1,16 @@
+
+/* QUANTISTES V12 / Institutional Confluence Workstation
+   Added over the native CVI/Q/P/Flow numerical engines; no mutation of pricing code. */
+:root{--q12bg:#091c2e;--q12panel:#0a1d2f;--q12edge:#1c374f;--q12gold:#85b1e9;--q12mint:#89cde7;--q12red:#e0dccb;--q12cyan:#d3e8ff;--q12muted:#6db5d6}
+#view-quant360{padding:10px 14px 40px!important;max-width:100%;min-width:0;overflow:visible!important}
+#view-quant360 .qt360-panel{display:block;animation:none!important}
+/* Bring the navigation back to one consistent active state. */
+.qt-nav-rail .tab[data-tab='quant360']{background:transparent!important;color:inherit!important;border:0!important;box-shadow:none!important;margin:0!important;width:100%!important;border-radius:2px!important;padding:10px 10px!important;text-align:left!important;font:inherit!important;letter-spacing:inherit!important}
+.qt-nav-rail .tab.active,.qt-nav-rail .tab[data-tab='quant360'].active{background:#87b5ff!important;color:#081929!important;border-left:3px solid #e3decc!important;box-shadow:none!important;font-weight:800!important}
+.qt-nav-rail .tab:not(.active):hover{background:#0c2135!important;color:#afe4f6!important}
+@media(max-width:1350px){}
+@media(max-width:1020px){}
+@media(max-width:720px){}
+@media(max-width:460px){}
+@media(prefers-reduced-motion:reduce){}
+

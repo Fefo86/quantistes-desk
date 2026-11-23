@@ -1,0 +1,17 @@
+#gfPlot{display:block;width:100%;max-width:100%;height:382px;touch-action:pan-y;cursor:crosshair;background:#091c2e;color:#92baf1}
+.g10-read,#view-distributions .pd-hover{display:block;padding:9px 12px;color:#b3e5f7;background:#0a1d2f;border-left:2px solid #488fb5;font:12px/1.55 var(--mono,Consolas);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.g10-controls{display:flex;align-items:center;flex-wrap:wrap;gap:9px 22px;padding:8px 12px;background:#091a2b;color:#91b9f0}
+.g10-controls label{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:0;font:11px/1.5 var(--mono,Consolas)}
+.g10-controls input[type=range]{display:inline-block;width:clamp(92px,16vw,205px);min-height:20px;margin:0;padding:0;accent-color:#87b5ff}
+.g10-controls select{background:#081929;border:1px solid #1e3d5c;color:#8fb8ef;padding:3px 7px;font:inherit}
+.g10-key{font:11px var(--mono,Consolas);display:flex;gap:7px;align-items:center}.g10-key i,.g10-key b{width:15px;height:0;border-top:1px dashed #87b5ff}.g10-key b{border-color:#f5efde}
+#view-smile #densityChart{display:block;width:100%;height:auto;min-height:0;max-height:none;padding:0;cursor:crosshair}
+#view-smile #densityChart svg,#view-distributions .pd-chart svg{display:block;width:100%;height:auto;max-height:none;min-height:0;background:#091c2e;touch-action:pan-y}
+#pdDensity{cursor:crosshair}#pdBins [data-prob-bin]{cursor:crosshair;outline:none}#pdBins [data-prob-bin]:is(:hover,:focus) rect:first-of-type{fill:#c9defc;fill-opacity:.07}
+#view-distributions .pd-hover .pd-inline-label{color:#81aee7}#view-distributions .pd-quantile-chip{font-variant-numeric:tabular-nums}
+@media(max-width:540px){#gfPlot{height:358px}.g10-controls{gap:7px 12px;padding:6px 9px}.g10-read{padding:7px 9px;font-size:11px}}
+#view-volcube .vc13-discount{display:grid;max-width:620px;gap:5px;padding:4px 9px;color:#6ea0dd;font:600 10px/1.5 Consolas}
+#view-volcube .vc13-discount select{background:#091c2e;color:#e6ebea;border:1px solid #3c5a75;padding:7px;font:12px Consolas}
+#view-volcube .vc13-discount small{font-size:10px;color:#7dabe5;font-weight:400;white-space:normal}
+#vc13Audit{font:600 10px/1.3 Consolas;color:#7eace6;border:1px solid #2a5075;background:#0a1e30;padding:5px 9px;cursor:pointer;margin-left:8px}
+#vc13Audit:disabled{color:#58758f;opacity:.45;cursor:not-allowed}

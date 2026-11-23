@@ -1,0 +1,50 @@
+#flow-panel-physical{font:12px/1.45 Consolas;color:#b6d2f9;background:#091a2b;padding:7px 0 28px}
+#flow-panel-physical *{box-sizing:border-box}
+#flow-panel-physical .qp-hero{display:flex;justify-content:space-between;align-items:center;gap:12px;background:radial-gradient(ellipse at 70% 10%,rgba(33,84,114,.22),transparent 60%),linear-gradient(110deg,#0a1e30,#091c2e);border:1px solid #29445e;border-left:4px solid #87b5ff;border-radius:9px;padding:18px;margin-bottom:12px}
+#flow-panel-physical .qp-overline{color:#99deff;letter-spacing:.2em;font-size:10px}
+#flow-panel-physical .qp-hero h2{font:700 29px/1.25 Consolas;letter-spacing:.06em;color:#ece4cd;margin:5px 0}#flow-panel-physical .qp-hero h2 em{color:#7cc3e0;font-style:normal}#flow-panel-physical .qp-hero p{color:#8acde8;margin:4px 0 0}
+#flow-panel-physical .qp-hero-meta{text-align:right;white-space:nowrap;display:flex;flex-direction:column;gap:4px}#flow-panel-physical .qp-hero-meta b{color:#7aa9e4;letter-spacing:.1em}#flow-panel-physical .qp-hero-meta span{color:#c1ebfa}#flow-panel-physical .qp-hero-meta small{color:#5d92d0}
+#flow-panel-physical .qp-quality-strip{border:1px solid #214262;background:linear-gradient(90deg,#0a1e30,#0a1c2f);color:#9adaf1;border-radius:5px;padding:9px 13px;margin-bottom:13px;font-size:11px}
+#flow-panel-physical .qp-toolbar{display:flex;align-items:end;gap:8px;flex-wrap:wrap;border:1px solid #1a3854;border-radius:8px;padding:12px;background:#0b1e31;margin:10px 0 13px}
+#flow-panel-physical label{font-size:10px;color:#6c9fdc;letter-spacing:.02em;display:flex;flex-direction:column;gap:6px}
+#flow-panel-physical select,#flow-panel-physical input{font-family:Consolas;color:#bad5f9;background:#091c2e;border:1px solid #234465;padding:8px 9px;border-radius:5px;max-width:100%;min-width:90px;outline:none;font-size:12px}
+#flow-panel-physical input:focus,#flow-panel-physical select:focus{border-color:#80c6e2;box-shadow:0 0 0 1px rgba(132,201,229,.3)}
+#flow-panel-physical button{background:#0f253a;border:1px solid #274c6f;color:#b5e6f7;font:700 11px Consolas;padding:9px 12px;border-radius:5px;cursor:pointer}
+#flow-panel-physical button:hover{background:#1b3855;border-color:#76bedc}#flow-panel-physical button.qp-primary{color:#0b1d31;background:#7ba9e4;border-color:#7ba9e4}
+#flow-panel-physical .qp-kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:12px 0}
+#flow-panel-physical .qp-kpi{background:linear-gradient(145deg,#0b1e31,#091b2d);border:1px solid #1d3b59;border-radius:7px;padding:12px 10px;min-height:83px}
+#flow-panel-physical .qp-kpi small{display:block;color:#77a7e2;font:10px Consolas;text-transform:uppercase;letter-spacing:.04em}
+#flow-panel-physical .qp-kpi strong{display:block;font-size:22px;color:#8db6ee;margin:4px 0}#flow-panel-physical .qp-kpi em{color:#7fc5e2;font-size:10px;font-style:normal}
+#flow-panel-physical .qp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+#flow-panel-physical .qp-chart-top{grid-template-columns:1fr 1fr}#flow-panel-physical .qp-card.qp-wide{grid-column:span 2}
+#flow-panel-physical .qp-card{background:linear-gradient(140deg,#0a1d2f,#091b2c);border:1px solid #1a3753;border-radius:9px;min-width:0;overflow:hidden;box-shadow:0 7px 18px rgba(7,21,37,.17)}
+#flow-panel-physical .qp-card>header{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#0a1e30;border-bottom:1px solid #203c55;padding:11px 14px}
+#flow-panel-physical .qp-card>header b{font-size:12px;color:#8bb5ed}#flow-panel-physical .qp-card>header span{font-size:10px;color:#77bfdd}
+#flow-panel-physical .qp-full{margin:12px 0}
+#flow-panel-physical .qp-chartbox{position:relative;margin:10px 12px;min-width:0;line-height:0;overflow:hidden}
+#flow-panel-physical .qp-chartbox canvas{width:100%;display:block;border-radius:6px;background:#091c2e;cursor:crosshair;touch-action:pan-y}
+#flow-panel-physical .qp-chartbox canvas.qp-overlay{position:absolute;left:0;top:0;background:transparent;pointer-events:auto}
+#flow-panel-physical .qp-readout{color:#a2dff3;white-space:normal;font-size:11px;line-height:1.5;min-height:35px;border-top:1px solid #1c374f;padding:8px 13px;background:#0a1d2f}
+#flow-panel-physical .qp-readout b{color:#95bcf2}#flow-panel-physical .qp-readout strong{color:#8fd1ea}
+#flow-panel-physical .qp-chartfoot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 14px 12px}#flow-panel-physical .qp-chartfoot label{flex:1}#flow-panel-physical .qp-chartfoot input{width:100%;padding:0}#flow-panel-physical .qp-chartfoot strong{color:#86b2ea;white-space:nowrap}
+#flow-panel-physical .qp-eventcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;padding:12px}
+#flow-panel-physical .qp-event{background:#0c2034;border:1px solid #214262;border-radius:7px;padding:9px;min-width:0}
+#flow-panel-physical .qp-event small{display:block;color:#88cce6;font-size:10px}#flow-panel-physical .qp-event b{display:block;color:#89b4ec;font-size:20px;line-height:1.35}#flow-panel-physical .qp-event em{font-style:normal;color:#79c0de;font-size:10px}
+#flow-panel-physical .qp-event.qp-risk{border-color:#26496b}#flow-panel-physical .qp-event.qp-risk b{color:#eae2cd}
+#flow-panel-physical .qp-toolrow{display:flex;flex-wrap:wrap;align-items:end;gap:10px;padding:12px}#flow-panel-physical .qp-toolrow label{flex:1;min-width:90px}
+#flow-panel-physical .qp-tabletools{display:flex;gap:10px;align-items:center;padding:11px 12px;background:#0a1c2e;flex-wrap:wrap}#flow-panel-physical .qp-tabletools input{min-width:180px;flex:1}
+#flow-panel-physical .qp-tablewrap{overflow:auto;max-height:510px;background:#091c2e;border-top:1px solid #1a3854;border-bottom:1px solid #1a3854}
+#flow-panel-physical .qp-table{border-collapse:collapse;width:100%;font:11px/1.3 Consolas;font-variant-numeric:tabular-nums}
+#flow-panel-physical .qp-table th{position:sticky;top:0;z-index:2;background:#0c2135;color:#88b3eb;font-weight:700;padding:10px 9px;white-space:nowrap;text-align:right;border-bottom:1px solid #224364;cursor:pointer}
+#flow-panel-physical .qp-table th:first-child,#flow-panel-physical .qp-table td:first-child{text-align:left}
+#flow-panel-physical .qp-table td{padding:8px 9px;text-align:right;border-bottom:1px solid rgba(66,116,168,.16);white-space:nowrap;color:#b5e6f7}
+#flow-panel-physical .qp-table tr:hover td{outline:1px solid rgba(111,184,216,.3);background-color:#122a3f}
+#flow-panel-physical .qp-table tr.qp-selected td:first-child{border-left:3px solid #86b1ea;color:#94bbf1}
+#flow-panel-physical .qp-table .qp-muted{color:#4e82ba}
+#flow-panel-physical .qp-footnote{padding:10px 14px;color:#72bada;font-size:10px;line-height:1.5}
+#flow-panel-physical .qp-audit-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:14px;padding:12px;align-items:start}
+#flow-panel-physical #qpAuditSummary{line-height:1.8;color:#a1def3}
+#flow-panel-physical #qpWalkTable table{width:100%;border-collapse:collapse;font-size:10px}#flow-panel-physical #qpWalkTable td,#flow-panel-physical #qpWalkTable th{padding:8px 6px;border-bottom:1px solid #29445e;text-align:right;white-space:nowrap}#flow-panel-physical #qpWalkTable th{color:#84b0e9;position:sticky;top:0;background:#0c2135}#flow-panel-physical #qpWalkTable td:first-child,#flow-panel-physical #qpWalkTable th:first-child{text-align:left}
+#flow-panel-physical .qp-footer{color:#4e95ba;text-align:center;letter-spacing:.06em;font-size:10px;padding:14px}
+@media(max-width:1160px){#flow-panel-physical .qp-kpis{grid-template-columns:repeat(3,1fr)}#flow-panel-physical .qp-grid{grid-template-columns:1fr}#flow-panel-physical .qp-card.qp-wide{grid-column:span 1}#flow-panel-physical .qp-audit-grid{grid-template-columns:1fr}}
+@media(max-width:700px){#flow-panel-physical .qp-kpis{grid-template-columns:repeat(2,1fr)}#flow-panel-physical .qp-hero{flex-direction:column;align-items:flex-start}#flow-panel-physical .qp-hero h2{font-size:22px}#flow-panel-physical .qp-hero-meta{text-align:left}#flow-panel-physical .qp-eventcards{grid-template-columns:repeat(2,1fr)}#flow-panel-physical .qp-toolbar label{flex:1 1 45%}#flow-panel-physical .qp-chartbox{margin:8px 4px}}

@@ -1,0 +1,1 @@
+.sy-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(156px,1fr));gap:4px 10px;margin:10px 0}.sy-fields input{margin-top:3px}.sy-guide{margin:7px 0}.sy-guide summary{cursor:pointer;color:var(--blue)}.sy-guide p{margin-top:5px;color:var(--muted)}.sy-status{margin-top:9px;color:var(--gold)}#view-systematic .tablewrap+.hint{margin:6px 0 11px}

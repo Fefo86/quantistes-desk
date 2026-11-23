@@ -1,0 +1,14 @@
+#view-volcube .vc11-title{display:flex;align-items:center;justify-content:space-between;min-height:20px}
+#view-volcube .vc11-title label{display:inline-flex;align-items:center;cursor:pointer;margin:0}
+#view-volcube .vc11-title input{width:15px;height:15px;min-height:0;margin:0;accent-color:#87b5ff}
+#view-volcube .vc11-date{display:grid;gap:3px;margin:2px 0 4px;font-size:10px;color:#85b0e9}
+#view-volcube .vc11-date input{width:100%;min-width:0;max-width:100%;box-sizing:border-box;border:1px solid #3a5873;background:#08192a;color:#e9e2cd;padding:4px 3px;min-height:27px;font:inherit;font-size:11px;color-scheme:dark}
+#view-volcube .vc11-file-status{font-size:10px;color:#94d6ed;line-height:1.35;overflow-wrap:anywhere}
+#view-volcube .vc11-file-status:empty,#view-volcube #vc11BatchStatus:empty{display:none}
+#view-volcube .vc11-file-status[data-error=true]{color:#99bef3}
+#view-volcube .vc11-api-actions{padding:10px 12px 2px}
+#view-volcube .vc11-bar{display:flex;flex-wrap:wrap;gap:6px}
+#view-volcube .vc11-bar button,#view-volcube .vc10-slot-actions button[id^=vc11Fetch]{min-height:27px;padding:4px 8px;border:1px solid #2d6a8e;background:#0c2134;color:#a9e1f5;font:inherit;font-size:11px;cursor:pointer}
+#view-volcube .vc11-bar button:disabled,#view-volcube button[id^=vc11Fetch]:disabled{opacity:.5;cursor:default}
+#view-volcube .vc11-api-actions p{line-height:1.4;font-size:11px;color:#85b1e9;margin:5px 0 0}
+#view-volcube #vc11BatchStatus{color:#88b3eb}

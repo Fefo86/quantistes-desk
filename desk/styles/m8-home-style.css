@@ -1,0 +1,28 @@
+#qtMonitorBrand{color:#75a5e1;font-weight:700;white-space:nowrap;letter-spacing:.01em}
+#qtWorkspace .qt-brand{font-size:14px}
+#qtWorkArea.m8-home>.metrics,#qtWorkArea.m8-home>#deskQuality{display:none}
+#qtWorkArea.m8-home .heading{margin-bottom:5px}
+.m8-home .heading h1{font-size:clamp(21px,2.2vw,32px);line-height:1.1;color:#cbe0fd}
+#view-monitor{margin-top:10px;color:#ceddeb}
+#view-monitor .m8-layout{display:grid;grid-template-columns:minmax(0,2.35fr) minmax(244px,1fr);gap:10px}
+#view-monitor .m8-chart-card,#view-monitor .m8-release{min-width:0;border:1px solid #203c54;background:#071727}
+#view-monitor .m8-cardhead{display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:44px;padding:9px 12px;border-bottom:1px solid #203c54;background:#091b2d}
+#view-monitor h2{margin:0;color:#f5f3e9;font-size:15px;text-transform:none;letter-spacing:0}
+#monChartNote{color:#6da0dd;font-size:11px;display:block;margin-top:2px}
+#view-monitor .m8-modes{display:flex;gap:2px}
+#view-monitor .m8-modes button{background:#081728;color:#c9dae9;border:1px solid #24415b;padding:4px 8px;border-radius:0;min-height:26px}
+#view-monitor .m8-modes [aria-pressed=true]{color:#75a5e1;border-color:#87b5ff;background:#0a1d2f}
+#monChart{min-height:166px;padding:7px 4px;display:grid;place-items:center;color:#6da0dd}
+#monChart svg{width:100%;height:clamp(174px,23vh,245px);display:block;overflow:visible;font-family:Consolas}
+.m8-legend{display:flex;flex-wrap:wrap;gap:15px;padding:2px 14px 9px;font-size:11px;color:#b6cadd}.m8-legend span:before{display:inline-block;vertical-align:middle;margin-right:5px;content:"";width:12px;height:2px;background:#87b5ff}.m8-legend span:nth-child(2):before{width:6px;height:6px;border-radius:50%;background:#78c0de}.m8-legend span:nth-child(3):before{height:0;border-top:1px dashed #d4e1eb;background:transparent}
+.m8-cursor{border-top:1px solid #29445e;display:grid;grid-template-columns:auto minmax(50px,1fr);column-gap:12px;align-items:center;padding:8px 12px;background:#081829}.m8-cursor label{font-weight:600;font-size:11px;color:#74a4e0}.m8-cursor output{grid-column:1/-1;font-size:12px;color:#bfd8fa;min-height:17px}.m8-cursor input{width:100%;margin:0;accent-color:#87b5ff}
+.m8-release-top{display:grid;gap:3px;padding:13px 12px 10px}.m8-release-top b{font-size:19px;color:#b7d2f9}.m8-release-top b[data-state=ok]{color:#85cae5}.m8-release-top span{font-size:11px;color:#6ea1dd}
+.m8-release dl{margin:0;padding:0 12px 9px}.m8-release dl div{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-top:1px solid #12293e;padding:5px 0}.m8-release dt{font-size:11px;color:#7cabe5}.m8-release dd{margin:0;font-size:13px;color:#e3decc;white-space:nowrap;font-variant-numeric:tabular-nums}.m8-audit{margin:0 12px 10px}
+#view-monitor button.m8-audit{border:0;border-bottom:1px solid #214160;color:#8ab4ec;background:transparent;border-radius:0;padding:3px 0}
+#view-monitor .m8-tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0}
+#view-monitor .m8-tools button{display:flex;align-items:center;gap:10px;text-align:left;padding:11px 10px;background:#091b2c;border:1px solid #25435d;border-radius:0;color:#bbd5fa}
+#view-monitor .m8-tools button:hover{border-color:#87b5ff;background:#0b1f32}
+#view-monitor .m8-tools b,#view-monitor .m8-tools small{display:block}#view-monitor .m8-tools b{font-size:13px}#view-monitor .m8-tools small{font-size:10px;color:#82afe8;margin-top:2px}#view-monitor .m8-tools i{margin-left:auto;color:#7490a9}
+.m8-key{color:#75a5e1;font-size:12px;font-weight:700}.m8-home .tool-help{margin:8px 0}
+@media(max-width:790px){#view-monitor .m8-layout{grid-template-columns:1fr}#view-monitor .m8-tools{grid-template-columns:1fr}.m8-release-top{padding:9px 12px}.m8-release dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:14px}.m8-release dl div{flex-wrap:wrap;gap:1px 5px}}
+@media(max-width:445px){#view-monitor .m8-cardhead{flex-wrap:wrap}.m8-release dl{grid-template-columns:1fr}.qt-location #qtLocation{display:none}.m8-cursor output{font-size:11px}}

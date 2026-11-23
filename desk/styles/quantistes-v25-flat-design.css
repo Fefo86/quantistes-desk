@@ -1,0 +1,147 @@
+
+/* QUANTISTES FLAT DESK 25 · UNIQUE-OWNER WORKSPACES / NO NESTED STUDIO NAV */
+:root{--q25-bg:#071525;--q25-surface:#091b2d;--q25-surface2:#0b1f32;--q25-border:#203c55;--q25-borderhi:#2d547c;--q25-text:#c4dbfb;--q25-muted:#6ea1dd;--q25-gold:#8bb5ed;--q25-teal:#7dc3e0;--q25-blue:#9dc1f4;--q25-rose:#e6e0cc;--q25-mono:Consolas}
+html{scroll-behavior:smooth;scroll-padding-top:132px}
+body.q13-on:not(.q13-native),body.q13-on:not(.q13-native) .q13{background:var(--q25-bg)!important;color:var(--q25-text)!important;font-family:Consolas!important}
+body.q13-on .q13::before{display:none!important}
+body.q13-on:not(.q13-native) .q13-header{padding:10px clamp(16px,2vw,38px)!important;min-height:65px!important;background:#091a2b!important;border-bottom:1px solid var(--q25-border)!important;box-shadow:none!important}
+body.q13-on:not(.q13-native) .q13-header .q13-brand strong{font:700 clamp(18px,1.35vw,25px)/1.1 var(--q25-mono)!important;letter-spacing:-.03em!important}
+body.q13-on:not(.q13-native) .q13-header .q13-brand>span{font-size:9px!important;letter-spacing:.12em!important;color:#7cabe5!important}
+body.q13-on:not(.q13-native) .q13-header .q13-mark{border-radius:4px!important;box-shadow:none!important}
+body.q13-on:not(.q13-native) .q13-header .q13-actions{gap:5px}
+body.q13-on:not(.q13-native) .q13-header .q13-actions :is(button,label){border-radius:4px!important;box-shadow:none!important}
+body.q13-on:not(.q13-native) #qlNav{position:sticky!important;top:0!important;z-index:110!important;min-height:55px!important;gap:3px!important;background:#091c2e!important;box-shadow:none!important;border-bottom:1px solid #29445e!important;padding-inline:clamp(12px,2vw,38px)!important;display:flex!important;flex-wrap:wrap!important;align-items:center!important;overflow:visible!important}
+body.q13-on:not(.q13-native) #qlNav button{font:700 clamp(10px,.8vw,13px)/1.25 var(--q25-mono)!important;padding:13px clamp(10px,.85vw,17px)!important;min-height:52px!important;white-space:nowrap!important;letter-spacing:.025em!important;border-radius:0!important}
+body.q13-on:not(.q13-native) #qlNav button small{display:none!important}
+body.q13-on:not(.q13-native) #qlNav button i{width:24px;height:24px;border-radius:3px}
+body.q13-on:not(.q13-native) #qlNav button.on{background:#0c2135!important;color:#a1c4f4!important;border-bottom:2px solid var(--q25-gold)!important}
+body.q13-on:not(.q13-native) #qlNav :is(#qlOpenEvidence,#qlFindTools){display:none!important}
+body.q13-on:not(.q13-native) #qlNav #qlOpenData{margin-left:auto!important;min-height:42px!important;background:#0c2034!important;color:#b1e4f6!important;border:1px solid #234566!important;padding-inline:13px!important}
+body.q13-on:not(.q13-native) #q24Context{min-height:31px!important;padding:5px clamp(16px,2.8vw,50px)!important;border-bottom:1px solid #142c42!important;background:#08192a!important;color:#77a7e2!important;gap:8px!important}
+body.q13-on:not(.q13-native) #q24Context .q24-context-left{gap:8px!important}
+body.q13-on:not(.q13-native) #q24Context #q24WorkClock{display:none!important}
+body.q13-on:not(.q13-native) .q13-layout>.q13-main{max-width:2600px!important;padding:28px clamp(14px,2.8vw,54px) 95px!important;margin:0 auto!important}
+body.q13-on:not(.q13-native) .q13-screen-title{border:0!important;margin:0!important;padding:0 0 18px!important;display:flex!important;align-items:flex-end!important}
+body.q13-on:not(.q13-native) .q13-screen-title h1{font:730 clamp(28px,2.35vw,45px)/1.08 var(--q25-mono)!important;letter-spacing:-.045em!important;max-width:none!important}
+body.q13-on:not(.q13-native) .q13-screen-title h1 span{color:var(--q25-gold)!important}
+body.q13-on:not(.q13-native) .q13-screen-title p,
+body.q13-on:not(.q13-native) .q13-screen-title .q13-eyebrow,
+body.q13-on:not(.q13-native) .q13-screen-title > :not(div):not(h1),
+body.q13-on:not(.q13-native) .q13-screen-title .q15-mode-switch{display:none!important}
+body.q13-on:not(.q13-native) .q13-screen-title .q13-inlinetools{display:none!important}
+/* The old overview, legacy study toolbar, secondary lab menu, and old widget recap are removed from visible workflow. */
+body.q13-on:not(.q13-native) .ql-studio,
+body.q13-on:not(.q13-native) .q15-spine,
+body.q13-on:not(.q13-native) .q15-labhead,
+body.q13-on:not(.q13-native) .q15-toolnav,
+body.q13-on:not(.q13-native) .q15-portal-head,
+body.q13-on:not(.q13-native) .q15-portal-status,
+body.q13-on:not(.q13-native) .q15-hero-forward,
+body.q13-on:not(.q13-native) .q15-instrument::before,
+body.q13-on:not(.q13-native) .q15-native-host::before,
+body.q13-on:not(.q13-native) #q16GlobalFocus,
+body.q13-on:not(.q13-native) #q24ScoreHead,
+body.q13-on:not(.q13-native) #q24SignalDeck,
+body.q13-on:not(.q13-native) #q24EvidencePanel,
+body.q13-on:not(.q13-native) #q24OriginalWorkflow,
+body.q13-on:not(.q13-native) #q13StepCards,
+body.q13-on:not(.q13-native) .q13-sidestate,
+body.q13-on:not(.q13-native) .q13-next,
+body.q13-on:not(.q13-native) .q15-native-only>.q15-hero-forward{display:none!important}
+/* User-facing method/tutorial annotations were dispersed through the original shell: keep the canonical method only in RESEARCH. */
+body.q13-on:not(.q13-native) details.tool-help,
+body.q13-on:not(.q13-native) [data-tool-guide],
+body.q13-on:not(.q13-native) .qt-manual-tools,
+body.q13-on:not(.q13-native) .qt-guide-tools,
+body.q13-on:not(.q13-native) #qlDataGuide,
+body.q13-on:not(.q13-native) #q24ImportSteps,
+body.q13-on:not(.q13-native) .flow-method-note,
+body.q13-on:not(.q13-native) #flow-panel-method,
+body.q13-on:not(.q13-native) .flow-score-footer #flowScoreFooter,
+body.q13-on:not(.q13-native) .flow-score-shell .flow-warning,
+body.q13-on:not(.q13-native) .flow-shell>.flow-warning,
+body.q13-on:not(.q13-native) .flow-hero,
+body.q13-on:not(.q13-native) .qt360-hero,
+body.q13-on:not(.q13-native) .qt360-foot{display:none!important}
+/* Direct workspaces: original quantitative DOM stays live, with one selected tool at a time. */
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel]>:not(.q13-screen-title):not(.q25-toolbar):not(.q15-instrument):not(:where(#q16AtlasDock,#q16FlowLab,#q16Registry)){display:none!important}
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel]>:is(#q16AtlasDock,#q16FlowLab,#q16Registry){display:none!important}
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel]>.q15-instrument{display:block!important;border:0!important;background:none!important;box-shadow:none!important;padding:0!important;margin:0!important;border-radius:0!important;max-width:100%!important;overflow:visible!important;min-height:200px}
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q25-custom>.q15-instrument{display:none!important}
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q25-custom.q25-tool-atlas>#q16AtlasDock,
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q25-custom.q25-tool-gammaatlas>#q16FlowLab,
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q25-custom.q25-tool-registry>#q16Registry{display:block!important}
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q25-custom.q25-tool-signed>:is(.q13-panel,.q13-grid,.q13-strip,.q13-banner),
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q25-custom.q25-tool-espath>:is(.q13-panel,.q13-grid,.q13-strip,.q13-chart-caption){display:block!important}
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q25-custom.q25-tool-signed>.q13-grid,
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q25-custom.q25-tool-espath>.q13-grid{display:grid!important}
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel] .q15-labcontent,
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel] .q15-labcontent[hidden]{display:block!important;height:auto!important;max-height:none!important;overflow:visible!important;padding:0!important;margin:0!important;background:transparent!important;border:0!important}
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel] .q15-native-host{display:block!important;min-width:0!important;width:100%!important;max-width:100%!important;margin:0!important;padding:0!important;background:transparent!important;border:0!important;min-height:180px}
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel] .q15-native-host>.view,
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel] .q15-native-host>.q15-archive-native,
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel] .q15-native-host>.q25-composite,
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel] .q15-native-host>.q15-dynamic-native{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important}
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel] .q15-native-host>.view.active{margin:0!important}
+.q25-composite{display:grid!important;gap:22px;width:100%}
+.q25-composite>.view{display:block!important;position:relative!important;width:100%!important;max-width:100%!important;margin:0!important;overflow:visible!important}
+.q25-composite>.view>.card,.q25-composite>.view>.grid2{margin-bottom:18px}
+/* The only secondary navigation is this compact, wrapping flat toolbar. No carousel and no overflow rail. */
+.q25-toolbar{display:flex!important;flex-wrap:wrap!important;gap:7px!important;align-items:center;min-width:0;padding:10px 0 19px!important;margin:0 0 20px!important;border-bottom:1px solid #1e3a52!important;position:relative;z-index:7}
+.q25-tool{font:700 clamp(11px,.72vw,12px)/1.3 var(--q25-mono)!important;letter-spacing:.015em!important;color:#84b0e9!important;background:#0b1f32!important;border:1px solid #1a3854!important;border-radius:5px!important;padding:10px 13px!important;min-height:37px!important;white-space:normal!important;box-shadow:none!important}
+.q25-tool:hover{background:#152d43!important;border-color:#4c7fb7!important;color:#d2e4fe!important}
+.q25-tool[aria-current="page"]{border-color:#87b5ff!important;background:#152d44!important;color:#e6e0cc!important;box-shadow:inset 0 -2px #77a7e2!important}
+.q25-pit{margin-left:auto!important;display:inline-flex;align-items:center;gap:7px;font:10px var(--q25-mono);color:#83c8e4;letter-spacing:.03em;white-space:nowrap}
+.q25-pit:before{content:'';width:5px;height:5px;border-radius:50%;background:#87b5ff}
+.q25-pit[data-alert="true"]{color:#e7e0cc}
+/* A less fragmented, typographically uniform work surface at all pixel densities. */
+body.q13-on:not(.q13-native) :is(.q13-panel,.q16-primary,.q15-native-host .card,.flow-card,.qt360-card,.pd-card,.qp-card){border:1px solid #1b3956!important;border-radius:8px!important;box-shadow:none!important;background:#0a1c2e!important}
+body.q13-on:not(.q13-native) :is(.q13-panel-head,.flow-card-head,.cardhead,.pd-card-head){background:#0c2135!important;border-bottom:1px solid #1d3c5a!important}
+body.q13-on:not(.q13-native) :is(.q13-panel-head h2,.cardhead h2,.cardhead h3,.flow-card-head b){color:#94bbf1!important;font-family:Consolas!important;letter-spacing:.015em!important}
+body.q13-on:not(.q13-native) :is(.card,.q13-panel,.flow-card){max-width:100%!important;min-width:0!important}
+body.q13-on:not(.q13-native) .q13-layout{min-width:0!important;overflow:visible!important}
+body.q13-on:not(.q13-native) .q13-main{min-width:0!important;overflow:visible!important}
+body.q13-on:not(.q13-native) :is(button,input,select,textarea){font-family:Consolas!important}
+body.q13-on:not(.q13-native) :is(.q13-panel,.flow-card,.card) :is(canvas,svg,.js-plotly-plot){max-width:100%}
+body.q13-on:not(.q13-native) .q24-chart-actions{top:6px;right:8px}
+/* No extra options-flow terminal navigation within an already selected tool. */
+body.q13-on:not(.q13-native) #view-flows .flow-subnav{display:none!important}
+body.q13-on:not(.q13-native) #view-flows .flow-toolbar{margin-top:10px}
+body.q13-on:not(.q13-native) #view-flows #flow-panel-ops{padding-top:0}
+body.q13-on:not(.q13-native) .flow-inner{min-width:0!important}
+body.q13-on:not(.q13-native) #flow-panel-method{display:none!important}
+body.q13-on:not(.q13-native) #view-flows .flow-inner:not(.active){display:none!important}
+body.q13-on:not(.q13-native) #view-flows .flow-inner.active{display:block!important}
+body.q13-on:not(.q13-native) .flow-score-shell{max-width:100%!important}
+body.q13-on:not(.q13-native) #view-flow-score{display:block!important}
+body.q13-on:not(.q13-native) #view-flow-score .flow-score-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)!important}
+body.q13-on:not(.q13-native) .flow-score-primary{min-height:220px;padding:26px!important}
+body.q13-on:not(.q13-native) .flow-score-action{font-size:clamp(30px,3vw,52px)!important;font-weight:800!important;letter-spacing:-.04em!important}
+body.q13-on:not(.q13-native) #faScore:has(p){display:none!important} /* duplicate empty flow-summary placeholder, calculations preserved */
+body.q13-on:not(.q13-native) #view-quant360 .qt360-tabs,
+body.q13-on:not(.q13-native) #view-quant360 .qt360-topnav{display:none!important}
+body.q13-on:not(.q13-native) #view-quant360 .qt360-panel:not(.on){display:none!important}
+body.q13-on:not(.q13-native) #view-quant360 .qt360-panel.on{display:block!important}
+body.q13-on:not(.q13-native) #q25-qa-anchor{display:none}
+/* No audit, methodology or tutorial fragments in the trading workspaces. The actual model output remains. */
+body.q13-on:not(.q13-native) :is(.qt-guide-toc,.tool-help,.q15-labhead,.flow-help-box,.qt360-foot,.flow-footer-notes){display:none!important}
+@media(max-width:1150px){body.q13-on:not(.q13-native) #qlNav{padding-inline:10px!important}body.q13-on:not(.q13-native) #qlNav button{padding:10px!important;min-height:43px!important}body.q13-on:not(.q13-native) .q13-layout>.q13-main{padding:19px 16px 65px!important}.q25-pit{flex-basis:100%;margin-left:0!important}.q25-toolbar{gap:6px!important}}
+@media(max-width:720px){body.q13-on:not(.q13-native) #qlNav button[data-ql-stage]{flex:1 1 29%;justify-content:center!important;font-size:10px!important}body.q13-on:not(.q13-native) #qlNav #qlOpenData{flex:1 1 100%;margin-left:0!important}body.q13-on:not(.q13-native) .q13-header .q13-clock{display:none!important}body.q13-on:not(.q13-native) .q13-screen-title h1{font-size:25px!important}.q25-tool{flex:1 1 44%;font-size:10px!important}.q25-composite{gap:14px!important}body.q13-on:not(.q13-native) #view-flow-score .flow-score-grid{grid-template-columns:1fr!important}}
+/* Override inherited v15 native-only blanket hiding for the sole flat tool picker. */
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q15-native-only > nav.q25-toolbar,
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q25-custom > nav.q25-toolbar,
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel] > nav.q25-toolbar{display:flex!important;visibility:visible!important;opacity:1!important;height:auto!important;max-height:none!important;overflow:visible!important}
+body.q13-on:not(.q13-native) .q10-joined,
+body.q13-on:not(.q13-native) .q10-joined-panel,
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel="path"] #view-flows .flow-toolbar,
+body.q13-on:not(.q13-native) #flow-panel-ops .op-tophead{display:none!important}
+body.q13-on:not(.q13-native) #q25-toolbar-score{display:none!important}
+/* Native snapshot metrics occupy one compact, visible KPI row instead of four isolated full-width rows. */
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q25-custom:is(.q25-tool-espath,.q25-tool-signed) > .q13-strip{
+ display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px!important;align-items:stretch!important;margin:0 0 16px!important;border:0!important;background:transparent!important;
+}
+body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q25-custom:is(.q25-tool-espath,.q25-tool-signed) > .q13-strip > *{
+ min-width:0!important;max-width:none!important;border:1px solid #1b3956!important;border-radius:7px!important;padding:12px!important;background:#0b1e31!important;}
+@media(max-width:920px){body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q25-custom:is(.q25-tool-espath,.q25-tool-signed) > .q13-strip{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:550px){body.q13-on:not(.q13-native) .q13-view[data-q13-panel].q25-custom:is(.q25-tool-espath,.q25-tool-signed) > .q13-strip{grid-template-columns:1fr!important}}
+
