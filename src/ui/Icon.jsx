@@ -9,6 +9,7 @@ const icons = {
   sliders: <><path d="M3 7h7m4 0h7M3 17h12m4 0h2"/><path d="M10 4h4v6h-4zm5 10h4v6h-4z"/></>,
   search: <><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></>,
   replay: <><path d="M3 10a8.5 8.5 0 1 1 .8 7M3 4v6h6"/></>,
+  upload: <path d="M12 15V3m-5 5 5-5 5 5M4 15v5h16v-5"/>,
   terminal: <><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m6 9 3 3-3 3m5 0h5"/></>,
   clock: <><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></>,
   collapse: <><rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M9 4v16m7-11-3 3 3 3"/></>,

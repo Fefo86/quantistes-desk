@@ -9,6 +9,7 @@ html.quantistes body.q13-on,html.quantistes body.q13-native{
   --accent:var(--amber);--mono:var(--terminal-mono);--sans:var(--terminal-mono)
 }
 html.quantistes body.q13-on:not(.q13-native) #q13App :is(.q13-header,#qlNav){display:none!important}
+html.quantistes body.q13-on:not(.q13-native) #q15Settings.open{z-index:600!important}
 html.quantistes body.q13-on:not(.q13-native) #q13App,
 html.quantistes body.q13-on:not(.q13-native) #q13App :is(.q13-layout,.q13-main){
   width:100%!important;max-width:none!important;margin:0!important;color:var(--ink)!important;background:var(--terminal-bg)!important;

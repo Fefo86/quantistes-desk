@@ -28,7 +28,12 @@ const fetches = [...scripts].filter(([p,s]) => !(p in projected) && !p.includes(
 assert.deepEqual(fetches.map(([p])=>p),[],'Valutare ogni nuova richiesta o trasporto');
 for (const p of Object.keys(projected)) {
   const s=projected[p];
-  if(p.includes('vc10-intake'))assert.match(s,/function beginApi\(\)\{el\('vc11BatchStatus'\)/);
+  if(p.includes('vc10-intake')){
+    assert.match(s,/function beginApi\(\)\{el\('vc11BatchStatus'\)/);
+    assert.ok(s.includes("el('vc11Fetch-'+id).disabled=true;"));
+    assert.ok(s.includes("el('vc11FetchSet').disabled=true;"));
+  }
+  if(p.includes('terminal-worker'))assert.ok(s.includes("$('skApiLoad-'+id).disabled=true;"));
   if(p.includes('daily-hub')){
     assert.doesNotMatch(s,/id="rdSecret"|id="rdAuth"|setInterval\(\(\)=>fetchDealer/);
     assert.match(s,/w\.DealerAdapter\.controls\(\)/);

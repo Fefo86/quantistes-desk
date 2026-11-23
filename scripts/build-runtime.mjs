@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import { localMarketSource, localMarketStyles } from './local-market.mjs';
+import { localMarketMarkup, localMarketSource, localMarketStyles } from './local-market.mjs';
 import { themeChartSource } from './theme-chart-source.mjs';
 import { terminalMaterials } from './terminal-materials.mjs';
 
@@ -51,7 +51,7 @@ for (const node of manifest.nodes) {
     if (!node.body && !html.includes('</head><body>')) continue;
     if (html.includes('</head><body>')) html = html.split('</head><body>')[1];
     html = html.replace(/<\/body>\s*<\/html>\s*$/i, '');
-    if (html.trim()) { flush(); layout.push(html); }
+    if (html.trim()) { flush(); layout.push(localMarketMarkup(html)); }
     continue;
   }
   const value = themeChartSource(node.id || node.path, localMarketSource(node.path, load(node)));

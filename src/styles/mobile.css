@@ -20,6 +20,7 @@
   .qx-actions button{min-width:2rem;min-height:2.15rem;justify-content:center}.qx-actions button>span{display:none}
   .qx-clock{font-size:.74rem;margin:0;padding-right:.45rem}.qx-clock>span{font-size:.68rem}
   .qx-command-row{gap:.28rem}.qx-command kbd{display:none}.qx-command .qx-field{font-size:.78rem}.qx-feeds summary{padding-left:.3rem;font-size:.7rem;gap:.27rem}
+  .qx button.qx-import-csv{gap:.2rem;padding-inline:.28rem;font-size:.73rem}.qx-import-verb{display:none}
   .qx-functions{padding-inline:0;scrollbar-width:thin}.qx-functions button{padding:.42rem .6rem}
   .qx-viewhead{align-items:flex-start;flex-direction:column;gap:.35rem;min-height:0;padding-block:.6rem}.qx-heading h1{font-size:1.3rem}.qx-function-code{font-size:.75rem}
   .qx-tape{justify-content:flex-start;gap:.25rem .55rem}.qx-tape>div{border:0;padding:0}.qx-tape dd{font-size:.78rem}.qx-tape time{display:inline}

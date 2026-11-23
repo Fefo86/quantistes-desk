@@ -3,6 +3,13 @@ import { CommandLine } from './CommandLine';
 import { Navigation } from './Navigation';
 
 export function Masthead({ view, section, navigate, csrf }) {
+  function importThetaCsv() {
+    const input = document.getElementById('csvFile');
+    if (!input) return;
+    window.Quantistes15?.settings();
+    input.scrollIntoView({ block: 'center' });
+    input.click();
+  }
   return <>
     <header className="qx-console">
       <div className="qx-titlebar">
@@ -16,9 +23,15 @@ export function Masthead({ view, section, navigate, csrf }) {
       </div>
       <div className="qx-command-row">
         <CommandLine ready={view.ready} navigate={navigate}/>
+        <button className="qx-import-csv" type="button" disabled={!view.ready} onClick={importThetaCsv}
+          title="Importa CSV ThetaData" aria-label="Importa CSV ThetaData">
+          <Icon name="upload" size={15}/><span><span className="qx-import-verb">Importa </span>CSV ThetaData</span>
+        </button>
         <details className="qx-feeds"><summary><i aria-hidden="true"/>Dati locali</summary>
-          <div className="qx-feeds-pop"><strong>Connessioni dati</strong>
-            <dl>{['SineMath / ThetaData','Bridge ES / VIX','OptionsDepth'].map(name => <div key={name}><dt>{name}</dt><dd>Disattivata</dd></div>)}</dl>
+          <div className="qx-feeds-pop"><strong>Sorgenti dati</strong>
+            <dl><div><dt>Importazione CSV ThetaData</dt><dd className="qx-import-active">Attiva</dd></div>
+              {['API SineMath / ThetaData','API bridge ES / VIX','API OptionsDepth'].map(name => <div key={name}><dt>{name}</dt><dd>Disattivata</dd></div>)}
+            </dl>
           </div>
         </details>
       </div>
